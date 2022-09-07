@@ -53,12 +53,15 @@ namespace SendGmailMulti
 
                 StreamReader sr = new StreamReader(ReceiverTextBox.Text);
                 string email;
+                int dem = 0;
 
                 while ((email = sr.ReadLine()) != null)
                 {
                     GuiMail(UserNameTextBox.Text, email, SubjectTextBox.Text, MessageTextBox.Text, attach);
+                    dem++;
                 }
                 sr.Close();
+                MessageBox.Show("Done! You have send "+ dem.ToString() + " mail");
             }
             );
             thread.Start();
@@ -90,6 +93,12 @@ namespace SendGmailMulti
             {
                 ReceiverTextBox.Text = dialog.FileName;
             }
+        }
+
+        private void MakeEmailListButton_Click(object sender, EventArgs e)
+        {
+            WriteEmailList wel = new WriteEmailList();
+            wel.Show();
         }
     }
 }

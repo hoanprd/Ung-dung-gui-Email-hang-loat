@@ -16,7 +16,8 @@ namespace SendGmailMulti
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SendGmailMulti());
+            Application.Run(new MainMenu());
+            //Application.Run(new SendGmailMulti());
         }
     }
 }

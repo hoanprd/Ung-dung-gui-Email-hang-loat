@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WriteEmailList));
             this.TextBoxW = new System.Windows.Forms.TextBox();
             this.PathTextBoxW = new System.Windows.Forms.TextBox();
             this.OpenButtonW = new System.Windows.Forms.Button();
@@ -102,8 +103,9 @@
             this.Controls.Add(this.OpenButtonW);
             this.Controls.Add(this.PathTextBoxW);
             this.Controls.Add(this.TextBoxW);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "WriteEmailList";
-            this.Text = "WriteEmailList";
+            this.Text = "Write Email List";
             this.ResumeLayout(false);
             this.PerformLayout();
 

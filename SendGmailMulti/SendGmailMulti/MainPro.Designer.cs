@@ -47,11 +47,13 @@ namespace SendGmailMulti
             this.label6 = new System.Windows.Forms.Label();
             this.AccountPanel = new System.Windows.Forms.Panel();
             this.PathPanel = new System.Windows.Forms.Panel();
-            this.InfoPanel = new System.Windows.Forms.Panel();
             this.MakeEmailListButton = new System.Windows.Forms.Button();
+            this.InfoPanel = new System.Windows.Forms.Panel();
+            this.PictureBoxMain = new System.Windows.Forms.PictureBox();
             this.AccountPanel.SuspendLayout();
             this.PathPanel.SuspendLayout();
             this.InfoPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxMain)).BeginInit();
             this.SuspendLayout();
             // 
             // AttachTextBox
@@ -219,17 +221,6 @@ namespace SendGmailMulti
             this.PathPanel.Size = new System.Drawing.Size(616, 176);
             this.PathPanel.TabIndex = 16;
             // 
-            // InfoPanel
-            // 
-            this.InfoPanel.Controls.Add(this.SubjectTextBox);
-            this.InfoPanel.Controls.Add(this.label2);
-            this.InfoPanel.Controls.Add(this.label5);
-            this.InfoPanel.Controls.Add(this.MessageTextBox);
-            this.InfoPanel.Location = new System.Drawing.Point(12, 161);
-            this.InfoPanel.Name = "InfoPanel";
-            this.InfoPanel.Size = new System.Drawing.Size(541, 318);
-            this.InfoPanel.TabIndex = 17;
-            // 
             // MakeEmailListButton
             // 
             this.MakeEmailListButton.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -241,11 +232,33 @@ namespace SendGmailMulti
             this.MakeEmailListButton.UseVisualStyleBackColor = true;
             this.MakeEmailListButton.Click += new System.EventHandler(this.MakeEmailListButton_Click);
             // 
+            // InfoPanel
+            // 
+            this.InfoPanel.Controls.Add(this.SubjectTextBox);
+            this.InfoPanel.Controls.Add(this.label2);
+            this.InfoPanel.Controls.Add(this.label5);
+            this.InfoPanel.Controls.Add(this.MessageTextBox);
+            this.InfoPanel.Location = new System.Drawing.Point(12, 161);
+            this.InfoPanel.Name = "InfoPanel";
+            this.InfoPanel.Size = new System.Drawing.Size(541, 318);
+            this.InfoPanel.TabIndex = 17;
+            // 
+            // PictureBoxMain
+            // 
+            this.PictureBoxMain.Image = global::SendGmailMulti.Properties.Resources.toi_pham_spammer;
+            this.PictureBoxMain.Location = new System.Drawing.Point(602, 216);
+            this.PictureBoxMain.Name = "PictureBoxMain";
+            this.PictureBoxMain.Size = new System.Drawing.Size(616, 299);
+            this.PictureBoxMain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PictureBoxMain.TabIndex = 18;
+            this.PictureBoxMain.TabStop = false;
+            // 
             // SendGmailMulti
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1230, 527);
+            this.Controls.Add(this.PictureBoxMain);
             this.Controls.Add(this.InfoPanel);
             this.Controls.Add(this.PathPanel);
             this.Controls.Add(this.AccountPanel);
@@ -259,6 +272,7 @@ namespace SendGmailMulti
             this.PathPanel.PerformLayout();
             this.InfoPanel.ResumeLayout(false);
             this.InfoPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxMain)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -284,6 +298,7 @@ namespace SendGmailMulti
         private System.Windows.Forms.Panel PathPanel;
         private System.Windows.Forms.Panel InfoPanel;
         private System.Windows.Forms.Button MakeEmailListButton;
+        private System.Windows.Forms.PictureBox PictureBoxMain;
     }
 }
 

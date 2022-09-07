@@ -113,5 +113,8 @@
   <ItemGroup>
     <None Include="Resources\Atelier Firis.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\toi-pham-spammer.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

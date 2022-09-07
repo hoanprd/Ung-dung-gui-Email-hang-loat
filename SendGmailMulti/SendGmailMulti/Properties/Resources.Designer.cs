@@ -109,5 +109,15 @@ namespace SendGmailMulti.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap toi_pham_spammer {
+            get {
+                object obj = ResourceManager.GetObject("toi-pham-spammer", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

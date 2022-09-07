@@ -121,6 +121,9 @@
   <data name="Atelier.Firis.full.2175355 (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Atelier.Firis.full.2175355 (2).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Atelier Firis" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Atelier Firis.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="pixlr-bg-result" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pixlr-bg-result.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -130,7 +133,7 @@
   <data name="pixlr-bg-result1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pixlr-bg-result1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Atelier Firis" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Atelier Firis.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="toi-pham-spammer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\toi-pham-spammer.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

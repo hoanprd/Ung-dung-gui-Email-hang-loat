@@ -29,11 +29,12 @@ namespace SendGmailMulti
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenu));
             this.panel1 = new System.Windows.Forms.Panel();
             this.AppName = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ExitButton = new System.Windows.Forms.Button();
             this.StartMainButton = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -59,6 +60,16 @@ namespace SendGmailMulti
             this.AppName.Size = new System.Drawing.Size(178, 66);
             this.AppName.TabIndex = 2;
             this.AppName.Text = "Mail Spammer\r\n   Application";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::SendGmailMulti.Properties.Resources.Atelier_Firis;
+            this.pictureBox1.Location = new System.Drawing.Point(306, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(659, 422);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
             // 
             // ExitButton
             // 
@@ -86,16 +97,6 @@ namespace SendGmailMulti
             this.StartMainButton.UseVisualStyleBackColor = true;
             this.StartMainButton.Click += new System.EventHandler(this.StartMainButton_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::SendGmailMulti.Properties.Resources.Atelier_Firis;
-            this.pictureBox1.Location = new System.Drawing.Point(306, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(659, 422);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -103,8 +104,9 @@ namespace SendGmailMulti
             this.ClientSize = new System.Drawing.Size(977, 450);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainMenu";
-            this.Text = "MainMenu";
+            this.Text = "Main Menu";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

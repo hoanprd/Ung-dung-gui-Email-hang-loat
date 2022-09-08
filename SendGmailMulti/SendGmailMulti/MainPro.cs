@@ -17,6 +17,8 @@ namespace SendGmailMulti
     public partial class SendGmailMulti : Form
     {
         Attachment attach = null;
+        bool CheckAccCorrect = false;
+
         public SendGmailMulti()
         {
             InitializeComponent();
@@ -41,6 +43,7 @@ namespace SendGmailMulti
             Thread thread = new Thread(() =>
             {
                 attach = null;
+
                 try
                 {
                     FileInfo file = new FileInfo(AttachTextBox.Text);
@@ -51,17 +54,28 @@ namespace SendGmailMulti
 
                 }
 
-                StreamReader sr = new StreamReader(ReceiverTextBox.Text);
-                string email;
-                int dem = 0;
-
-                while ((email = sr.ReadLine()) != null)
+                try
                 {
-                    GuiMail(UserNameTextBox.Text, email, SubjectTextBox.Text, MessageTextBox.Text, attach);
-                    dem++;
+                    StreamReader sr = new StreamReader(ReceiverTextBox.Text);
+                    string email;
+                    int dem = 0;
+
+                    while ((email = sr.ReadLine()) != null)
+                    {
+                        GuiMail(UserNameTextBox.Text, email, SubjectTextBox.Text, MessageTextBox.Text, attach);
+                        dem++;
+                    }
+                    sr.Close();
+
+                    MessageBox.Show("Done! You have send " + dem.ToString() + " mail");
                 }
-                sr.Close();
-                MessageBox.Show("Done! You have send "+ dem.ToString() + " mail");
+                catch
+                {
+                    if (CheckAccCorrect == false)
+                        MessageBox.Show("Error! You haven't choose any reciver ");
+                    else
+                        MessageBox.Show("User name or password not correct");
+                }
             }
             );
             thread.Start();
@@ -92,6 +106,7 @@ namespace SendGmailMulti
             if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 ReceiverTextBox.Text = dialog.FileName;
+                CheckAccCorrect = true;
             }
         }
 

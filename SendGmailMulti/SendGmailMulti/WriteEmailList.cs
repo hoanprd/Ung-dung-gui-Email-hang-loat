@@ -34,13 +34,6 @@ namespace SendGmailMulti
             }
         }
 
-        private void SaveButtonW_Click(object sender, EventArgs e)
-        {
-            StreamWriter write = new StreamWriter(TextBoxW.Text.Trim());
-            write.WriteLine(TextBoxW.Text);
-            write.Close();
-        }
-
         private void SaveAsButtonW_Click(object sender, EventArgs e)
         {
             save = new SaveFileDialog();
@@ -51,12 +44,18 @@ namespace SendGmailMulti
                 StreamWriter write = new StreamWriter(save.FileName);
                 write.WriteLine(TextBoxW.Text);
                 write.Close();
+                MessageBox.Show("Save success!");
             }
         }
 
         private void CloseWriteEmailList_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void WriteEmailList_Load(object sender, EventArgs e)
+        {
+            ControlBox = false;
         }
     }
 }

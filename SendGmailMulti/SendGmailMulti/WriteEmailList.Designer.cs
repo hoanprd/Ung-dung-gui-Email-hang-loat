@@ -32,7 +32,6 @@
             this.TextBoxW = new System.Windows.Forms.TextBox();
             this.PathTextBoxW = new System.Windows.Forms.TextBox();
             this.OpenButtonW = new System.Windows.Forms.Button();
-            this.SaveButtonW = new System.Windows.Forms.Button();
             this.SaveAsButtonW = new System.Windows.Forms.Button();
             this.PathLabelW = new System.Windows.Forms.Label();
             this.CloseWriteEmailList = new System.Windows.Forms.Button();
@@ -55,23 +54,13 @@
             // 
             // OpenButtonW
             // 
-            this.OpenButtonW.Location = new System.Drawing.Point(419, 116);
+            this.OpenButtonW.Location = new System.Drawing.Point(544, 116);
             this.OpenButtonW.Name = "OpenButtonW";
             this.OpenButtonW.Size = new System.Drawing.Size(119, 41);
             this.OpenButtonW.TabIndex = 2;
             this.OpenButtonW.Text = "Open";
             this.OpenButtonW.UseVisualStyleBackColor = true;
             this.OpenButtonW.Click += new System.EventHandler(this.OpenButtonW_Click);
-            // 
-            // SaveButtonW
-            // 
-            this.SaveButtonW.Location = new System.Drawing.Point(544, 116);
-            this.SaveButtonW.Name = "SaveButtonW";
-            this.SaveButtonW.Size = new System.Drawing.Size(119, 41);
-            this.SaveButtonW.TabIndex = 3;
-            this.SaveButtonW.Text = "Save";
-            this.SaveButtonW.UseVisualStyleBackColor = true;
-            this.SaveButtonW.Click += new System.EventHandler(this.SaveButtonW_Click);
             // 
             // SaveAsButtonW
             // 
@@ -111,13 +100,13 @@
             this.Controls.Add(this.CloseWriteEmailList);
             this.Controls.Add(this.PathLabelW);
             this.Controls.Add(this.SaveAsButtonW);
-            this.Controls.Add(this.SaveButtonW);
             this.Controls.Add(this.OpenButtonW);
             this.Controls.Add(this.PathTextBoxW);
             this.Controls.Add(this.TextBoxW);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "WriteEmailList";
             this.Text = "Write Email List";
+            this.Load += new System.EventHandler(this.WriteEmailList_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -128,7 +117,6 @@
         private System.Windows.Forms.TextBox TextBoxW;
         private System.Windows.Forms.TextBox PathTextBoxW;
         private System.Windows.Forms.Button OpenButtonW;
-        private System.Windows.Forms.Button SaveButtonW;
         private System.Windows.Forms.Button SaveAsButtonW;
         private System.Windows.Forms.Label PathLabelW;
         private System.Windows.Forms.Button CloseWriteEmailList;

@@ -28,5 +28,10 @@ namespace SendGmailMulti
         {
             Application.Exit();
         }
+
+        private void MainMenu_Load(object sender, EventArgs e)
+        {
+            MaximizeBox = false;
+        }
     }
 }

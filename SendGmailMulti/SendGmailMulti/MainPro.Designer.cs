@@ -61,7 +61,7 @@ namespace SendGmailMulti
             // 
             this.AttachTextBox.Location = new System.Drawing.Point(116, 19);
             this.AttachTextBox.Name = "AttachTextBox";
-            this.AttachTextBox.Size = new System.Drawing.Size(369, 22);
+            this.AttachTextBox.Size = new System.Drawing.Size(188, 22);
             this.AttachTextBox.TabIndex = 0;
             // 
             // label1
@@ -80,7 +80,7 @@ namespace SendGmailMulti
             this.ReceiverTextBox.Location = new System.Drawing.Point(116, 70);
             this.ReceiverTextBox.Name = "ReceiverTextBox";
             this.ReceiverTextBox.ReadOnly = true;
-            this.ReceiverTextBox.Size = new System.Drawing.Size(184, 22);
+            this.ReceiverTextBox.Size = new System.Drawing.Size(369, 22);
             this.ReceiverTextBox.TabIndex = 2;
             // 
             // label2
@@ -279,6 +279,7 @@ namespace SendGmailMulti
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SendGmailMulti";
             this.Text = "Send gmail multi";
+            this.Load += new System.EventHandler(this.SendGmailMulti_Load);
             this.AccountPanel.ResumeLayout(false);
             this.AccountPanel.PerformLayout();
             this.PathPanel.ResumeLayout(false);

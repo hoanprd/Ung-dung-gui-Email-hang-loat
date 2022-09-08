@@ -87,9 +87,9 @@ namespace SendGmailMulti
                 catch
                 {
                     if (CheckAccCorrect == false)
-                        MessageBox.Show("Error! You haven't choose any reciver", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        MessageBox.Show("Error! You haven't choose any receiver", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     else
-                        MessageBox.Show("User name or password not correct", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                        MessageBox.Show("User name or password is not correct", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                 }
             }
             );
@@ -144,6 +144,12 @@ namespace SendGmailMulti
             MainMenu mm = new MainMenu();
             mm.Show();
             this.Close();
+        }
+
+        private void SendGmailMulti_Load(object sender, EventArgs e)
+        {
+            MaximizeBox = false;
+            ControlBox = false;
         }
     }
 }

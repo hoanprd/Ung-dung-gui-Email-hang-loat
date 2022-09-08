@@ -80,7 +80,7 @@ namespace SendGmailMulti
             this.ReceiverTextBox.Location = new System.Drawing.Point(116, 70);
             this.ReceiverTextBox.Name = "ReceiverTextBox";
             this.ReceiverTextBox.ReadOnly = true;
-            this.ReceiverTextBox.Size = new System.Drawing.Size(369, 22);
+            this.ReceiverTextBox.Size = new System.Drawing.Size(184, 22);
             this.ReceiverTextBox.TabIndex = 2;
             // 
             // label2

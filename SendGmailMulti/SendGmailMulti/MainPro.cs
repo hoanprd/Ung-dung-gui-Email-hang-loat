@@ -29,13 +29,28 @@ namespace SendGmailMulti
 
         }
 
+        List<string> _lstFilePath;
         private void button1_Click(object sender, EventArgs e)
         {
             OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Multiselect = true;
+            dialog.RestoreDirectory = true;
+
             if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                AttachTextBox.Text = dialog.FileName;
+                _lstFilePath = new List<string>();
+                foreach (var item in dialog.FileNames)
+                {
+                    _lstFilePath.Add(item);
+                    if (!File.Exists(item))
+                    {
+                        MessageBox.Show("File does not exits!", "Email", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                }
             }
+            int fileNumber = dialog.FileNames.Count();
+            AttachTextBox.Text = "Number of file " + fileNumber.ToString();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -89,6 +104,14 @@ namespace SendGmailMulti
             if (attach != null)
             {
                 mess.Attachments.Add(attach);
+            }
+
+            string[] files = _lstFilePath.ToArray();
+            Attachment attachment;
+            foreach (var item in files)
+            {
+                attachment = new Attachment(item);
+                mess.Attachments.Add(attachment);
             }
 
             SmtpClient client = new SmtpClient("smtp.gmail.com", 587);

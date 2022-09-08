@@ -12,7 +12,6 @@ namespace SendGmailMulti
 {
     public partial class MainMenu : Form
     {
-        
         public MainMenu()
         {
             InitializeComponent();
@@ -20,10 +19,9 @@ namespace SendGmailMulti
 
         private void StartMainButton_Click(object sender, EventArgs e)
         {
-            //MainMenu mm = new MainMenu();
             SendGmailMulti sgm = new SendGmailMulti();
-            //mm.Hide();
             sgm.Show();
+            this.Hide();
         }
 
         private void ExitButton_Click(object sender, EventArgs e)

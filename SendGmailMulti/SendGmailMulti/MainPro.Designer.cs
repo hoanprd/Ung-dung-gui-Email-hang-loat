@@ -50,6 +50,7 @@ namespace SendGmailMulti
             this.MakeEmailListButton = new System.Windows.Forms.Button();
             this.InfoPanel = new System.Windows.Forms.Panel();
             this.PictureBoxMain = new System.Windows.Forms.PictureBox();
+            this.BackToMenuButton = new System.Windows.Forms.Button();
             this.AccountPanel.SuspendLayout();
             this.PathPanel.SuspendLayout();
             this.InfoPanel.SuspendLayout();
@@ -253,11 +254,23 @@ namespace SendGmailMulti
             this.PictureBoxMain.TabIndex = 18;
             this.PictureBoxMain.TabStop = false;
             // 
+            // BackToMenuButton
+            // 
+            this.BackToMenuButton.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BackToMenuButton.Location = new System.Drawing.Point(12, 485);
+            this.BackToMenuButton.Name = "BackToMenuButton";
+            this.BackToMenuButton.Size = new System.Drawing.Size(100, 30);
+            this.BackToMenuButton.TabIndex = 19;
+            this.BackToMenuButton.Text = "BACK";
+            this.BackToMenuButton.UseVisualStyleBackColor = true;
+            this.BackToMenuButton.Click += new System.EventHandler(this.BackToMenuButton_Click);
+            // 
             // SendGmailMulti
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1230, 527);
+            this.Controls.Add(this.BackToMenuButton);
             this.Controls.Add(this.PictureBoxMain);
             this.Controls.Add(this.InfoPanel);
             this.Controls.Add(this.PathPanel);
@@ -299,6 +312,7 @@ namespace SendGmailMulti
         private System.Windows.Forms.Panel InfoPanel;
         private System.Windows.Forms.Button MakeEmailListButton;
         private System.Windows.Forms.PictureBox PictureBoxMain;
+        private System.Windows.Forms.Button BackToMenuButton;
     }
 }
 

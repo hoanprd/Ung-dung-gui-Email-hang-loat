@@ -35,6 +35,7 @@
             this.SaveButtonW = new System.Windows.Forms.Button();
             this.SaveAsButtonW = new System.Windows.Forms.Button();
             this.PathLabelW = new System.Windows.Forms.Label();
+            this.CloseWriteEmailList = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // TextBoxW
@@ -54,7 +55,7 @@
             // 
             // OpenButtonW
             // 
-            this.OpenButtonW.Location = new System.Drawing.Point(12, 116);
+            this.OpenButtonW.Location = new System.Drawing.Point(419, 116);
             this.OpenButtonW.Name = "OpenButtonW";
             this.OpenButtonW.Size = new System.Drawing.Size(119, 41);
             this.OpenButtonW.TabIndex = 2;
@@ -64,7 +65,7 @@
             // 
             // SaveButtonW
             // 
-            this.SaveButtonW.Location = new System.Drawing.Point(137, 116);
+            this.SaveButtonW.Location = new System.Drawing.Point(544, 116);
             this.SaveButtonW.Name = "SaveButtonW";
             this.SaveButtonW.Size = new System.Drawing.Size(119, 41);
             this.SaveButtonW.TabIndex = 3;
@@ -74,7 +75,7 @@
             // 
             // SaveAsButtonW
             // 
-            this.SaveAsButtonW.Location = new System.Drawing.Point(262, 116);
+            this.SaveAsButtonW.Location = new System.Drawing.Point(669, 116);
             this.SaveAsButtonW.Name = "SaveAsButtonW";
             this.SaveAsButtonW.Size = new System.Drawing.Size(119, 41);
             this.SaveAsButtonW.TabIndex = 4;
@@ -92,11 +93,22 @@
             this.PathLabelW.TabIndex = 5;
             this.PathLabelW.Text = "Path:";
             // 
+            // CloseWriteEmailList
+            // 
+            this.CloseWriteEmailList.Location = new System.Drawing.Point(12, 116);
+            this.CloseWriteEmailList.Name = "CloseWriteEmailList";
+            this.CloseWriteEmailList.Size = new System.Drawing.Size(119, 41);
+            this.CloseWriteEmailList.TabIndex = 6;
+            this.CloseWriteEmailList.Text = "Close";
+            this.CloseWriteEmailList.UseVisualStyleBackColor = true;
+            this.CloseWriteEmailList.Click += new System.EventHandler(this.CloseWriteEmailList_Click);
+            // 
             // WriteEmailList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 470);
+            this.Controls.Add(this.CloseWriteEmailList);
             this.Controls.Add(this.PathLabelW);
             this.Controls.Add(this.SaveAsButtonW);
             this.Controls.Add(this.SaveButtonW);
@@ -119,5 +131,6 @@
         private System.Windows.Forms.Button SaveButtonW;
         private System.Windows.Forms.Button SaveAsButtonW;
         private System.Windows.Forms.Label PathLabelW;
+        private System.Windows.Forms.Button CloseWriteEmailList;
     }
 }

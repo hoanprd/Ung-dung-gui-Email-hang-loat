@@ -72,9 +72,9 @@ namespace SendGmailMulti
                 catch
                 {
                     if (CheckAccCorrect == false)
-                        MessageBox.Show("Error! You haven't choose any reciver ");
+                        MessageBox.Show("Error! You haven't choose any reciver", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     else
-                        MessageBox.Show("User name or password not correct");
+                        MessageBox.Show("User name or password not correct", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                 }
             }
             );
@@ -114,6 +114,13 @@ namespace SendGmailMulti
         {
             WriteEmailList wel = new WriteEmailList();
             wel.Show();
+        }
+
+        private void BackToMenuButton_Click(object sender, EventArgs e)
+        {
+            MainMenu mm = new MainMenu();
+            mm.Show();
+            this.Close();
         }
     }
 }

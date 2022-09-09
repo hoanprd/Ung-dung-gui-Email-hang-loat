@@ -116,5 +116,14 @@
   <ItemGroup>
     <None Include="Resources\toi-pham-spammer.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Important.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Important1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Important-removebg-preview.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

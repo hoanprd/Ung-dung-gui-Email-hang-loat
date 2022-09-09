@@ -18,6 +18,7 @@ namespace SendGmailMulti
     {
         Attachment attach = null;
         bool CheckAccCorrect = false;
+        bool CheckAccSecur = false;
 
         public SendGmailMulti()
         {
@@ -55,6 +56,8 @@ namespace SendGmailMulti
 
         private void button2_Click(object sender, EventArgs e)
         {
+            CheckAccSecur = false;
+
             Thread thread = new Thread(() =>
             {
                 attach = null;
@@ -87,9 +90,11 @@ namespace SendGmailMulti
                 catch
                 {
                     if (CheckAccCorrect == false)
-                        MessageBox.Show("Error! You haven't choose any receiver", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    else
-                        MessageBox.Show("User name or password is not correct", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                        MessageBox.Show("Error! You haven't choose any receiver!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    else if (CheckAccCorrect == true && CheckAccSecur == false)
+                        MessageBox.Show("User name or password is not correct!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                    else if (CheckAccCorrect == true && CheckAccSecur == true)
+                        MessageBox.Show("Please turn off your account security!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                 }
             }
             );
@@ -106,12 +111,15 @@ namespace SendGmailMulti
                 mess.Attachments.Add(attach);
             }
 
-            string[] files = _lstFilePath.ToArray();
-            Attachment attachment;
-            foreach (var item in files)
+            if (_lstFilePath != null)
             {
-                attachment = new Attachment(item);
-                mess.Attachments.Add(attachment);
+                string[] files = _lstFilePath.ToArray();
+                Attachment attachment;
+                foreach (var item in files)
+                {
+                    attachment = new Attachment(item);
+                    mess.Attachments.Add(attachment);
+                }
             }
 
             SmtpClient client = new SmtpClient("smtp.gmail.com", 587);
@@ -121,6 +129,7 @@ namespace SendGmailMulti
             client.Credentials = new NetworkCredential(UserNameTextBox.Text, PasswordTextBox.Text);
 
             client.Send(mess);
+            CheckAccSecur = true;
         }
 
         private void MailListButton_Click(object sender, EventArgs e)

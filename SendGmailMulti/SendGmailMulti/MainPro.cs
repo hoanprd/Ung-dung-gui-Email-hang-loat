@@ -92,7 +92,7 @@ namespace SendGmailMulti
                     if (CheckAccCorrect == false)
                         MessageBox.Show("Error! You haven't choose any receiver!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     else if (CheckAccCorrect == true && CheckAccSecur == false)
-                        MessageBox.Show("User name or password is not correct!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                        MessageBox.Show("User name or password is not correct!\nPlease check your connection and account security", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                     else if (CheckAccCorrect == true && CheckAccSecur == true)
                         MessageBox.Show("Please turn off your account security!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                 }
@@ -129,6 +129,7 @@ namespace SendGmailMulti
             client.Credentials = new NetworkCredential(UserNameTextBox.Text, PasswordTextBox.Text);
 
             client.Send(mess);
+
             CheckAccSecur = true;
         }
 

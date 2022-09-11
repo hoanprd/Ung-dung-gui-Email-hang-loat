@@ -46,21 +46,21 @@ namespace SendGmailMulti
             this.MailListButton = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.AccountPanel = new System.Windows.Forms.Panel();
+            this.ImportantBox3 = new System.Windows.Forms.PictureBox();
+            this.ImportantBox2 = new System.Windows.Forms.PictureBox();
             this.PathPanel = new System.Windows.Forms.Panel();
+            this.ImportantBox1 = new System.Windows.Forms.PictureBox();
             this.MakeEmailListButton = new System.Windows.Forms.Button();
             this.InfoPanel = new System.Windows.Forms.Panel();
             this.BackToMenuButton = new System.Windows.Forms.Button();
             this.PictureBoxMain = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.AccountPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ImportantBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ImportantBox2)).BeginInit();
             this.PathPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ImportantBox1)).BeginInit();
             this.InfoPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxMain)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // AttachTextBox
@@ -203,8 +203,8 @@ namespace SendGmailMulti
             // 
             // AccountPanel
             // 
-            this.AccountPanel.Controls.Add(this.pictureBox2);
-            this.AccountPanel.Controls.Add(this.pictureBox1);
+            this.AccountPanel.Controls.Add(this.ImportantBox3);
+            this.AccountPanel.Controls.Add(this.ImportantBox2);
             this.AccountPanel.Controls.Add(this.label3);
             this.AccountPanel.Controls.Add(this.label4);
             this.AccountPanel.Controls.Add(this.UserNameTextBox);
@@ -215,9 +215,29 @@ namespace SendGmailMulti
             this.AccountPanel.TabIndex = 15;
             this.AccountPanel.Tag = "";
             // 
+            // ImportantBox3
+            // 
+            this.ImportantBox3.Image = global::SendGmailMulti.Properties.Resources.Important_removebg_preview;
+            this.ImportantBox3.Location = new System.Drawing.Point(483, 74);
+            this.ImportantBox3.Name = "ImportantBox3";
+            this.ImportantBox3.Size = new System.Drawing.Size(29, 22);
+            this.ImportantBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ImportantBox3.TabIndex = 10;
+            this.ImportantBox3.TabStop = false;
+            // 
+            // ImportantBox2
+            // 
+            this.ImportantBox2.Image = global::SendGmailMulti.Properties.Resources.Important_removebg_preview;
+            this.ImportantBox2.Location = new System.Drawing.Point(483, 12);
+            this.ImportantBox2.Name = "ImportantBox2";
+            this.ImportantBox2.Size = new System.Drawing.Size(29, 22);
+            this.ImportantBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ImportantBox2.TabIndex = 9;
+            this.ImportantBox2.TabStop = false;
+            // 
             // PathPanel
             // 
-            this.PathPanel.Controls.Add(this.pictureBox3);
+            this.PathPanel.Controls.Add(this.ImportantBox1);
             this.PathPanel.Controls.Add(this.MakeEmailListButton);
             this.PathPanel.Controls.Add(this.AttachTextBox);
             this.PathPanel.Controls.Add(this.label1);
@@ -229,6 +249,16 @@ namespace SendGmailMulti
             this.PathPanel.Name = "PathPanel";
             this.PathPanel.Size = new System.Drawing.Size(616, 176);
             this.PathPanel.TabIndex = 16;
+            // 
+            // ImportantBox1
+            // 
+            this.ImportantBox1.Image = global::SendGmailMulti.Properties.Resources.Important_removebg_preview;
+            this.ImportantBox1.Location = new System.Drawing.Point(478, 70);
+            this.ImportantBox1.Name = "ImportantBox1";
+            this.ImportantBox1.Size = new System.Drawing.Size(29, 22);
+            this.ImportantBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ImportantBox1.TabIndex = 11;
+            this.ImportantBox1.TabStop = false;
             // 
             // MakeEmailListButton
             // 
@@ -273,36 +303,6 @@ namespace SendGmailMulti
             this.PictureBoxMain.TabIndex = 18;
             this.PictureBoxMain.TabStop = false;
             // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::SendGmailMulti.Properties.Resources.Important_removebg_preview;
-            this.pictureBox3.Location = new System.Drawing.Point(478, 70);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(29, 22);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 11;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::SendGmailMulti.Properties.Resources.Important_removebg_preview;
-            this.pictureBox2.Location = new System.Drawing.Point(483, 74);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(29, 22);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 10;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::SendGmailMulti.Properties.Resources.Important_removebg_preview;
-            this.pictureBox1.Location = new System.Drawing.Point(483, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(29, 22);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 9;
-            this.pictureBox1.TabStop = false;
-            // 
             // SendGmailMulti
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -320,14 +320,14 @@ namespace SendGmailMulti
             this.Load += new System.EventHandler(this.SendGmailMulti_Load);
             this.AccountPanel.ResumeLayout(false);
             this.AccountPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ImportantBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ImportantBox2)).EndInit();
             this.PathPanel.ResumeLayout(false);
             this.PathPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ImportantBox1)).EndInit();
             this.InfoPanel.ResumeLayout(false);
             this.InfoPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxMain)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -355,9 +355,9 @@ namespace SendGmailMulti
         private System.Windows.Forms.Button MakeEmailListButton;
         private System.Windows.Forms.PictureBox PictureBoxMain;
         private System.Windows.Forms.Button BackToMenuButton;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox ImportantBox2;
+        private System.Windows.Forms.PictureBox ImportantBox3;
+        private System.Windows.Forms.PictureBox ImportantBox1;
     }
 }
 

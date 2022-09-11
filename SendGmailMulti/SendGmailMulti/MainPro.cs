@@ -46,7 +46,7 @@ namespace SendGmailMulti
                 }
             }
             int fileNumber = dialog.FileNames.Count();
-            AttachTextBox.Text = "Number of file " + fileNumber.ToString();
+            AttachTextBox.Text = "Number of files " + fileNumber.ToString();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -78,6 +78,7 @@ namespace SendGmailMulti
                         GuiMail(UserNameTextBox.Text, email, SubjectTextBox.Text, MessageTextBox.Text, attach);
                         dem++;
                     }
+
                     sr.Close();
 
                     MessageBox.Show("Done! You have send " + dem.ToString() + " mail");
@@ -88,8 +89,6 @@ namespace SendGmailMulti
                         MessageBox.Show("Error! You haven't choose any receiver!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     else if (CheckAccCorrect == true && CheckAccSecur == false)
                         MessageBox.Show("User name or password is not correct!\nPlease check your connection and account security", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
-                    else if (CheckAccCorrect == true && CheckAccSecur == true)
-                        MessageBox.Show("Please turn off your account security!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                 }
             }
             );

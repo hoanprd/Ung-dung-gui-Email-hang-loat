@@ -155,5 +155,29 @@ namespace SendGmailMulti
             MaximizeBox = false;
             ControlBox = false;
         }
+
+        private void UserNameTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (UserNameTextBox.Text == null || UserNameTextBox.Text == "")
+            {
+                ImportantBox2.Show();
+            }
+            else
+            {
+                ImportantBox2.Hide();
+            }
+        }
+
+        private void PasswordTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (PasswordTextBox.Text == null || PasswordTextBox.Text == "")
+            {
+                ImportantBox3.Show();
+            }
+            else
+            {
+                ImportantBox3.Hide();
+            }
+        }
     }
 }

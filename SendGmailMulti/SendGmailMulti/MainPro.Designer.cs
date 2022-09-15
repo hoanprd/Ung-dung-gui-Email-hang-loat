@@ -131,6 +131,7 @@ namespace SendGmailMulti
             this.UserNameTextBox.Name = "UserNameTextBox";
             this.UserNameTextBox.Size = new System.Drawing.Size(369, 22);
             this.UserNameTextBox.TabIndex = 7;
+            this.UserNameTextBox.TextChanged += new System.EventHandler(this.UserNameTextBox_TextChanged);
             // 
             // PasswordTextBox
             // 
@@ -139,6 +140,7 @@ namespace SendGmailMulti
             this.PasswordTextBox.PasswordChar = '*';
             this.PasswordTextBox.Size = new System.Drawing.Size(369, 22);
             this.PasswordTextBox.TabIndex = 8;
+            this.PasswordTextBox.TextChanged += new System.EventHandler(this.PasswordTextBox_TextChanged);
             // 
             // label5
             // 

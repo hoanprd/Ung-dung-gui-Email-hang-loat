@@ -17,9 +17,8 @@ namespace SendGmailMulti
     public partial class SendGmailMulti : Form
     {
         Attachment attach = null;
-        //bool CheckAccCorrect = false;
-        bool CheckAccSecur = false, stopccbcc = false;
-        string CCEmail, BCCEmail, CCTemp, BCCTemp;
+        bool CheckAccSecur = false;
+        string MailList, CCEmail, BCCEmail, MailTemp, CCTemp, BCCTemp;
 
         public SendGmailMulti()
         {
@@ -57,9 +56,9 @@ namespace SendGmailMulti
             Thread thread = new Thread(() =>
             {
                 attach = null;
-                stopccbcc = false;
-                //int dem = 0;
-                int tao = 0;
+                int tao1 = 0;
+                int tao2 = 0;
+                int tao3 = 0;
 
                 try
                 {
@@ -73,54 +72,86 @@ namespace SendGmailMulti
 
                 try
                 {
-                    StreamReader sr = new StreamReader(ReceiverTextBox.Text);
-                    StreamReader srCC = new StreamReader(CCTextBox.Text);
-                    StreamReader srBCC = new StreamReader(BCCTextBox.Text);
+                    MailTemp = null;
                     CCTemp = null;
                     BCCTemp = null;
 
-                    string email;
-                    
-                    while ((CCEmail = srCC.ReadLine()) != null)
+                    if (ReceiverTextBox.Text == null || ReceiverTextBox.Text == "")
                     {
-                        if (tao != 0)
+                        //do nothing
+                    }
+                    else
+                    {
+                        StreamReader sr = new StreamReader(ReceiverTextBox.Text);
+                        while ((MailList = sr.ReadLine()) != null)
                         {
-                            CCTemp += ", " + CCEmail;
+                            if (tao1 != 0)
+                            {
+                                MailTemp += ", " + MailList;
+                            }
+                            else
+                            {
+                                MailTemp += MailList;
+                                tao1 = 1;
+                            }
                         }
-                        else
-                        {
-                            CCTemp += CCEmail;
-                            tao = 1;
-                        }
+
+                        sr.Close();
                     }
 
-                    while ((BCCEmail = srBCC.ReadLine()) != null)
+                    if (CCTextBox.Text == null || CCTextBox.Text == "")
                     {
-                        if (tao != 0)
+                        //do nothing
+                    }
+                    else
+                    {
+                        StreamReader srCC = new StreamReader(CCTextBox.Text);
+                        while ((CCEmail = srCC.ReadLine()) != null)
                         {
-                            BCCTemp += ", " + BCCEmail;
+                            if (tao2 != 0)
+                            {
+                                CCTemp += ", " + CCEmail;
+                            }
+                            else
+                            {
+                                CCTemp += CCEmail;
+                                tao2 = 1;
+                            }
                         }
-                        else
-                        {
-                            BCCTemp += BCCEmail;
-                            tao = 1;
-                        }
+
+                        srCC.Close();
                     }
 
-                    while ((email = sr.ReadLine()) != null)
+                    if (BCCTextBox.Text == null || BCCTextBox.Text == "")
                     {
-                        GuiMail(UserNameTextBox.Text, email, SubjectTextBox.Text, MessageTextBox.Text, attach);
-                        //dem++;
+                        //do nothing
+                    }
+                    else
+                    {
+                        StreamReader srBCC = new StreamReader(BCCTextBox.Text);
+                        while ((BCCEmail = srBCC.ReadLine()) != null)
+                        {
+                            if (tao3 != 0)
+                            {
+                                BCCTemp += ", " + BCCEmail;
+                            }
+                            else
+                            {
+                                BCCTemp += BCCEmail;
+                                tao3 = 1;
+                            }
+                        }
+
+                        srBCC.Close();
                     }
 
-                    sr.Close();
+                    GuiMail();
 
-                    //MessageBox.Show("Done! You have send " + dem.ToString() + " mail");
                     MessageBox.Show("Done!");
                 }
                 catch
                 {
-                    if ((ReceiverTextBox.Text == null || ReceiverTextBox.Text == "") && (CCTextBox.Text == null || CCTextBox.Text == ""))
+                    if ((ReceiverTextBox.Text == null || ReceiverTextBox.Text == "") && (CCTextBox.Text == null || CCTextBox.Text == "") && (BCCTextBox.Text == null || BCCTextBox.Text == ""))
                         MessageBox.Show("Error! You haven't choose any receiver!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     else if ((ReceiverTextBox.Text == null || ReceiverTextBox.Text == "") && CheckAccSecur == false)
                         MessageBox.Show("User name or password is not correct!\nPlease check your connection and account security", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
@@ -131,23 +162,61 @@ namespace SendGmailMulti
         }
 
         //Hàm gửi mail
-        void GuiMail(string from, string to, string subject, string message, Attachment file = null)
+        void GuiMail(Attachment file = null)
         {
-            MailMessage mess = new MailMessage(from, to, subject, message);
+            MailMessage mess = new MailMessage();
 
-            if (stopccbcc == false)
+            mess.From = new MailAddress(UserNameTextBox.Text);
+            mess.Subject = SubjectTextBox.Text;
+            mess.Body = MessageTextBox.Text;
+
+            try
             {
-                stopccbcc = true;
-                MailAddress cc = new MailAddress(CCTemp);
-                MailAddress bcc = new MailAddress(BCCTemp);
+                if (ReceiverTextBox.Text != null || ReceiverTextBox.Text != "")
+                {
+                    string[] Multi = MailTemp.Split(',');
+                    foreach (string Multiemailid in Multi)
+                    {
+                        mess.To.Add(new MailAddress(Multiemailid));
+                    }
+                }
+            }
+            catch
+            {
 
-                mess.CC.Add(cc);
-                mess.Bcc.Add(bcc);
             }
 
-            if (attach != null)
+            if (ReceiverTextBox.Text == null || ReceiverTextBox.Text == "")
             {
-                mess.Attachments.Add(attach);
+                //do nothing
+            }
+            else
+            {
+                string[] Multi = MailTemp.Split(',');
+                foreach (string Multiemailid in Multi)
+                {
+                    mess.To.Add(new MailAddress(Multiemailid));
+                }
+            }
+
+            if (CCTextBox.Text == null || CCTextBox.Text == "")
+            {
+                //do nothing
+            }
+            else
+            {
+                MailAddress cc = new MailAddress(CCTemp);
+                mess.CC.Add(cc);
+            }
+
+            if (BCCTextBox.Text == null || BCCTextBox.Text == "")
+            {
+                //do nothing
+            }
+            else
+            {
+                MailAddress bcc = new MailAddress(BCCTemp);
+                mess.Bcc.Add(bcc);
             }
 
             if (_lstFilePath != null)
@@ -199,6 +268,30 @@ namespace SendGmailMulti
         {
             MaximizeBox = false;
             ControlBox = false;
+        }
+
+        private void CCTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (CCTextBox.Text == null || CCTextBox.Text == "")
+            {
+                ImportantBox1.Show();
+            }
+            else
+            {
+                ImportantBox1.Hide();
+            }
+        }
+
+        private void BCCTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (BCCTextBox.Text == null || BCCTextBox.Text == "")
+            {
+                ImportantBox1.Show();
+            }
+            else
+            {
+                ImportantBox1.Hide();
+            }
         }
 
         private void ReceiverTextBox_TextChanged(object sender, EventArgs e)

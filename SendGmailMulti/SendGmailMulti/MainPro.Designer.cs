@@ -90,7 +90,6 @@ namespace SendGmailMulti
             // 
             this.ReceiverTextBox.Location = new System.Drawing.Point(116, 62);
             this.ReceiverTextBox.Name = "ReceiverTextBox";
-            this.ReceiverTextBox.ReadOnly = true;
             this.ReceiverTextBox.Size = new System.Drawing.Size(356, 22);
             this.ReceiverTextBox.TabIndex = 2;
             this.ReceiverTextBox.TextChanged += new System.EventHandler(this.ReceiverTextBox_TextChanged);
@@ -291,17 +290,17 @@ namespace SendGmailMulti
             // 
             this.BCCTextBox.Location = new System.Drawing.Point(116, 144);
             this.BCCTextBox.Name = "BCCTextBox";
-            this.BCCTextBox.ReadOnly = true;
             this.BCCTextBox.Size = new System.Drawing.Size(356, 22);
             this.BCCTextBox.TabIndex = 19;
+            this.BCCTextBox.TextChanged += new System.EventHandler(this.BCCTextBox_TextChanged);
             // 
             // CCTextBox
             // 
             this.CCTextBox.Location = new System.Drawing.Point(116, 103);
             this.CCTextBox.Name = "CCTextBox";
-            this.CCTextBox.ReadOnly = true;
             this.CCTextBox.Size = new System.Drawing.Size(356, 22);
             this.CCTextBox.TabIndex = 18;
+            this.CCTextBox.TextChanged += new System.EventHandler(this.CCTextBox_TextChanged);
             // 
             // BCCLabel
             // 

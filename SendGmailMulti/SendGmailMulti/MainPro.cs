@@ -19,7 +19,7 @@ namespace SendGmailMulti
         Attachment attach = null;
         //bool CheckAccCorrect = false;
         bool CheckAccSecur = false, stopccbcc = false;
-        //string CCEmail, BCCEmail, CCTemp;
+        string CCEmail, BCCEmail, CCTemp, BCCTemp;
 
         public SendGmailMulti()
         {
@@ -59,7 +59,7 @@ namespace SendGmailMulti
                 attach = null;
                 stopccbcc = false;
                 //int dem = 0;
-                //int tao = 0;
+                int tao = 0;
 
                 try
                 {
@@ -74,13 +74,14 @@ namespace SendGmailMulti
                 try
                 {
                     StreamReader sr = new StreamReader(ReceiverTextBox.Text);
-                    //StreamReader srCC = new StreamReader(CCTextBox.Text);
-                    //StreamReader srBCC = new StreamReader(BCCTextBox.Text);
-                    //CCTemp = null;
+                    StreamReader srCC = new StreamReader(CCTextBox.Text);
+                    StreamReader srBCC = new StreamReader(BCCTextBox.Text);
+                    CCTemp = null;
+                    BCCTemp = null;
 
                     string email;
                     
-                    /*while ((CCEmail = srCC.ReadLine()) != null)
+                    while ((CCEmail = srCC.ReadLine()) != null)
                     {
                         if (tao != 0)
                         {
@@ -88,12 +89,23 @@ namespace SendGmailMulti
                         }
                         else
                         {
-                            CCTemp += '"' + CCEmail;
+                            CCTemp += CCEmail;
                             tao = 1;
                         }
                     }
-                    CCTemp += '"';
-                    Console.WriteLine(CCTemp);*/
+
+                    while ((BCCEmail = srBCC.ReadLine()) != null)
+                    {
+                        if (tao != 0)
+                        {
+                            BCCTemp += ", " + BCCEmail;
+                        }
+                        else
+                        {
+                            BCCTemp += BCCEmail;
+                            tao = 1;
+                        }
+                    }
 
                     while ((email = sr.ReadLine()) != null)
                     {
@@ -126,9 +138,8 @@ namespace SendGmailMulti
             if (stopccbcc == false)
             {
                 stopccbcc = true;
-                MailAddress cc = new MailAddress("2051120235@ut.edu.vn, tinhprd@gmail.com");
-                //MailAddress cc = new MailAddress(CCTemp);
-                MailAddress bcc = new MailAddress("hoanprd@gmail.com");
+                MailAddress cc = new MailAddress(CCTemp);
+                MailAddress bcc = new MailAddress(BCCTemp);
 
                 mess.CC.Add(cc);
                 mess.Bcc.Add(bcc);
@@ -188,6 +199,18 @@ namespace SendGmailMulti
         {
             MaximizeBox = false;
             ControlBox = false;
+        }
+
+        private void ReceiverTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (ReceiverTextBox.Text == null || ReceiverTextBox.Text == "")
+            {
+                ImportantBox1.Show();
+            }
+            else
+            {
+                ImportantBox1.Hide();
+            }
         }
 
         private void UserNameTextBox_TextChanged(object sender, EventArgs e)

@@ -17,8 +17,9 @@ namespace SendGmailMulti
     public partial class SendGmailMulti : Form
     {
         Attachment attach = null;
-        bool CheckAccCorrect = false;
-        bool CheckAccSecur = false;
+        //bool CheckAccCorrect = false;
+        bool CheckAccSecur = false, stopccbcc = false;
+        //string CCEmail, BCCEmail, CCTemp;
 
         public SendGmailMulti()
         {
@@ -56,6 +57,9 @@ namespace SendGmailMulti
             Thread thread = new Thread(() =>
             {
                 attach = null;
+                stopccbcc = false;
+                //int dem = 0;
+                //int tao = 0;
 
                 try
                 {
@@ -70,24 +74,43 @@ namespace SendGmailMulti
                 try
                 {
                     StreamReader sr = new StreamReader(ReceiverTextBox.Text);
+                    //StreamReader srCC = new StreamReader(CCTextBox.Text);
+                    //StreamReader srBCC = new StreamReader(BCCTextBox.Text);
+                    //CCTemp = null;
+
                     string email;
-                    int dem = 0;
+                    
+                    /*while ((CCEmail = srCC.ReadLine()) != null)
+                    {
+                        if (tao != 0)
+                        {
+                            CCTemp += ", " + CCEmail;
+                        }
+                        else
+                        {
+                            CCTemp += '"' + CCEmail;
+                            tao = 1;
+                        }
+                    }
+                    CCTemp += '"';
+                    Console.WriteLine(CCTemp);*/
 
                     while ((email = sr.ReadLine()) != null)
                     {
                         GuiMail(UserNameTextBox.Text, email, SubjectTextBox.Text, MessageTextBox.Text, attach);
-                        dem++;
+                        //dem++;
                     }
 
                     sr.Close();
 
-                    MessageBox.Show("Done! You have send " + dem.ToString() + " mail");
+                    //MessageBox.Show("Done! You have send " + dem.ToString() + " mail");
+                    MessageBox.Show("Done!");
                 }
                 catch
                 {
-                    if (CheckAccCorrect == false)
+                    if ((ReceiverTextBox.Text == null || ReceiverTextBox.Text == "") && (CCTextBox.Text == null || CCTextBox.Text == ""))
                         MessageBox.Show("Error! You haven't choose any receiver!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    else if (CheckAccCorrect == true && CheckAccSecur == false)
+                    else if ((ReceiverTextBox.Text == null || ReceiverTextBox.Text == "") && CheckAccSecur == false)
                         MessageBox.Show("User name or password is not correct!\nPlease check your connection and account security", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                 }
             }
@@ -99,6 +122,17 @@ namespace SendGmailMulti
         void GuiMail(string from, string to, string subject, string message, Attachment file = null)
         {
             MailMessage mess = new MailMessage(from, to, subject, message);
+
+            if (stopccbcc == false)
+            {
+                stopccbcc = true;
+                MailAddress cc = new MailAddress("2051120235@ut.edu.vn, tinhprd@gmail.com");
+                //MailAddress cc = new MailAddress(CCTemp);
+                MailAddress bcc = new MailAddress("hoanprd@gmail.com");
+
+                mess.CC.Add(cc);
+                mess.Bcc.Add(bcc);
+            }
 
             if (attach != null)
             {
@@ -133,7 +167,7 @@ namespace SendGmailMulti
             if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 ReceiverTextBox.Text = dialog.FileName;
-                CheckAccCorrect = true;
+                //CheckAccCorrect = true;
             }
         }
 
@@ -177,6 +211,26 @@ namespace SendGmailMulti
             else
             {
                 ImportantBox3.Hide();
+            }
+        }
+
+        private void MailListCCButton_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dialog = new OpenFileDialog();
+            if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                CCTextBox.Text = dialog.FileName;
+                //CheckAccCorrect = true;
+            }
+        }
+
+        private void MailListBCCButon_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dialog = new OpenFileDialog();
+            if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                BCCTextBox.Text = dialog.FileName;
+                //CheckAccCorrect = true;
             }
         }
     }

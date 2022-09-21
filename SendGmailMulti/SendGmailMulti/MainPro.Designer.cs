@@ -49,11 +49,17 @@ namespace SendGmailMulti
             this.ImportantBox3 = new System.Windows.Forms.PictureBox();
             this.ImportantBox2 = new System.Windows.Forms.PictureBox();
             this.PathPanel = new System.Windows.Forms.Panel();
+            this.BCCTextBox = new System.Windows.Forms.TextBox();
+            this.CCTextBox = new System.Windows.Forms.TextBox();
+            this.BCCLabel = new System.Windows.Forms.Label();
+            this.CCLabel = new System.Windows.Forms.Label();
             this.ImportantBox1 = new System.Windows.Forms.PictureBox();
             this.MakeEmailListButton = new System.Windows.Forms.Button();
             this.InfoPanel = new System.Windows.Forms.Panel();
             this.BackToMenuButton = new System.Windows.Forms.Button();
             this.PictureBoxMain = new System.Windows.Forms.PictureBox();
+            this.MailListCCButton = new System.Windows.Forms.Button();
+            this.MailListBCCButon = new System.Windows.Forms.Button();
             this.AccountPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ImportantBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImportantBox2)).BeginInit();
@@ -74,7 +80,7 @@ namespace SendGmailMulti
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(11, 70);
+            this.label1.Location = new System.Drawing.Point(11, 62);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(88, 22);
             this.label1.TabIndex = 1;
@@ -82,7 +88,7 @@ namespace SendGmailMulti
             // 
             // ReceiverTextBox
             // 
-            this.ReceiverTextBox.Location = new System.Drawing.Point(116, 70);
+            this.ReceiverTextBox.Location = new System.Drawing.Point(116, 62);
             this.ReceiverTextBox.Name = "ReceiverTextBox";
             this.ReceiverTextBox.ReadOnly = true;
             this.ReceiverTextBox.Size = new System.Drawing.Size(356, 22);
@@ -185,7 +191,7 @@ namespace SendGmailMulti
             // MailListButton
             // 
             this.MailListButton.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MailListButton.Location = new System.Drawing.Point(509, 63);
+            this.MailListButton.Location = new System.Drawing.Point(509, 55);
             this.MailListButton.Name = "MailListButton";
             this.MailListButton.Size = new System.Drawing.Size(99, 34);
             this.MailListButton.TabIndex = 13;
@@ -239,6 +245,12 @@ namespace SendGmailMulti
             // 
             // PathPanel
             // 
+            this.PathPanel.Controls.Add(this.MailListBCCButon);
+            this.PathPanel.Controls.Add(this.MailListCCButton);
+            this.PathPanel.Controls.Add(this.BCCTextBox);
+            this.PathPanel.Controls.Add(this.CCTextBox);
+            this.PathPanel.Controls.Add(this.BCCLabel);
+            this.PathPanel.Controls.Add(this.CCLabel);
             this.PathPanel.Controls.Add(this.ImportantBox1);
             this.PathPanel.Controls.Add(this.MakeEmailListButton);
             this.PathPanel.Controls.Add(this.AttachTextBox);
@@ -249,13 +261,49 @@ namespace SendGmailMulti
             this.PathPanel.Controls.Add(this.AttachButton);
             this.PathPanel.Location = new System.Drawing.Point(602, 21);
             this.PathPanel.Name = "PathPanel";
-            this.PathPanel.Size = new System.Drawing.Size(616, 176);
+            this.PathPanel.Size = new System.Drawing.Size(616, 214);
             this.PathPanel.TabIndex = 16;
+            // 
+            // BCCTextBox
+            // 
+            this.BCCTextBox.Location = new System.Drawing.Point(116, 144);
+            this.BCCTextBox.Name = "BCCTextBox";
+            this.BCCTextBox.ReadOnly = true;
+            this.BCCTextBox.Size = new System.Drawing.Size(356, 22);
+            this.BCCTextBox.TabIndex = 19;
+            // 
+            // CCTextBox
+            // 
+            this.CCTextBox.Location = new System.Drawing.Point(116, 103);
+            this.CCTextBox.Name = "CCTextBox";
+            this.CCTextBox.ReadOnly = true;
+            this.CCTextBox.Size = new System.Drawing.Size(356, 22);
+            this.CCTextBox.TabIndex = 18;
+            // 
+            // BCCLabel
+            // 
+            this.BCCLabel.AutoSize = true;
+            this.BCCLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BCCLabel.Location = new System.Drawing.Point(11, 144);
+            this.BCCLabel.Name = "BCCLabel";
+            this.BCCLabel.Size = new System.Drawing.Size(55, 22);
+            this.BCCLabel.TabIndex = 17;
+            this.BCCLabel.Text = "BCC:";
+            // 
+            // CCLabel
+            // 
+            this.CCLabel.AutoSize = true;
+            this.CCLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CCLabel.Location = new System.Drawing.Point(11, 102);
+            this.CCLabel.Name = "CCLabel";
+            this.CCLabel.Size = new System.Drawing.Size(42, 22);
+            this.CCLabel.TabIndex = 16;
+            this.CCLabel.Text = "CC:";
             // 
             // ImportantBox1
             // 
             this.ImportantBox1.Image = global::SendGmailMulti.Properties.Resources.Important_removebg_preview;
-            this.ImportantBox1.Location = new System.Drawing.Point(478, 70);
+            this.ImportantBox1.Location = new System.Drawing.Point(478, 62);
             this.ImportantBox1.Name = "ImportantBox1";
             this.ImportantBox1.Size = new System.Drawing.Size(29, 22);
             this.ImportantBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -265,9 +313,9 @@ namespace SendGmailMulti
             // MakeEmailListButton
             // 
             this.MakeEmailListButton.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MakeEmailListButton.Location = new System.Drawing.Point(200, 111);
+            this.MakeEmailListButton.Location = new System.Drawing.Point(209, 172);
             this.MakeEmailListButton.Name = "MakeEmailListButton";
-            this.MakeEmailListButton.Size = new System.Drawing.Size(219, 46);
+            this.MakeEmailListButton.Size = new System.Drawing.Size(187, 39);
             this.MakeEmailListButton.TabIndex = 15;
             this.MakeEmailListButton.Text = "Make new list";
             this.MakeEmailListButton.UseVisualStyleBackColor = true;
@@ -298,12 +346,34 @@ namespace SendGmailMulti
             // PictureBoxMain
             // 
             this.PictureBoxMain.Image = global::SendGmailMulti.Properties.Resources.toi_pham_spammer;
-            this.PictureBoxMain.Location = new System.Drawing.Point(602, 216);
+            this.PictureBoxMain.Location = new System.Drawing.Point(602, 241);
             this.PictureBoxMain.Name = "PictureBoxMain";
-            this.PictureBoxMain.Size = new System.Drawing.Size(616, 299);
+            this.PictureBoxMain.Size = new System.Drawing.Size(616, 274);
             this.PictureBoxMain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PictureBoxMain.TabIndex = 18;
             this.PictureBoxMain.TabStop = false;
+            // 
+            // MailListCCButton
+            // 
+            this.MailListCCButton.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MailListCCButton.Location = new System.Drawing.Point(509, 96);
+            this.MailListCCButton.Name = "MailListCCButton";
+            this.MailListCCButton.Size = new System.Drawing.Size(99, 34);
+            this.MailListCCButton.TabIndex = 20;
+            this.MailListCCButton.Text = "Mail list";
+            this.MailListCCButton.UseVisualStyleBackColor = true;
+            this.MailListCCButton.Click += new System.EventHandler(this.MailListCCButton_Click);
+            // 
+            // MailListBCCButon
+            // 
+            this.MailListBCCButon.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MailListBCCButon.Location = new System.Drawing.Point(509, 137);
+            this.MailListBCCButon.Name = "MailListBCCButon";
+            this.MailListBCCButon.Size = new System.Drawing.Size(99, 34);
+            this.MailListBCCButon.TabIndex = 21;
+            this.MailListBCCButon.Text = "Mail list";
+            this.MailListBCCButon.UseVisualStyleBackColor = true;
+            this.MailListBCCButon.Click += new System.EventHandler(this.MailListBCCButon_Click);
             // 
             // SendGmailMulti
             // 
@@ -360,6 +430,12 @@ namespace SendGmailMulti
         private System.Windows.Forms.PictureBox ImportantBox2;
         private System.Windows.Forms.PictureBox ImportantBox3;
         private System.Windows.Forms.PictureBox ImportantBox1;
+        private System.Windows.Forms.Label BCCLabel;
+        private System.Windows.Forms.Label CCLabel;
+        private System.Windows.Forms.TextBox BCCTextBox;
+        private System.Windows.Forms.TextBox CCTextBox;
+        private System.Windows.Forms.Button MailListBCCButon;
+        private System.Windows.Forms.Button MailListCCButton;
     }
 }
 

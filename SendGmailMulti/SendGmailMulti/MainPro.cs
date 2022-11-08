@@ -11,6 +11,7 @@ using System.Threading;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace SendGmailMulti
 {
@@ -155,6 +156,8 @@ namespace SendGmailMulti
                         MessageBox.Show("Error! You haven't choose any receiver!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     else if ((ReceiverTextBox.Text == null || ReceiverTextBox.Text == "") && CheckAccSecur == false)
                         MessageBox.Show("User name or password is not correct!\nPlease check your connection and account security", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                    else
+                        MessageBox.Show("Send unsuccessful!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                 }
             }
             );
@@ -169,22 +172,6 @@ namespace SendGmailMulti
             mess.From = new MailAddress(UserNameTextBox.Text);
             mess.Subject = SubjectTextBox.Text;
             mess.Body = MessageTextBox.Text;
-
-            try
-            {
-                if (ReceiverTextBox.Text != null || ReceiverTextBox.Text != "")
-                {
-                    string[] Multi = MailTemp.Split(',');
-                    foreach (string Multiemailid in Multi)
-                    {
-                        mess.To.Add(new MailAddress(Multiemailid));
-                    }
-                }
-            }
-            catch
-            {
-
-            }
 
             if (ReceiverTextBox.Text == null || ReceiverTextBox.Text == "")
             {
@@ -292,6 +279,11 @@ namespace SendGmailMulti
             {
                 ImportantBox1.Hide();
             }
+        }
+
+        private void TurnOffSecurityButton_Click(object sender, EventArgs e)
+        {
+            Process.Start("https://myaccount.google.com/lesssecureapps");
         }
 
         private void ReceiverTextBox_TextChanged(object sender, EventArgs e)

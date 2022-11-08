@@ -60,6 +60,7 @@ namespace SendGmailMulti
             this.InfoPanel = new System.Windows.Forms.Panel();
             this.BackToMenuButton = new System.Windows.Forms.Button();
             this.PictureBoxMain = new System.Windows.Forms.PictureBox();
+            this.TurnOffSecurityButton = new System.Windows.Forms.Button();
             this.AccountPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ImportantBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImportantBox2)).BeginInit();
@@ -172,7 +173,7 @@ namespace SendGmailMulti
             // SendButton
             // 
             this.SendButton.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SendButton.Location = new System.Drawing.Point(453, 485);
+            this.SendButton.Location = new System.Drawing.Point(453, 521);
             this.SendButton.Name = "SendButton";
             this.SendButton.Size = new System.Drawing.Size(100, 30);
             this.SendButton.TabIndex = 11;
@@ -211,6 +212,7 @@ namespace SendGmailMulti
             // 
             // AccountPanel
             // 
+            this.AccountPanel.Controls.Add(this.TurnOffSecurityButton);
             this.AccountPanel.Controls.Add(this.ImportantBox3);
             this.AccountPanel.Controls.Add(this.ImportantBox2);
             this.AccountPanel.Controls.Add(this.label3);
@@ -219,7 +221,7 @@ namespace SendGmailMulti
             this.AccountPanel.Controls.Add(this.PasswordTextBox);
             this.AccountPanel.Location = new System.Drawing.Point(12, 21);
             this.AccountPanel.Name = "AccountPanel";
-            this.AccountPanel.Size = new System.Drawing.Size(541, 110);
+            this.AccountPanel.Size = new System.Drawing.Size(541, 166);
             this.AccountPanel.TabIndex = 15;
             this.AccountPanel.Tag = "";
             // 
@@ -349,7 +351,7 @@ namespace SendGmailMulti
             this.InfoPanel.Controls.Add(this.label2);
             this.InfoPanel.Controls.Add(this.label5);
             this.InfoPanel.Controls.Add(this.MessageTextBox);
-            this.InfoPanel.Location = new System.Drawing.Point(12, 161);
+            this.InfoPanel.Location = new System.Drawing.Point(12, 197);
             this.InfoPanel.Name = "InfoPanel";
             this.InfoPanel.Size = new System.Drawing.Size(541, 318);
             this.InfoPanel.TabIndex = 17;
@@ -357,7 +359,7 @@ namespace SendGmailMulti
             // BackToMenuButton
             // 
             this.BackToMenuButton.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BackToMenuButton.Location = new System.Drawing.Point(12, 485);
+            this.BackToMenuButton.Location = new System.Drawing.Point(12, 521);
             this.BackToMenuButton.Name = "BackToMenuButton";
             this.BackToMenuButton.Size = new System.Drawing.Size(100, 30);
             this.BackToMenuButton.TabIndex = 19;
@@ -375,11 +377,22 @@ namespace SendGmailMulti
             this.PictureBoxMain.TabIndex = 18;
             this.PictureBoxMain.TabStop = false;
             // 
+            // TurnOffSecurityButton
+            // 
+            this.TurnOffSecurityButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TurnOffSecurityButton.Location = new System.Drawing.Point(195, 124);
+            this.TurnOffSecurityButton.Name = "TurnOffSecurityButton";
+            this.TurnOffSecurityButton.Size = new System.Drawing.Size(157, 39);
+            this.TurnOffSecurityButton.TabIndex = 20;
+            this.TurnOffSecurityButton.Text = "Turn off security";
+            this.TurnOffSecurityButton.UseVisualStyleBackColor = true;
+            this.TurnOffSecurityButton.Click += new System.EventHandler(this.TurnOffSecurityButton_Click);
+            // 
             // SendGmailMulti
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1230, 527);
+            this.ClientSize = new System.Drawing.Size(1230, 564);
             this.Controls.Add(this.BackToMenuButton);
             this.Controls.Add(this.PictureBoxMain);
             this.Controls.Add(this.InfoPanel);
@@ -436,6 +449,7 @@ namespace SendGmailMulti
         private System.Windows.Forms.TextBox CCTextBox;
         private System.Windows.Forms.Button MailListBCCButon;
         private System.Windows.Forms.Button MailListCCButton;
+        private System.Windows.Forms.Button TurnOffSecurityButton;
     }
 }
 

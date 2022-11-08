@@ -105,6 +105,7 @@
             this.Controls.Add(this.TextBoxW);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "WriteEmailList";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Write Email List";
             this.Load += new System.EventHandler(this.WriteEmailList_Load);
             this.ResumeLayout(false);

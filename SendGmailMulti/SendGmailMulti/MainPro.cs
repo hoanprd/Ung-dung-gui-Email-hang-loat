@@ -259,7 +259,7 @@ namespace SendGmailMulti
 
         private void CCTextBox_TextChanged(object sender, EventArgs e)
         {
-            if (CCTextBox.Text == null || CCTextBox.Text == "")
+            if ((ReceiverTextBox.Text == null || ReceiverTextBox.Text == "") && (CCTextBox.Text == null || CCTextBox.Text == "") && (BCCTextBox.Text == null || BCCTextBox.Text == ""))
             {
                 ImportantBox1.Show();
             }
@@ -271,7 +271,7 @@ namespace SendGmailMulti
 
         private void BCCTextBox_TextChanged(object sender, EventArgs e)
         {
-            if (BCCTextBox.Text == null || BCCTextBox.Text == "")
+            if ((ReceiverTextBox.Text == null || ReceiverTextBox.Text == "") && (CCTextBox.Text == null || CCTextBox.Text == "") && (BCCTextBox.Text == null || BCCTextBox.Text == ""))
             {
                 ImportantBox1.Show();
             }
@@ -288,7 +288,7 @@ namespace SendGmailMulti
 
         private void ReceiverTextBox_TextChanged(object sender, EventArgs e)
         {
-            if (ReceiverTextBox.Text == null || ReceiverTextBox.Text == "")
+            if ((ReceiverTextBox.Text == null || ReceiverTextBox.Text == "") && (CCTextBox.Text == null || CCTextBox.Text == "") && (BCCTextBox.Text == null || BCCTextBox.Text == ""))
             {
                 ImportantBox1.Show();
             }

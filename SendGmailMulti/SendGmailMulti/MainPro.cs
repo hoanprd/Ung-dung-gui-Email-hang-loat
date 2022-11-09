@@ -21,6 +21,7 @@ namespace SendGmailMulti
         Attachment attach = null;
         bool CheckAccSecur = false;
         string MailList, CCEmail, BCCEmail, MailTemp, CCTemp, BCCTemp;
+        int dtIndex = 0;
 
         string constr;
         MySqlConnection con;
@@ -350,7 +351,10 @@ namespace SendGmailMulti
         {
             MaximizeBox = false;
             ControlBox = false;
-            this.Size = new Size(1300, 510);
+            //this.Size = new Size(1300, 510);
+            DatabaseEditPanel.Hide();
+            DatabaseAccountPanel.Hide();
+            this.Size = new Size(820, 510);
             this.CenterToScreen();
         }
 
@@ -459,7 +463,7 @@ namespace SendGmailMulti
                     int result = cmd.ExecuteNonQuery();
                     if (result == 1)
                     {
-                        MessageBox.Show("Thêm thành công!");
+                        MessageBox.Show("Add successful!");
                         LoadKetNoi();
                         IDTextBox.Clear();
                         NameTextBox.Clear();
@@ -487,7 +491,7 @@ namespace SendGmailMulti
                     int result = cmd.ExecuteNonQuery();
                     if (result == 1)
                     {
-                        MessageBox.Show("Xóa thành công!");
+                        MessageBox.Show("Delete successful!");
                         LoadKetNoi();
                         IDTextBox.Clear();
                         NameTextBox.Clear();
@@ -515,7 +519,7 @@ namespace SendGmailMulti
                     int result = cmd.ExecuteNonQuery();
                     if (result == 1)
                     {
-                        MessageBox.Show("Sửa thành công!");
+                        MessageBox.Show("Update successful!");
                         LoadKetNoi();
                         IDTextBox.Clear();
                         NameTextBox.Clear();
@@ -529,27 +533,6 @@ namespace SendGmailMulti
             {
                 MessageBox.Show(err.ToString());
             }
-        }
-
-        private void AddToReceiver_Click(object sender, EventArgs e)
-        {
-            if (conneted == true)
-            {
-                MailList = MailTextBox.Text;
-                if (tao4 != 0)
-                {
-                    MailTemp += ", " + MailList;
-                }
-                else
-                {
-                    MailTemp += MailList;
-                    tao4 = 1;
-                }
-
-                MessageBox.Show("Thêm thành công!");
-            }
-            else
-                MessageBox.Show("Chưa kết nối database!");
         }
 
         private void AddToCC_Click(object sender, EventArgs e)
@@ -566,11 +549,12 @@ namespace SendGmailMulti
                     CCTemp += CCEmail;
                     tao5 = 1;
                 }
+                CCDatabaseListTextBox.Text = CCTemp;
 
-                MessageBox.Show("Thêm thành công!");
+                MessageBox.Show("Add to CC list successful!");
             }
             else
-                MessageBox.Show("Chưa kết nối database!");
+                MessageBox.Show("Database unconnect!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
         }
 
         private void AddToBCC_Click(object sender, EventArgs e)
@@ -587,11 +571,12 @@ namespace SendGmailMulti
                     BCCTemp += BCCEmail;
                     tao6 = 1;
                 }
+                BCCDatabaseListTextBox.Text = BCCTemp;
 
-                MessageBox.Show("Thêm thành công!");
+                MessageBox.Show("Add to BCC list successful!");
             }
             else
-                MessageBox.Show("Chưa kết nối database!");
+                MessageBox.Show("Database unconnect!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
         }
 
         private void DatabaseGridView_SelectionChanged(object sender, EventArgs e)
@@ -600,6 +585,50 @@ namespace SendGmailMulti
             {
                 id = row.Cells[0].Value.ToString();
             }
+        }
+
+        private void SendFromDatabaseCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            string checkbox = SendFromDatabaseCheckBox.CheckState == CheckState.Checked ? "on" : SendFromDatabaseCheckBox.CheckState == CheckState.Unchecked ?
+                "off" : "non";
+            if (checkbox == "on")
+            {
+                DatabaseEditPanel.Show();
+                DatabaseAccountPanel.Show();
+                this.Size = new Size(1300, 510);
+                this.CenterToScreen();
+            }
+            else
+            {
+                DatabaseEditPanel.Hide();
+                DatabaseAccountPanel.Hide();
+                this.Size = new Size(820, 510);
+                this.CenterToScreen();
+            }
+        }
+
+        private void CCDatabaseUpdateButton_Click(object sender, EventArgs e)
+        {
+            if (conneted == true)
+            {
+                CCTemp = CCDatabaseListTextBox.Text;
+
+                MessageBox.Show("CC list update successful!");
+            }
+            else
+                MessageBox.Show("Database unconnect!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+        }
+
+        private void BCCDatabaseUpdateButton_Click(object sender, EventArgs e)
+        {
+            if (conneted == true)
+            {
+                BCCTemp = BCCDatabaseListTextBox.Text;
+
+                MessageBox.Show("BCC list update successful!");
+            }
+            else
+                MessageBox.Show("Database unconnect!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
         }
 
         private void MailListCCButton_Click(object sender, EventArgs e)
@@ -646,6 +675,22 @@ namespace SendGmailMulti
             tao5 = 0;
             tao6 = 0;
             conneted = true;
+            MailTemp = null;
+            CCDatabaseListTextBox.Clear();
+            BCCDatabaseListTextBox.Clear();
+            foreach (DataGridViewRow row in DatabaseGridView.Rows)
+            {
+                if (dtIndex != 0)
+                    MailTemp += ", " + row.Cells[2].Value;
+                else if (dtIndex == 0)
+                {
+                    MailTemp += row.Cells[2].Value;
+                    dtIndex = 1;
+                    tao4 = 1;
+                }
+            }
+            dtIndex = 0;
+            MailTemp = MailTemp.Remove(MailTemp.Length - 2, 2);
         }
 
         public void DongKetNoi()

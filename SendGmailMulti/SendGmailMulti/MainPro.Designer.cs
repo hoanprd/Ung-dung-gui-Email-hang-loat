@@ -63,7 +63,6 @@ namespace SendGmailMulti
             this.DatabaseEditPanel = new System.Windows.Forms.Panel();
             this.AddToCC = new System.Windows.Forms.Button();
             this.AddToBCC = new System.Windows.Forms.Button();
-            this.AddToReceiver = new System.Windows.Forms.Button();
             this.UpdateDatabaseButton = new System.Windows.Forms.Button();
             this.DeleteDatabaseButton = new System.Windows.Forms.Button();
             this.AddDatabaseButton = new System.Windows.Forms.Button();
@@ -77,7 +76,7 @@ namespace SendGmailMulti
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.NameTextBox = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.DatabaseAccountPanel = new System.Windows.Forms.Panel();
             this.PortDatabaseTextBox = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.PasswordDatabaseTextBox = new System.Windows.Forms.TextBox();
@@ -91,6 +90,13 @@ namespace SendGmailMulti
             this.DatabaseGridView = new System.Windows.Forms.DataGridView();
             this.LoadButton = new System.Windows.Forms.Button();
             this.SendFromDatabaseCheckBox = new System.Windows.Forms.CheckBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.CCDatabaseListTextBox = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.BCCDatabaseListTextBox = new System.Windows.Forms.TextBox();
+            this.CCDatabaseUpdateButton = new System.Windows.Forms.Button();
+            this.BCCDatabaseUpdateButton = new System.Windows.Forms.Button();
             this.AccountPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ImportantBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImportantBox2)).BeginInit();
@@ -98,8 +104,9 @@ namespace SendGmailMulti
             ((System.ComponentModel.ISupportInitialize)(this.ImportantBox1)).BeginInit();
             this.InfoPanel.SuspendLayout();
             this.DatabaseEditPanel.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.DatabaseAccountPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DatabaseGridView)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // AttachTextBox
@@ -414,7 +421,6 @@ namespace SendGmailMulti
             // 
             this.DatabaseEditPanel.Controls.Add(this.AddToCC);
             this.DatabaseEditPanel.Controls.Add(this.AddToBCC);
-            this.DatabaseEditPanel.Controls.Add(this.AddToReceiver);
             this.DatabaseEditPanel.Controls.Add(this.UpdateDatabaseButton);
             this.DatabaseEditPanel.Controls.Add(this.DeleteDatabaseButton);
             this.DatabaseEditPanel.Controls.Add(this.AddDatabaseButton);
@@ -454,17 +460,6 @@ namespace SendGmailMulti
             this.AddToBCC.Text = "BCC";
             this.AddToBCC.UseVisualStyleBackColor = true;
             this.AddToBCC.Click += new System.EventHandler(this.AddToBCC_Click);
-            // 
-            // AddToReceiver
-            // 
-            this.AddToReceiver.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddToReceiver.Location = new System.Drawing.Point(274, 231);
-            this.AddToReceiver.Name = "AddToReceiver";
-            this.AddToReceiver.Size = new System.Drawing.Size(85, 30);
-            this.AddToReceiver.TabIndex = 30;
-            this.AddToReceiver.Text = "Receiver";
-            this.AddToReceiver.UseVisualStyleBackColor = true;
-            this.AddToReceiver.Click += new System.EventHandler(this.AddToReceiver_Click);
             // 
             // UpdateDatabaseButton
             // 
@@ -584,28 +579,28 @@ namespace SendGmailMulti
             this.NameTextBox.Size = new System.Drawing.Size(371, 22);
             this.NameTextBox.TabIndex = 2;
             // 
-            // panel1
+            // DatabaseAccountPanel
             // 
-            this.panel1.Controls.Add(this.PortDatabaseTextBox);
-            this.panel1.Controls.Add(this.label12);
-            this.panel1.Controls.Add(this.PasswordDatabaseTextBox);
-            this.panel1.Controls.Add(this.UsernameDatabaseTextBox);
-            this.panel1.Controls.Add(this.label13);
-            this.panel1.Controls.Add(this.label14);
-            this.panel1.Controls.Add(this.SeverDatabaseTextBox);
-            this.panel1.Controls.Add(this.label15);
-            this.panel1.Controls.Add(this.label16);
-            this.panel1.Controls.Add(this.DatabaseNameTextBox);
-            this.panel1.Location = new System.Drawing.Point(1109, 21);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(583, 214);
-            this.panel1.TabIndex = 23;
+            this.DatabaseAccountPanel.Controls.Add(this.PortDatabaseTextBox);
+            this.DatabaseAccountPanel.Controls.Add(this.label12);
+            this.DatabaseAccountPanel.Controls.Add(this.PasswordDatabaseTextBox);
+            this.DatabaseAccountPanel.Controls.Add(this.UsernameDatabaseTextBox);
+            this.DatabaseAccountPanel.Controls.Add(this.label13);
+            this.DatabaseAccountPanel.Controls.Add(this.label14);
+            this.DatabaseAccountPanel.Controls.Add(this.SeverDatabaseTextBox);
+            this.DatabaseAccountPanel.Controls.Add(this.label15);
+            this.DatabaseAccountPanel.Controls.Add(this.label16);
+            this.DatabaseAccountPanel.Controls.Add(this.DatabaseNameTextBox);
+            this.DatabaseAccountPanel.Location = new System.Drawing.Point(559, 21);
+            this.DatabaseAccountPanel.Name = "DatabaseAccountPanel";
+            this.DatabaseAccountPanel.Size = new System.Drawing.Size(541, 214);
+            this.DatabaseAccountPanel.TabIndex = 23;
             // 
             // PortDatabaseTextBox
             // 
             this.PortDatabaseTextBox.Location = new System.Drawing.Point(144, 183);
             this.PortDatabaseTextBox.Name = "PortDatabaseTextBox";
-            this.PortDatabaseTextBox.Size = new System.Drawing.Size(412, 22);
+            this.PortDatabaseTextBox.Size = new System.Drawing.Size(380, 22);
             this.PortDatabaseTextBox.TabIndex = 21;
             // 
             // label12
@@ -622,14 +617,14 @@ namespace SendGmailMulti
             // 
             this.PasswordDatabaseTextBox.Location = new System.Drawing.Point(144, 139);
             this.PasswordDatabaseTextBox.Name = "PasswordDatabaseTextBox";
-            this.PasswordDatabaseTextBox.Size = new System.Drawing.Size(412, 22);
+            this.PasswordDatabaseTextBox.Size = new System.Drawing.Size(380, 22);
             this.PasswordDatabaseTextBox.TabIndex = 19;
             // 
             // UsernameDatabaseTextBox
             // 
             this.UsernameDatabaseTextBox.Location = new System.Drawing.Point(144, 98);
             this.UsernameDatabaseTextBox.Name = "UsernameDatabaseTextBox";
-            this.UsernameDatabaseTextBox.Size = new System.Drawing.Size(412, 22);
+            this.UsernameDatabaseTextBox.Size = new System.Drawing.Size(380, 22);
             this.UsernameDatabaseTextBox.TabIndex = 18;
             // 
             // label13
@@ -656,7 +651,7 @@ namespace SendGmailMulti
             // 
             this.SeverDatabaseTextBox.Location = new System.Drawing.Point(144, 14);
             this.SeverDatabaseTextBox.Name = "SeverDatabaseTextBox";
-            this.SeverDatabaseTextBox.Size = new System.Drawing.Size(412, 22);
+            this.SeverDatabaseTextBox.Size = new System.Drawing.Size(380, 22);
             this.SeverDatabaseTextBox.TabIndex = 0;
             // 
             // label15
@@ -683,17 +678,17 @@ namespace SendGmailMulti
             // 
             this.DatabaseNameTextBox.Location = new System.Drawing.Point(144, 57);
             this.DatabaseNameTextBox.Name = "DatabaseNameTextBox";
-            this.DatabaseNameTextBox.Size = new System.Drawing.Size(412, 22);
+            this.DatabaseNameTextBox.Size = new System.Drawing.Size(380, 22);
             this.DatabaseNameTextBox.TabIndex = 2;
             // 
             // DatabaseGridView
             // 
             this.DatabaseGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DatabaseGridView.Location = new System.Drawing.Point(1109, 241);
+            this.DatabaseGridView.Location = new System.Drawing.Point(1109, 21);
             this.DatabaseGridView.Name = "DatabaseGridView";
             this.DatabaseGridView.RowHeadersWidth = 51;
             this.DatabaseGridView.RowTemplate.Height = 24;
-            this.DatabaseGridView.Size = new System.Drawing.Size(583, 274);
+            this.DatabaseGridView.Size = new System.Drawing.Size(583, 386);
             this.DatabaseGridView.TabIndex = 24;
             this.DatabaseGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DatabaseGridView_CellDoubleClick);
             this.DatabaseGridView.SelectionChanged += new System.EventHandler(this.DatabaseGridView_SelectionChanged);
@@ -718,16 +713,87 @@ namespace SendGmailMulti
             this.SendFromDatabaseCheckBox.TabIndex = 26;
             this.SendFromDatabaseCheckBox.Text = "Send from database";
             this.SendFromDatabaseCheckBox.UseVisualStyleBackColor = true;
+            this.SendFromDatabaseCheckBox.CheckedChanged += new System.EventHandler(this.SendFromDatabaseCheckBox_CheckedChanged);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.BCCDatabaseUpdateButton);
+            this.panel2.Controls.Add(this.CCDatabaseUpdateButton);
+            this.panel2.Controls.Add(this.CCDatabaseListTextBox);
+            this.panel2.Controls.Add(this.label20);
+            this.panel2.Controls.Add(this.label21);
+            this.panel2.Controls.Add(this.BCCDatabaseListTextBox);
+            this.panel2.Location = new System.Drawing.Point(1109, 422);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(583, 93);
+            this.panel2.TabIndex = 24;
+            // 
+            // CCDatabaseListTextBox
+            // 
+            this.CCDatabaseListTextBox.Location = new System.Drawing.Point(94, 14);
+            this.CCDatabaseListTextBox.Name = "CCDatabaseListTextBox";
+            this.CCDatabaseListTextBox.Size = new System.Drawing.Size(395, 22);
+            this.CCDatabaseListTextBox.TabIndex = 0;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(3, 57);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(85, 22);
+            this.label20.TabIndex = 1;
+            this.label20.Text = "BCC list:";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(3, 11);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(72, 22);
+            this.label21.TabIndex = 14;
+            this.label21.Text = "CC list:";
+            // 
+            // BCCDatabaseListTextBox
+            // 
+            this.BCCDatabaseListTextBox.Location = new System.Drawing.Point(94, 57);
+            this.BCCDatabaseListTextBox.Name = "BCCDatabaseListTextBox";
+            this.BCCDatabaseListTextBox.Size = new System.Drawing.Size(395, 22);
+            this.BCCDatabaseListTextBox.TabIndex = 2;
+            // 
+            // CCDatabaseUpdateButton
+            // 
+            this.CCDatabaseUpdateButton.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CCDatabaseUpdateButton.Location = new System.Drawing.Point(495, 9);
+            this.CCDatabaseUpdateButton.Name = "CCDatabaseUpdateButton";
+            this.CCDatabaseUpdateButton.Size = new System.Drawing.Size(85, 30);
+            this.CCDatabaseUpdateButton.TabIndex = 33;
+            this.CCDatabaseUpdateButton.Text = "Update";
+            this.CCDatabaseUpdateButton.UseVisualStyleBackColor = true;
+            this.CCDatabaseUpdateButton.Click += new System.EventHandler(this.CCDatabaseUpdateButton_Click);
+            // 
+            // BCCDatabaseUpdateButton
+            // 
+            this.BCCDatabaseUpdateButton.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BCCDatabaseUpdateButton.Location = new System.Drawing.Point(495, 52);
+            this.BCCDatabaseUpdateButton.Name = "BCCDatabaseUpdateButton";
+            this.BCCDatabaseUpdateButton.Size = new System.Drawing.Size(85, 30);
+            this.BCCDatabaseUpdateButton.TabIndex = 34;
+            this.BCCDatabaseUpdateButton.Text = "Update";
+            this.BCCDatabaseUpdateButton.UseVisualStyleBackColor = true;
+            this.BCCDatabaseUpdateButton.Click += new System.EventHandler(this.BCCDatabaseUpdateButton_Click);
             // 
             // SendGmailMulti
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1732, 563);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.SendFromDatabaseCheckBox);
             this.Controls.Add(this.LoadButton);
             this.Controls.Add(this.DatabaseGridView);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.DatabaseAccountPanel);
             this.Controls.Add(this.DatabaseEditPanel);
             this.Controls.Add(this.BackToMenuButton);
             this.Controls.Add(this.InfoPanel);
@@ -750,9 +816,11 @@ namespace SendGmailMulti
             this.InfoPanel.PerformLayout();
             this.DatabaseEditPanel.ResumeLayout(false);
             this.DatabaseEditPanel.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.DatabaseAccountPanel.ResumeLayout(false);
+            this.DatabaseAccountPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DatabaseGridView)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -801,7 +869,7 @@ namespace SendGmailMulti
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox NameTextBox;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel DatabaseAccountPanel;
         private System.Windows.Forms.TextBox PortDatabaseTextBox;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox PasswordDatabaseTextBox;
@@ -813,7 +881,6 @@ namespace SendGmailMulti
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox DatabaseNameTextBox;
         private System.Windows.Forms.DataGridView DatabaseGridView;
-        private System.Windows.Forms.Button AddToReceiver;
         private System.Windows.Forms.Button UpdateDatabaseButton;
         private System.Windows.Forms.Button DeleteDatabaseButton;
         private System.Windows.Forms.Button AddDatabaseButton;
@@ -821,6 +888,13 @@ namespace SendGmailMulti
         private System.Windows.Forms.Button AddToBCC;
         private System.Windows.Forms.Button LoadButton;
         private System.Windows.Forms.CheckBox SendFromDatabaseCheckBox;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.TextBox CCDatabaseListTextBox;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.TextBox BCCDatabaseListTextBox;
+        private System.Windows.Forms.Button BCCDatabaseUpdateButton;
+        private System.Windows.Forms.Button CCDatabaseUpdateButton;
     }
 }
 

@@ -60,14 +60,46 @@ namespace SendGmailMulti
             this.MakeEmailListButton = new System.Windows.Forms.Button();
             this.InfoPanel = new System.Windows.Forms.Panel();
             this.BackToMenuButton = new System.Windows.Forms.Button();
-            this.PictureBoxMain = new System.Windows.Forms.PictureBox();
+            this.DatabaseEditPanel = new System.Windows.Forms.Panel();
+            this.AddToCC = new System.Windows.Forms.Button();
+            this.AddToBCC = new System.Windows.Forms.Button();
+            this.AddToReceiver = new System.Windows.Forms.Button();
+            this.UpdateDatabaseButton = new System.Windows.Forms.Button();
+            this.DeleteDatabaseButton = new System.Windows.Forms.Button();
+            this.AddDatabaseButton = new System.Windows.Forms.Button();
+            this.PhoneTextBox = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.GenderTextBox = new System.Windows.Forms.TextBox();
+            this.MailTextBox = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.IDTextBox = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.NameTextBox = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.PortDatabaseTextBox = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.PasswordDatabaseTextBox = new System.Windows.Forms.TextBox();
+            this.UsernameDatabaseTextBox = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.SeverDatabaseTextBox = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.DatabaseNameTextBox = new System.Windows.Forms.TextBox();
+            this.DatabaseGridView = new System.Windows.Forms.DataGridView();
+            this.LoadButton = new System.Windows.Forms.Button();
+            this.SendFromDatabaseCheckBox = new System.Windows.Forms.CheckBox();
             this.AccountPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ImportantBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImportantBox2)).BeginInit();
             this.PathPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ImportantBox1)).BeginInit();
             this.InfoPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxMain)).BeginInit();
+            this.DatabaseEditPanel.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DatabaseGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // AttachTextBox
@@ -91,7 +123,7 @@ namespace SendGmailMulti
             // 
             this.ReceiverTextBox.Location = new System.Drawing.Point(116, 62);
             this.ReceiverTextBox.Name = "ReceiverTextBox";
-            this.ReceiverTextBox.Size = new System.Drawing.Size(356, 22);
+            this.ReceiverTextBox.Size = new System.Drawing.Size(235, 22);
             this.ReceiverTextBox.TabIndex = 2;
             this.ReceiverTextBox.TextChanged += new System.EventHandler(this.ReceiverTextBox_TextChanged);
             // 
@@ -162,7 +194,7 @@ namespace SendGmailMulti
             // AttachButton
             // 
             this.AttachButton.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AttachButton.Location = new System.Drawing.Point(509, 12);
+            this.AttachButton.Location = new System.Drawing.Point(388, 13);
             this.AttachButton.Name = "AttachButton";
             this.AttachButton.Size = new System.Drawing.Size(99, 34);
             this.AttachButton.TabIndex = 10;
@@ -173,7 +205,7 @@ namespace SendGmailMulti
             // SendButton
             // 
             this.SendButton.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SendButton.Location = new System.Drawing.Point(453, 521);
+            this.SendButton.Location = new System.Drawing.Point(436, 521);
             this.SendButton.Name = "SendButton";
             this.SendButton.Size = new System.Drawing.Size(100, 30);
             this.SendButton.TabIndex = 11;
@@ -192,7 +224,7 @@ namespace SendGmailMulti
             // MailListButton
             // 
             this.MailListButton.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MailListButton.Location = new System.Drawing.Point(509, 55);
+            this.MailListButton.Location = new System.Drawing.Point(388, 56);
             this.MailListButton.Name = "MailListButton";
             this.MailListButton.Size = new System.Drawing.Size(99, 34);
             this.MailListButton.TabIndex = 13;
@@ -272,15 +304,15 @@ namespace SendGmailMulti
             this.PathPanel.Controls.Add(this.ReceiverTextBox);
             this.PathPanel.Controls.Add(this.MailListButton);
             this.PathPanel.Controls.Add(this.AttachButton);
-            this.PathPanel.Location = new System.Drawing.Point(602, 21);
+            this.PathPanel.Location = new System.Drawing.Point(559, 21);
             this.PathPanel.Name = "PathPanel";
-            this.PathPanel.Size = new System.Drawing.Size(616, 214);
+            this.PathPanel.Size = new System.Drawing.Size(544, 214);
             this.PathPanel.TabIndex = 16;
             // 
             // MailListBCCButon
             // 
             this.MailListBCCButon.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MailListBCCButon.Location = new System.Drawing.Point(509, 137);
+            this.MailListBCCButon.Location = new System.Drawing.Point(388, 138);
             this.MailListBCCButon.Name = "MailListBCCButon";
             this.MailListBCCButon.Size = new System.Drawing.Size(99, 34);
             this.MailListBCCButon.TabIndex = 21;
@@ -291,7 +323,7 @@ namespace SendGmailMulti
             // MailListCCButton
             // 
             this.MailListCCButton.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MailListCCButton.Location = new System.Drawing.Point(509, 96);
+            this.MailListCCButton.Location = new System.Drawing.Point(388, 97);
             this.MailListCCButton.Name = "MailListCCButton";
             this.MailListCCButton.Size = new System.Drawing.Size(99, 34);
             this.MailListCCButton.TabIndex = 20;
@@ -303,7 +335,7 @@ namespace SendGmailMulti
             // 
             this.BCCTextBox.Location = new System.Drawing.Point(116, 144);
             this.BCCTextBox.Name = "BCCTextBox";
-            this.BCCTextBox.Size = new System.Drawing.Size(356, 22);
+            this.BCCTextBox.Size = new System.Drawing.Size(235, 22);
             this.BCCTextBox.TabIndex = 19;
             this.BCCTextBox.TextChanged += new System.EventHandler(this.BCCTextBox_TextChanged);
             // 
@@ -311,7 +343,7 @@ namespace SendGmailMulti
             // 
             this.CCTextBox.Location = new System.Drawing.Point(116, 103);
             this.CCTextBox.Name = "CCTextBox";
-            this.CCTextBox.Size = new System.Drawing.Size(356, 22);
+            this.CCTextBox.Size = new System.Drawing.Size(235, 22);
             this.CCTextBox.TabIndex = 18;
             this.CCTextBox.TextChanged += new System.EventHandler(this.CCTextBox_TextChanged);
             // 
@@ -338,7 +370,7 @@ namespace SendGmailMulti
             // ImportantBox1
             // 
             this.ImportantBox1.Image = global::SendGmailMulti.Properties.Resources.Important_removebg_preview;
-            this.ImportantBox1.Location = new System.Drawing.Point(478, 62);
+            this.ImportantBox1.Location = new System.Drawing.Point(357, 63);
             this.ImportantBox1.Name = "ImportantBox1";
             this.ImportantBox1.Size = new System.Drawing.Size(29, 22);
             this.ImportantBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -348,7 +380,7 @@ namespace SendGmailMulti
             // MakeEmailListButton
             // 
             this.MakeEmailListButton.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MakeEmailListButton.Location = new System.Drawing.Point(209, 172);
+            this.MakeEmailListButton.Location = new System.Drawing.Point(164, 172);
             this.MakeEmailListButton.Name = "MakeEmailListButton";
             this.MakeEmailListButton.Size = new System.Drawing.Size(187, 39);
             this.MakeEmailListButton.TabIndex = 15;
@@ -370,7 +402,7 @@ namespace SendGmailMulti
             // BackToMenuButton
             // 
             this.BackToMenuButton.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BackToMenuButton.Location = new System.Drawing.Point(12, 521);
+            this.BackToMenuButton.Location = new System.Drawing.Point(27, 521);
             this.BackToMenuButton.Name = "BackToMenuButton";
             this.BackToMenuButton.Size = new System.Drawing.Size(100, 30);
             this.BackToMenuButton.TabIndex = 19;
@@ -378,23 +410,326 @@ namespace SendGmailMulti
             this.BackToMenuButton.UseVisualStyleBackColor = true;
             this.BackToMenuButton.Click += new System.EventHandler(this.BackToMenuButton_Click);
             // 
-            // PictureBoxMain
+            // DatabaseEditPanel
             // 
-            this.PictureBoxMain.Image = global::SendGmailMulti.Properties.Resources.toi_pham_spammer;
-            this.PictureBoxMain.Location = new System.Drawing.Point(602, 241);
-            this.PictureBoxMain.Name = "PictureBoxMain";
-            this.PictureBoxMain.Size = new System.Drawing.Size(616, 274);
-            this.PictureBoxMain.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PictureBoxMain.TabIndex = 18;
-            this.PictureBoxMain.TabStop = false;
+            this.DatabaseEditPanel.Controls.Add(this.AddToCC);
+            this.DatabaseEditPanel.Controls.Add(this.AddToBCC);
+            this.DatabaseEditPanel.Controls.Add(this.AddToReceiver);
+            this.DatabaseEditPanel.Controls.Add(this.UpdateDatabaseButton);
+            this.DatabaseEditPanel.Controls.Add(this.DeleteDatabaseButton);
+            this.DatabaseEditPanel.Controls.Add(this.AddDatabaseButton);
+            this.DatabaseEditPanel.Controls.Add(this.PhoneTextBox);
+            this.DatabaseEditPanel.Controls.Add(this.label11);
+            this.DatabaseEditPanel.Controls.Add(this.GenderTextBox);
+            this.DatabaseEditPanel.Controls.Add(this.MailTextBox);
+            this.DatabaseEditPanel.Controls.Add(this.label7);
+            this.DatabaseEditPanel.Controls.Add(this.label8);
+            this.DatabaseEditPanel.Controls.Add(this.IDTextBox);
+            this.DatabaseEditPanel.Controls.Add(this.label9);
+            this.DatabaseEditPanel.Controls.Add(this.label10);
+            this.DatabaseEditPanel.Controls.Add(this.NameTextBox);
+            this.DatabaseEditPanel.Location = new System.Drawing.Point(559, 241);
+            this.DatabaseEditPanel.Name = "DatabaseEditPanel";
+            this.DatabaseEditPanel.Size = new System.Drawing.Size(544, 274);
+            this.DatabaseEditPanel.TabIndex = 22;
+            // 
+            // AddToCC
+            // 
+            this.AddToCC.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddToCC.Location = new System.Drawing.Point(365, 231);
+            this.AddToCC.Name = "AddToCC";
+            this.AddToCC.Size = new System.Drawing.Size(85, 30);
+            this.AddToCC.TabIndex = 32;
+            this.AddToCC.Text = "CC";
+            this.AddToCC.UseVisualStyleBackColor = true;
+            this.AddToCC.Click += new System.EventHandler(this.AddToCC_Click);
+            // 
+            // AddToBCC
+            // 
+            this.AddToBCC.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddToBCC.Location = new System.Drawing.Point(456, 231);
+            this.AddToBCC.Name = "AddToBCC";
+            this.AddToBCC.Size = new System.Drawing.Size(85, 30);
+            this.AddToBCC.TabIndex = 31;
+            this.AddToBCC.Text = "BCC";
+            this.AddToBCC.UseVisualStyleBackColor = true;
+            this.AddToBCC.Click += new System.EventHandler(this.AddToBCC_Click);
+            // 
+            // AddToReceiver
+            // 
+            this.AddToReceiver.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddToReceiver.Location = new System.Drawing.Point(274, 231);
+            this.AddToReceiver.Name = "AddToReceiver";
+            this.AddToReceiver.Size = new System.Drawing.Size(85, 30);
+            this.AddToReceiver.TabIndex = 30;
+            this.AddToReceiver.Text = "Receiver";
+            this.AddToReceiver.UseVisualStyleBackColor = true;
+            this.AddToReceiver.Click += new System.EventHandler(this.AddToReceiver_Click);
+            // 
+            // UpdateDatabaseButton
+            // 
+            this.UpdateDatabaseButton.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UpdateDatabaseButton.Location = new System.Drawing.Point(169, 231);
+            this.UpdateDatabaseButton.Name = "UpdateDatabaseButton";
+            this.UpdateDatabaseButton.Size = new System.Drawing.Size(77, 30);
+            this.UpdateDatabaseButton.TabIndex = 27;
+            this.UpdateDatabaseButton.Text = "Update";
+            this.UpdateDatabaseButton.UseVisualStyleBackColor = true;
+            this.UpdateDatabaseButton.Click += new System.EventHandler(this.UpdateDatabaseButton_Click);
+            // 
+            // DeleteDatabaseButton
+            // 
+            this.DeleteDatabaseButton.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeleteDatabaseButton.Location = new System.Drawing.Point(86, 231);
+            this.DeleteDatabaseButton.Name = "DeleteDatabaseButton";
+            this.DeleteDatabaseButton.Size = new System.Drawing.Size(77, 30);
+            this.DeleteDatabaseButton.TabIndex = 26;
+            this.DeleteDatabaseButton.Text = "Delete";
+            this.DeleteDatabaseButton.UseVisualStyleBackColor = true;
+            this.DeleteDatabaseButton.Click += new System.EventHandler(this.DeleteDatabaseButton_Click);
+            // 
+            // AddDatabaseButton
+            // 
+            this.AddDatabaseButton.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddDatabaseButton.Location = new System.Drawing.Point(3, 231);
+            this.AddDatabaseButton.Name = "AddDatabaseButton";
+            this.AddDatabaseButton.Size = new System.Drawing.Size(77, 30);
+            this.AddDatabaseButton.TabIndex = 25;
+            this.AddDatabaseButton.Text = "Add";
+            this.AddDatabaseButton.UseVisualStyleBackColor = true;
+            this.AddDatabaseButton.Click += new System.EventHandler(this.AddDatabaseButton_Click);
+            // 
+            // PhoneTextBox
+            // 
+            this.PhoneTextBox.Location = new System.Drawing.Point(116, 188);
+            this.PhoneTextBox.Name = "PhoneTextBox";
+            this.PhoneTextBox.Size = new System.Drawing.Size(371, 22);
+            this.PhoneTextBox.TabIndex = 21;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(11, 188);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(64, 22);
+            this.label11.TabIndex = 20;
+            this.label11.Text = "Phone:";
+            // 
+            // GenderTextBox
+            // 
+            this.GenderTextBox.Location = new System.Drawing.Point(116, 144);
+            this.GenderTextBox.Name = "GenderTextBox";
+            this.GenderTextBox.Size = new System.Drawing.Size(371, 22);
+            this.GenderTextBox.TabIndex = 19;
+            // 
+            // MailTextBox
+            // 
+            this.MailTextBox.Location = new System.Drawing.Point(116, 103);
+            this.MailTextBox.Name = "MailTextBox";
+            this.MailTextBox.Size = new System.Drawing.Size(371, 22);
+            this.MailTextBox.TabIndex = 18;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(11, 144);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(74, 22);
+            this.label7.TabIndex = 17;
+            this.label7.Text = "Gender:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(11, 102);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(54, 22);
+            this.label8.TabIndex = 16;
+            this.label8.Text = "Mail:";
+            // 
+            // IDTextBox
+            // 
+            this.IDTextBox.Location = new System.Drawing.Point(116, 19);
+            this.IDTextBox.Name = "IDTextBox";
+            this.IDTextBox.Size = new System.Drawing.Size(371, 22);
+            this.IDTextBox.TabIndex = 0;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(11, 62);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(62, 22);
+            this.label9.TabIndex = 1;
+            this.label9.Text = "Name:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(11, 16);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(36, 22);
+            this.label10.TabIndex = 14;
+            this.label10.Text = "ID:";
+            // 
+            // NameTextBox
+            // 
+            this.NameTextBox.Location = new System.Drawing.Point(116, 62);
+            this.NameTextBox.Name = "NameTextBox";
+            this.NameTextBox.Size = new System.Drawing.Size(371, 22);
+            this.NameTextBox.TabIndex = 2;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.PortDatabaseTextBox);
+            this.panel1.Controls.Add(this.label12);
+            this.panel1.Controls.Add(this.PasswordDatabaseTextBox);
+            this.panel1.Controls.Add(this.UsernameDatabaseTextBox);
+            this.panel1.Controls.Add(this.label13);
+            this.panel1.Controls.Add(this.label14);
+            this.panel1.Controls.Add(this.SeverDatabaseTextBox);
+            this.panel1.Controls.Add(this.label15);
+            this.panel1.Controls.Add(this.label16);
+            this.panel1.Controls.Add(this.DatabaseNameTextBox);
+            this.panel1.Location = new System.Drawing.Point(1109, 21);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(583, 214);
+            this.panel1.TabIndex = 23;
+            // 
+            // PortDatabaseTextBox
+            // 
+            this.PortDatabaseTextBox.Location = new System.Drawing.Point(144, 183);
+            this.PortDatabaseTextBox.Name = "PortDatabaseTextBox";
+            this.PortDatabaseTextBox.Size = new System.Drawing.Size(412, 22);
+            this.PortDatabaseTextBox.TabIndex = 21;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(3, 183);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(49, 22);
+            this.label12.TabIndex = 20;
+            this.label12.Text = "Port:";
+            // 
+            // PasswordDatabaseTextBox
+            // 
+            this.PasswordDatabaseTextBox.Location = new System.Drawing.Point(144, 139);
+            this.PasswordDatabaseTextBox.Name = "PasswordDatabaseTextBox";
+            this.PasswordDatabaseTextBox.Size = new System.Drawing.Size(412, 22);
+            this.PasswordDatabaseTextBox.TabIndex = 19;
+            // 
+            // UsernameDatabaseTextBox
+            // 
+            this.UsernameDatabaseTextBox.Location = new System.Drawing.Point(144, 98);
+            this.UsernameDatabaseTextBox.Name = "UsernameDatabaseTextBox";
+            this.UsernameDatabaseTextBox.Size = new System.Drawing.Size(412, 22);
+            this.UsernameDatabaseTextBox.TabIndex = 18;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(3, 139);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(94, 22);
+            this.label13.TabIndex = 17;
+            this.label13.Text = "Password:";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(3, 97);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(94, 22);
+            this.label14.TabIndex = 16;
+            this.label14.Text = "Username:";
+            // 
+            // SeverDatabaseTextBox
+            // 
+            this.SeverDatabaseTextBox.Location = new System.Drawing.Point(144, 14);
+            this.SeverDatabaseTextBox.Name = "SeverDatabaseTextBox";
+            this.SeverDatabaseTextBox.Size = new System.Drawing.Size(412, 22);
+            this.SeverDatabaseTextBox.TabIndex = 0;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(3, 57);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(135, 22);
+            this.label15.TabIndex = 1;
+            this.label15.Text = "Database name:";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(3, 11);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(69, 22);
+            this.label16.TabIndex = 14;
+            this.label16.Text = "Server:";
+            // 
+            // DatabaseNameTextBox
+            // 
+            this.DatabaseNameTextBox.Location = new System.Drawing.Point(144, 57);
+            this.DatabaseNameTextBox.Name = "DatabaseNameTextBox";
+            this.DatabaseNameTextBox.Size = new System.Drawing.Size(412, 22);
+            this.DatabaseNameTextBox.TabIndex = 2;
+            // 
+            // DatabaseGridView
+            // 
+            this.DatabaseGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DatabaseGridView.Location = new System.Drawing.Point(1109, 241);
+            this.DatabaseGridView.Name = "DatabaseGridView";
+            this.DatabaseGridView.RowHeadersWidth = 51;
+            this.DatabaseGridView.RowTemplate.Height = 24;
+            this.DatabaseGridView.Size = new System.Drawing.Size(583, 274);
+            this.DatabaseGridView.TabIndex = 24;
+            this.DatabaseGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DatabaseGridView_CellDoubleClick);
+            this.DatabaseGridView.SelectionChanged += new System.EventHandler(this.DatabaseGridView_SelectionChanged);
+            // 
+            // LoadButton
+            // 
+            this.LoadButton.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoadButton.Location = new System.Drawing.Point(1592, 521);
+            this.LoadButton.Name = "LoadButton";
+            this.LoadButton.Size = new System.Drawing.Size(100, 30);
+            this.LoadButton.TabIndex = 25;
+            this.LoadButton.Text = "LOAD";
+            this.LoadButton.UseVisualStyleBackColor = true;
+            this.LoadButton.Click += new System.EventHandler(this.LoadButton_Click);
+            // 
+            // SendFromDatabaseCheckBox
+            // 
+            this.SendFromDatabaseCheckBox.AutoSize = true;
+            this.SendFromDatabaseCheckBox.Location = new System.Drawing.Point(272, 528);
+            this.SendFromDatabaseCheckBox.Name = "SendFromDatabaseCheckBox";
+            this.SendFromDatabaseCheckBox.Size = new System.Drawing.Size(158, 21);
+            this.SendFromDatabaseCheckBox.TabIndex = 26;
+            this.SendFromDatabaseCheckBox.Text = "Send from database";
+            this.SendFromDatabaseCheckBox.UseVisualStyleBackColor = true;
             // 
             // SendGmailMulti
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1230, 564);
+            this.ClientSize = new System.Drawing.Size(1732, 563);
+            this.Controls.Add(this.SendFromDatabaseCheckBox);
+            this.Controls.Add(this.LoadButton);
+            this.Controls.Add(this.DatabaseGridView);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.DatabaseEditPanel);
             this.Controls.Add(this.BackToMenuButton);
-            this.Controls.Add(this.PictureBoxMain);
             this.Controls.Add(this.InfoPanel);
             this.Controls.Add(this.PathPanel);
             this.Controls.Add(this.AccountPanel);
@@ -413,8 +748,13 @@ namespace SendGmailMulti
             ((System.ComponentModel.ISupportInitialize)(this.ImportantBox1)).EndInit();
             this.InfoPanel.ResumeLayout(false);
             this.InfoPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.PictureBoxMain)).EndInit();
+            this.DatabaseEditPanel.ResumeLayout(false);
+            this.DatabaseEditPanel.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DatabaseGridView)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -439,7 +779,6 @@ namespace SendGmailMulti
         private System.Windows.Forms.Panel PathPanel;
         private System.Windows.Forms.Panel InfoPanel;
         private System.Windows.Forms.Button MakeEmailListButton;
-        private System.Windows.Forms.PictureBox PictureBoxMain;
         private System.Windows.Forms.Button BackToMenuButton;
         private System.Windows.Forms.PictureBox ImportantBox2;
         private System.Windows.Forms.PictureBox ImportantBox3;
@@ -451,6 +790,37 @@ namespace SendGmailMulti
         private System.Windows.Forms.Button MailListBCCButon;
         private System.Windows.Forms.Button MailListCCButton;
         private System.Windows.Forms.Button TurnOffSecurityButton;
+        private System.Windows.Forms.Panel DatabaseEditPanel;
+        private System.Windows.Forms.TextBox PhoneTextBox;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox GenderTextBox;
+        private System.Windows.Forms.TextBox MailTextBox;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox IDTextBox;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox NameTextBox;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox PortDatabaseTextBox;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox PasswordDatabaseTextBox;
+        private System.Windows.Forms.TextBox UsernameDatabaseTextBox;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox SeverDatabaseTextBox;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox DatabaseNameTextBox;
+        private System.Windows.Forms.DataGridView DatabaseGridView;
+        private System.Windows.Forms.Button AddToReceiver;
+        private System.Windows.Forms.Button UpdateDatabaseButton;
+        private System.Windows.Forms.Button DeleteDatabaseButton;
+        private System.Windows.Forms.Button AddDatabaseButton;
+        private System.Windows.Forms.Button AddToCC;
+        private System.Windows.Forms.Button AddToBCC;
+        private System.Windows.Forms.Button LoadButton;
+        private System.Windows.Forms.CheckBox SendFromDatabaseCheckBox;
     }
 }
 

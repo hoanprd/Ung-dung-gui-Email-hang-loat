@@ -12,6 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
+using MySql.Data.MySqlClient;
 
 namespace SendGmailMulti
 {
@@ -20,6 +21,17 @@ namespace SendGmailMulti
         Attachment attach = null;
         bool CheckAccSecur = false;
         string MailList, CCEmail, BCCEmail, MailTemp, CCTemp, BCCTemp;
+
+        string constr;
+        MySqlConnection con;
+        MySqlCommand cmd;
+        MySqlDataAdapter adt;
+
+        bool IsLoaded;
+        static int tao4 = 0;
+        static int tao5 = 0;
+        static int tao6 = 0;
+        bool conneted = false;
 
         public SendGmailMulti()
         {
@@ -71,93 +83,118 @@ namespace SendGmailMulti
 
                 }
 
-                try
+
+                string checkbox = SendFromDatabaseCheckBox.CheckState == CheckState.Checked ? "on" : SendFromDatabaseCheckBox.CheckState == CheckState.Unchecked ?
+                "off" : "non";
+
+                if (checkbox == "on")
                 {
-                    MailTemp = null;
-                    CCTemp = null;
-                    BCCTemp = null;
-
-                    if (ReceiverTextBox.Text == null || ReceiverTextBox.Text == "")
+                    try
                     {
-                        //do nothing
+                        GuiMailDatabase();
+
+                        MessageBox.Show("Done!");
                     }
-                    else
+                    catch
                     {
-                        StreamReader sr = new StreamReader(ReceiverTextBox.Text);
-                        while ((MailList = sr.ReadLine()) != null)
-                        {
-                            if (tao1 != 0)
-                            {
-                                MailTemp += ", " + MailList;
-                            }
-                            else
-                            {
-                                MailTemp += MailList;
-                                tao1 = 1;
-                            }
-                        }
-
-                        sr.Close();
+                        if ((ReceiverTextBox.Text == null || ReceiverTextBox.Text == "") && (CCTextBox.Text == null || CCTextBox.Text == "") && (BCCTextBox.Text == null || BCCTextBox.Text == ""))
+                            MessageBox.Show("Error! You haven't choose any receiver!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        else if ((ReceiverTextBox.Text == null || ReceiverTextBox.Text == "") && CheckAccSecur == false)
+                            MessageBox.Show("User name or password is not correct!\nPlease check your connection and account security", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                        else
+                            MessageBox.Show("Send unsuccessful!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                     }
-
-                    if (CCTextBox.Text == null || CCTextBox.Text == "")
-                    {
-                        //do nothing
-                    }
-                    else
-                    {
-                        StreamReader srCC = new StreamReader(CCTextBox.Text);
-                        while ((CCEmail = srCC.ReadLine()) != null)
-                        {
-                            if (tao2 != 0)
-                            {
-                                CCTemp += ", " + CCEmail;
-                            }
-                            else
-                            {
-                                CCTemp += CCEmail;
-                                tao2 = 1;
-                            }
-                        }
-
-                        srCC.Close();
-                    }
-
-                    if (BCCTextBox.Text == null || BCCTextBox.Text == "")
-                    {
-                        //do nothing
-                    }
-                    else
-                    {
-                        StreamReader srBCC = new StreamReader(BCCTextBox.Text);
-                        while ((BCCEmail = srBCC.ReadLine()) != null)
-                        {
-                            if (tao3 != 0)
-                            {
-                                BCCTemp += ", " + BCCEmail;
-                            }
-                            else
-                            {
-                                BCCTemp += BCCEmail;
-                                tao3 = 1;
-                            }
-                        }
-
-                        srBCC.Close();
-                    }
-
-                    GuiMail();
-
-                    MessageBox.Show("Done!");
                 }
-                catch
+                else
                 {
-                    if ((ReceiverTextBox.Text == null || ReceiverTextBox.Text == "") && (CCTextBox.Text == null || CCTextBox.Text == "") && (BCCTextBox.Text == null || BCCTextBox.Text == ""))
-                        MessageBox.Show("Error! You haven't choose any receiver!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    else if ((ReceiverTextBox.Text == null || ReceiverTextBox.Text == "") && CheckAccSecur == false)
-                        MessageBox.Show("User name or password is not correct!\nPlease check your connection and account security", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
-                    else
-                        MessageBox.Show("Send unsuccessful!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                    try
+                    {
+                        MailTemp = null;
+                        CCTemp = null;
+                        BCCTemp = null;
+
+                        if (ReceiverTextBox.Text == null || ReceiverTextBox.Text == "")
+                        {
+                            //do nothing
+                        }
+                        else
+                        {
+                            StreamReader sr = new StreamReader(ReceiverTextBox.Text);
+                            while ((MailList = sr.ReadLine()) != null)
+                            {
+                                if (tao1 != 0)
+                                {
+                                    MailTemp += ", " + MailList;
+                                }
+                                else
+                                {
+                                    MailTemp += MailList;
+                                    tao1 = 1;
+                                }
+                            }
+
+                            sr.Close();
+                        }
+
+                        if (CCTextBox.Text == null || CCTextBox.Text == "")
+                        {
+                            //do nothing
+                        }
+                        else
+                        {
+                            StreamReader srCC = new StreamReader(CCTextBox.Text);
+                            while ((CCEmail = srCC.ReadLine()) != null)
+                            {
+                                if (tao2 != 0)
+                                {
+                                    CCTemp += ", " + CCEmail;
+                                }
+                                else
+                                {
+                                    CCTemp += CCEmail;
+                                    tao2 = 1;
+                                }
+                            }
+
+                            srCC.Close();
+                        }
+
+                        if (BCCTextBox.Text == null || BCCTextBox.Text == "")
+                        {
+                            //do nothing
+                        }
+                        else
+                        {
+                            StreamReader srBCC = new StreamReader(BCCTextBox.Text);
+                            while ((BCCEmail = srBCC.ReadLine()) != null)
+                            {
+                                if (tao3 != 0)
+                                {
+                                    BCCTemp += ", " + BCCEmail;
+                                }
+                                else
+                                {
+                                    BCCTemp += BCCEmail;
+                                    tao3 = 1;
+                                }
+                            }
+
+                            srBCC.Close();
+                        }
+
+                        GuiMail();
+
+                        MessageBox.Show("Done!");
+                    }
+                    catch
+                    {
+                        if ((ReceiverTextBox.Text == null || ReceiverTextBox.Text == "") && (CCTextBox.Text == null || CCTextBox.Text == "") && (BCCTextBox.Text == null || BCCTextBox.Text == ""))
+                            MessageBox.Show("Error! You haven't choose any receiver!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        else if ((ReceiverTextBox.Text == null || ReceiverTextBox.Text == "") && CheckAccSecur == false)
+                            MessageBox.Show("User name or password is not correct!\nPlease check your connection and account security", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                        else
+                            MessageBox.Show("Send unsuccessful!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                    }
                 }
             }
             );
@@ -182,6 +219,7 @@ namespace SendGmailMulti
                 string[] Multi = MailTemp.Split(',');
                 foreach (string Multiemailid in Multi)
                 {
+                    mess.IsBodyHtml = true;
                     mess.To.Add(new MailAddress(Multiemailid));
                 }
             }
@@ -193,6 +231,7 @@ namespace SendGmailMulti
             else
             {
                 MailAddress cc = new MailAddress(CCTemp);
+                mess.IsBodyHtml = true;
                 mess.CC.Add(cc);
             }
 
@@ -203,6 +242,62 @@ namespace SendGmailMulti
             else
             {
                 MailAddress bcc = new MailAddress(BCCTemp);
+                mess.IsBodyHtml = true;
+                mess.Bcc.Add(bcc);
+            }
+
+            if (_lstFilePath != null)
+            {
+                string[] files = _lstFilePath.ToArray();
+                Attachment attachment;
+                foreach (var item in files)
+                {
+                    attachment = new Attachment(item);
+                    mess.Attachments.Add(attachment);
+                }
+            }
+
+            SmtpClient client = new SmtpClient("smtp.gmail.com", 587);
+
+            client.EnableSsl = true;
+
+            client.Credentials = new NetworkCredential(UserNameTextBox.Text, PasswordTextBox.Text);
+
+            client.Send(mess);
+
+            CheckAccSecur = true;
+        }
+
+        //Hàm gửi Mail bằng Database
+        void GuiMailDatabase(Attachment file = null)
+        {
+            MailMessage mess = new MailMessage();
+
+            mess.From = new MailAddress(UserNameTextBox.Text);
+            mess.Subject = SubjectTextBox.Text;
+            mess.Body = MessageTextBox.Text;
+
+            if (tao4 != 0)
+            {
+                string[] Multi = MailTemp.Split(',');
+                foreach (string Multiemailid in Multi)
+                {
+                    mess.IsBodyHtml = true;
+                    mess.To.Add(new MailAddress(Multiemailid));
+                }
+            }
+
+            if (tao5 != 0)
+            {
+                MailAddress cc = new MailAddress(CCTemp);
+                mess.IsBodyHtml = true;
+                mess.CC.Add(cc);
+            }
+
+            if (tao6 != 0)
+            {
+                MailAddress bcc = new MailAddress(BCCTemp);
+                mess.IsBodyHtml = true;
                 mess.Bcc.Add(bcc);
             }
 
@@ -255,6 +350,8 @@ namespace SendGmailMulti
         {
             MaximizeBox = false;
             ControlBox = false;
+            this.Size = new Size(1300, 510);
+            this.CenterToScreen();
         }
 
         private void CCTextBox_TextChanged(object sender, EventArgs e)
@@ -322,6 +419,189 @@ namespace SendGmailMulti
             }
         }
 
+        private void LoadButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                LoadKetNoi();
+                IsLoaded = true;
+            }
+            catch
+            {
+                DongKetNoi();
+                MessageBox.Show("Infomation uncorrect or error from Server!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+            }
+        }
+        public string id { get; set; }
+
+        private void DatabaseGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            foreach (DataGridViewRow row in DatabaseGridView.SelectedRows)
+            {
+                id = row.Cells[0].Value.ToString();
+                IDTextBox.Text = row.Cells[0].Value.ToString();
+                NameTextBox.Text = row.Cells[1].Value.ToString();
+                MailTextBox.Text = row.Cells[2].Value.ToString();
+                GenderTextBox.Text = row.Cells[3].Value.ToString();
+                PhoneTextBox.Text = row.Cells[4].Value.ToString();
+            }
+        }
+
+        private void AddDatabaseButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string query = string.Format("INSERT INTO gmail VALUES('{0}', '{1}', '{2}', '{3}', '{4}')", IDTextBox.Text, NameTextBox.Text, MailTextBox.Text, GenderTextBox.Text, PhoneTextBox.Text);
+                using (MySqlConnection con = new MySqlConnection(constr))
+                {
+                    con.Open();
+                    MySqlCommand cmd = new MySqlCommand(query, con);
+                    int result = cmd.ExecuteNonQuery();
+                    if (result == 1)
+                    {
+                        MessageBox.Show("Thêm thành công!");
+                        LoadKetNoi();
+                        IDTextBox.Clear();
+                        NameTextBox.Clear();
+                        MailTextBox.Clear();
+                        GenderTextBox.Clear();
+                        PhoneTextBox.Clear();
+                    }
+                }
+            }
+            catch (MySqlException err)
+            {
+                MessageBox.Show(err.ToString());
+            }
+        }
+
+        private void DeleteDatabaseButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string query = string.Format("DELETE FROM gmail WHERE ID = {0}", id);
+                using (MySqlConnection con = new MySqlConnection(constr))
+                {
+                    con.Open();
+                    MySqlCommand cmd = new MySqlCommand(query, con);
+                    int result = cmd.ExecuteNonQuery();
+                    if (result == 1)
+                    {
+                        MessageBox.Show("Xóa thành công!");
+                        LoadKetNoi();
+                        IDTextBox.Clear();
+                        NameTextBox.Clear();
+                        MailTextBox.Clear();
+                        GenderTextBox.Clear();
+                        PhoneTextBox.Clear();
+                    }
+                }
+            }
+            catch (MySqlException err)
+            {
+                MessageBox.Show(err.ToString());
+            }
+        }
+
+        private void UpdateDatabaseButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string query = string.Format("UPDATE gmail SET ID = '{0}', Name = '{1}', Mail = '{2}', Gender = '{3}', Phone = '{4}' WHERE ID = {5}", IDTextBox.Text, NameTextBox.Text, MailTextBox.Text, GenderTextBox.Text, PhoneTextBox.Text, id);
+                using (MySqlConnection con = new MySqlConnection(constr))
+                {
+                    con.Open();
+                    MySqlCommand cmd = new MySqlCommand(query, con);
+                    int result = cmd.ExecuteNonQuery();
+                    if (result == 1)
+                    {
+                        MessageBox.Show("Sửa thành công!");
+                        LoadKetNoi();
+                        IDTextBox.Clear();
+                        NameTextBox.Clear();
+                        MailTextBox.Clear();
+                        GenderTextBox.Clear();
+                        PhoneTextBox.Clear();
+                    }
+                }
+            }
+            catch (MySqlException err)
+            {
+                MessageBox.Show(err.ToString());
+            }
+        }
+
+        private void AddToReceiver_Click(object sender, EventArgs e)
+        {
+            if (conneted == true)
+            {
+                MailList = MailTextBox.Text;
+                if (tao4 != 0)
+                {
+                    MailTemp += ", " + MailList;
+                }
+                else
+                {
+                    MailTemp += MailList;
+                    tao4 = 1;
+                }
+
+                MessageBox.Show("Thêm thành công!");
+            }
+            else
+                MessageBox.Show("Chưa kết nối database!");
+        }
+
+        private void AddToCC_Click(object sender, EventArgs e)
+        {
+            if (conneted == true)
+            {
+                CCEmail = MailTextBox.Text;
+                if (tao5 != 0)
+                {
+                    CCTemp += ", " + CCEmail;
+                }
+                else
+                {
+                    CCTemp += CCEmail;
+                    tao5 = 1;
+                }
+
+                MessageBox.Show("Thêm thành công!");
+            }
+            else
+                MessageBox.Show("Chưa kết nối database!");
+        }
+
+        private void AddToBCC_Click(object sender, EventArgs e)
+        {
+            if (conneted == true)
+            {
+                BCCEmail = MailTextBox.Text;
+                if (tao6 != 0)
+                {
+                    BCCTemp += ", " + BCCEmail;
+                }
+                else
+                {
+                    BCCTemp += BCCEmail;
+                    tao6 = 1;
+                }
+
+                MessageBox.Show("Thêm thành công!");
+            }
+            else
+                MessageBox.Show("Chưa kết nối database!");
+        }
+
+        private void DatabaseGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in DatabaseGridView.SelectedRows)
+            {
+                id = row.Cells[0].Value.ToString();
+            }
+        }
+
         private void MailListCCButton_Click(object sender, EventArgs e)
         {
             OpenFileDialog dialog = new OpenFileDialog();
@@ -340,6 +620,37 @@ namespace SendGmailMulti
                 BCCTextBox.Text = dialog.FileName;
                 //CheckAccCorrect = true;
             }
+        }
+
+        //Database
+        public void MoKetNoi()
+        {
+            con.Open();
+        }
+
+        public void LoadKetNoi()
+        {
+            constr = "server=" + SeverDatabaseTextBox.Text + ";user=" + UsernameDatabaseTextBox.Text + ";pwd=" + PasswordDatabaseTextBox.Text + ";database=" + DatabaseNameTextBox.Text + ";port=" + PortDatabaseTextBox.Text + ";";
+            con = new MySqlConnection(constr);
+            MoKetNoi();
+            cmd = new MySqlCommand("select * from gmail", con);
+            adt = new MySqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            adt.Fill(dt);
+            DatabaseGridView.DataSource = dt;
+            DongKetNoi();
+            MailTemp = null;
+            CCTemp = null;
+            BCCTemp = null;
+            tao4 = 0;
+            tao5 = 0;
+            tao6 = 0;
+            conneted = true;
+        }
+
+        public void DongKetNoi()
+        {
+            con.Close();
         }
     }
 }

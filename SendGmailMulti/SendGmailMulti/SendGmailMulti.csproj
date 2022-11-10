@@ -85,6 +85,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HowToUse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HowToUse.Designer.cs">
+      <DependentUpon>HowToUse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoopSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoopSetting.Designer.cs">
+      <DependentUpon>LoopSetting.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainPro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,6 +117,12 @@
     <Compile Include="WriteEmailList.Designer.cs">
       <DependentUpon>WriteEmailList.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="HowToUse.resx">
+      <DependentUpon>HowToUse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoopSetting.resx">
+      <DependentUpon>LoopSetting.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainPro.resx">
       <DependentUpon>MainPro.cs</DependentUpon>
     </EmbeddedResource>

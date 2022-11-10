@@ -22,13 +22,13 @@ namespace SendGmailMulti
         bool CheckAccSecur = false;
         string MailList, CCEmail, BCCEmail, MailTemp, CCTemp, BCCTemp;
         int dtIndex = 0;
+        public static int LoopTime = 1;
 
         string constr;
         MySqlConnection con;
         MySqlCommand cmd;
         MySqlDataAdapter adt;
 
-        bool IsLoaded;
         static int tao4 = 0;
         static int tao5 = 0;
         static int tao6 = 0;
@@ -92,9 +92,10 @@ namespace SendGmailMulti
                 {
                     try
                     {
-                        GuiMailDatabase();
+                        for (int i = 1; i <= LoopTime; i++)
+                            GuiMailDatabase();
 
-                        MessageBox.Show("Done!");
+                        MessageBox.Show("Done!\nNumber of loop: " + LoopTime.ToString(), "Result");
                     }
                     catch
                     {
@@ -183,9 +184,10 @@ namespace SendGmailMulti
                             srBCC.Close();
                         }
 
-                        GuiMail();
+                        for (int i = 1; i <= LoopTime; i++)
+                            GuiMail();
 
-                        MessageBox.Show("Done!");
+                        MessageBox.Show("Done!\nNumber of loop: " + LoopTime.ToString(), "Result");
                     }
                     catch
                     {
@@ -428,7 +430,6 @@ namespace SendGmailMulti
             try
             {
                 LoadKetNoi();
-                IsLoaded = true;
             }
             catch
             {
@@ -631,6 +632,35 @@ namespace SendGmailMulti
                 MessageBox.Show("Database unconnect!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
         }
 
+        private void loopToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LoopSetting ls = new LoopSetting();
+            ls.Show();
+        }
+
+        private void ReceiverDatabaseUpdateButton_Click(object sender, EventArgs e)
+        {
+            if (conneted == true)
+            {
+                MailTemp = ReceiverDatabaseListTextBox.Text;
+
+                MessageBox.Show("Receiver list update successful!");
+            }
+            else
+                MessageBox.Show("Database unconnect!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+        }
+
+        private void howToUseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            HowToUse htu = new HowToUse();
+            htu.Show();
+        }
+
+        private void aboutUsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Process.Start("https://www.facebook.com/hoan.nguyenduy.7967");
+        }
+
         private void MailListCCButton_Click(object sender, EventArgs e)
         {
             OpenFileDialog dialog = new OpenFileDialog();
@@ -676,6 +706,7 @@ namespace SendGmailMulti
             tao6 = 0;
             conneted = true;
             MailTemp = null;
+            ReceiverDatabaseListTextBox.Clear();
             CCDatabaseListTextBox.Clear();
             BCCDatabaseListTextBox.Clear();
             foreach (DataGridViewRow row in DatabaseGridView.Rows)
@@ -691,6 +722,7 @@ namespace SendGmailMulti
             }
             dtIndex = 0;
             MailTemp = MailTemp.Remove(MailTemp.Length - 2, 2);
+            ReceiverDatabaseListTextBox.Text = MailTemp;
         }
 
         public void DongKetNoi()

@@ -13,6 +13,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
 using MySql.Data.MySqlClient;
+using System.Media;
+using System.Windows.Media;
+using AudioSwitcher.AudioApi.CoreAudio;
 
 namespace SendGmailMulti
 {
@@ -23,6 +26,8 @@ namespace SendGmailMulti
         string MailList, CCEmail, BCCEmail, MailTemp, CCTemp, BCCTemp;
         int dtIndex = 0;
         public static int LoopTime = 1;
+        private SoundPlayer sp;
+        CoreAudioDevice defaultPlaybackDevice = new CoreAudioController().DefaultPlaybackDevice;
 
         string constr;
         MySqlConnection con;
@@ -37,6 +42,9 @@ namespace SendGmailMulti
         public SendGmailMulti()
         {
             InitializeComponent();
+
+            sp = new SoundPlayer("Rong thieng.wav");
+            defaultPlaybackDevice.Volume = BGMSetting.SoundValue;
         }
 
         List<string> _lstFilePath;
@@ -661,6 +669,12 @@ namespace SendGmailMulti
             Process.Start("https://www.facebook.com/hoan.nguyenduy.7967");
         }
 
+        private void bGMToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BGMSetting bgms = new BGMSetting();
+            bgms.Show();
+        }
+
         private void MailListCCButton_Click(object sender, EventArgs e)
         {
             OpenFileDialog dialog = new OpenFileDialog();
@@ -728,6 +742,20 @@ namespace SendGmailMulti
         public void DongKetNoi()
         {
             con.Close();
+        }
+
+        public void PlayMusic(bool PlayBGM)
+        {
+            if (PlayBGM == true)
+            {
+                defaultPlaybackDevice.Volume = BGMSetting.SoundValue;
+                sp.PlayLooping();
+            }
+            else
+            {
+                defaultPlaybackDevice.Volume = BGMSetting.SoundValue;
+                sp.Stop();
+            }
         }
     }
 }

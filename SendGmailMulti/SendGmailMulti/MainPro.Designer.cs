@@ -106,6 +106,7 @@ namespace SendGmailMulti
             this.infoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.howToUseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutUsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bGMToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AccountPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ImportantBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImportantBox2)).BeginInit();
@@ -840,7 +841,8 @@ namespace SendGmailMulti
             // settingToolStripMenuItem
             // 
             this.settingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.loopToolStripMenuItem});
+            this.loopToolStripMenuItem,
+            this.bGMToolStripMenuItem});
             this.settingToolStripMenuItem.Name = "settingToolStripMenuItem";
             this.settingToolStripMenuItem.Size = new System.Drawing.Size(70, 24);
             this.settingToolStripMenuItem.Text = "Setting";
@@ -848,7 +850,7 @@ namespace SendGmailMulti
             // loopToolStripMenuItem
             // 
             this.loopToolStripMenuItem.Name = "loopToolStripMenuItem";
-            this.loopToolStripMenuItem.Size = new System.Drawing.Size(126, 26);
+            this.loopToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.loopToolStripMenuItem.Text = "Loop";
             this.loopToolStripMenuItem.Click += new System.EventHandler(this.loopToolStripMenuItem_Click);
             // 
@@ -864,16 +866,23 @@ namespace SendGmailMulti
             // howToUseToolStripMenuItem
             // 
             this.howToUseToolStripMenuItem.Name = "howToUseToolStripMenuItem";
-            this.howToUseToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.howToUseToolStripMenuItem.Size = new System.Drawing.Size(167, 26);
             this.howToUseToolStripMenuItem.Text = "How to use";
             this.howToUseToolStripMenuItem.Click += new System.EventHandler(this.howToUseToolStripMenuItem_Click);
             // 
             // aboutUsToolStripMenuItem
             // 
             this.aboutUsToolStripMenuItem.Name = "aboutUsToolStripMenuItem";
-            this.aboutUsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.aboutUsToolStripMenuItem.Size = new System.Drawing.Size(167, 26);
             this.aboutUsToolStripMenuItem.Text = "About us";
             this.aboutUsToolStripMenuItem.Click += new System.EventHandler(this.aboutUsToolStripMenuItem_Click);
+            // 
+            // bGMToolStripMenuItem
+            // 
+            this.bGMToolStripMenuItem.Name = "bGMToolStripMenuItem";
+            this.bGMToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.bGMToolStripMenuItem.Text = "BGM";
+            this.bGMToolStripMenuItem.Click += new System.EventHandler(this.bGMToolStripMenuItem_Click);
             // 
             // SendGmailMulti
             // 
@@ -999,6 +1008,7 @@ namespace SendGmailMulti
         private System.Windows.Forms.Button ReceiverDatabaseUpdateButton;
         private System.Windows.Forms.TextBox ReceiverDatabaseListTextBox;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.ToolStripMenuItem bGMToolStripMenuItem;
     }
 }
 

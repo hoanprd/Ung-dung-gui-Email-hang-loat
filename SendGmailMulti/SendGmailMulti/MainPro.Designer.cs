@@ -46,9 +46,9 @@ namespace SendGmailMulti
             this.MailListButton = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.AccountPanel = new System.Windows.Forms.Panel();
-            this.TurnOffSecurityButton = new System.Windows.Forms.Button();
             this.ImportantBox3 = new System.Windows.Forms.PictureBox();
             this.ImportantBox2 = new System.Windows.Forms.PictureBox();
+            this.TurnOffSecurityButton = new System.Windows.Forms.Button();
             this.PathPanel = new System.Windows.Forms.Panel();
             this.MailListBCCButon = new System.Windows.Forms.Button();
             this.MailListCCButton = new System.Windows.Forms.Button();
@@ -79,6 +79,7 @@ namespace SendGmailMulti
             this.DatabaseAccountPanel = new System.Windows.Forms.Panel();
             this.PortDatabaseTextBox = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.LoadButton = new System.Windows.Forms.Button();
             this.PasswordDatabaseTextBox = new System.Windows.Forms.TextBox();
             this.UsernameDatabaseTextBox = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -88,7 +89,6 @@ namespace SendGmailMulti
             this.label16 = new System.Windows.Forms.Label();
             this.DatabaseNameTextBox = new System.Windows.Forms.TextBox();
             this.DatabaseGridView = new System.Windows.Forms.DataGridView();
-            this.LoadButton = new System.Windows.Forms.Button();
             this.SendFromDatabaseCheckBox = new System.Windows.Forms.CheckBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.ReceiverDatabaseUpdateButton = new System.Windows.Forms.Button();
@@ -103,10 +103,10 @@ namespace SendGmailMulti
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.settingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.loopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bGMToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.infoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.howToUseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutUsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.bGMToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AccountPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ImportantBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ImportantBox2)).BeginInit();
@@ -122,16 +122,17 @@ namespace SendGmailMulti
             // 
             // AttachTextBox
             // 
-            this.AttachTextBox.Location = new System.Drawing.Point(116, 19);
+            this.AttachTextBox.Location = new System.Drawing.Point(108, 140);
+            this.AttachTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.AttachTextBox.Name = "AttachTextBox";
-            this.AttachTextBox.Size = new System.Drawing.Size(188, 22);
+            this.AttachTextBox.Size = new System.Drawing.Size(260, 22);
             this.AttachTextBox.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(11, 62);
+            this.label1.Location = new System.Drawing.Point(11, 14);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(88, 22);
             this.label1.TabIndex = 1;
@@ -139,7 +140,8 @@ namespace SendGmailMulti
             // 
             // ReceiverTextBox
             // 
-            this.ReceiverTextBox.Location = new System.Drawing.Point(116, 62);
+            this.ReceiverTextBox.Location = new System.Drawing.Point(116, 14);
+            this.ReceiverTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ReceiverTextBox.Name = "ReceiverTextBox";
             this.ReceiverTextBox.Size = new System.Drawing.Size(235, 22);
             this.ReceiverTextBox.TabIndex = 2;
@@ -149,7 +151,7 @@ namespace SendGmailMulti
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(11, 14);
+            this.label2.Location = new System.Drawing.Point(9, 43);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(75, 22);
             this.label2.TabIndex = 3;
@@ -157,7 +159,8 @@ namespace SendGmailMulti
             // 
             // SubjectTextBox
             // 
-            this.SubjectTextBox.Location = new System.Drawing.Point(116, 14);
+            this.SubjectTextBox.Location = new System.Drawing.Point(103, 44);
+            this.SubjectTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SubjectTextBox.Name = "SubjectTextBox";
             this.SubjectTextBox.Size = new System.Drawing.Size(369, 22);
             this.SubjectTextBox.TabIndex = 4;
@@ -185,6 +188,7 @@ namespace SendGmailMulti
             // UserNameTextBox
             // 
             this.UserNameTextBox.Location = new System.Drawing.Point(108, 12);
+            this.UserNameTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.UserNameTextBox.Name = "UserNameTextBox";
             this.UserNameTextBox.Size = new System.Drawing.Size(369, 22);
             this.UserNameTextBox.TabIndex = 7;
@@ -193,6 +197,7 @@ namespace SendGmailMulti
             // PasswordTextBox
             // 
             this.PasswordTextBox.Location = new System.Drawing.Point(108, 74);
+            this.PasswordTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PasswordTextBox.Name = "PasswordTextBox";
             this.PasswordTextBox.PasswordChar = '*';
             this.PasswordTextBox.Size = new System.Drawing.Size(369, 22);
@@ -203,7 +208,7 @@ namespace SendGmailMulti
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(11, 55);
+            this.label5.Location = new System.Drawing.Point(9, 73);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(85, 22);
             this.label5.TabIndex = 9;
@@ -212,7 +217,8 @@ namespace SendGmailMulti
             // AttachButton
             // 
             this.AttachButton.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AttachButton.Location = new System.Drawing.Point(388, 13);
+            this.AttachButton.Location = new System.Drawing.Point(380, 135);
+            this.AttachButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.AttachButton.Name = "AttachButton";
             this.AttachButton.Size = new System.Drawing.Size(99, 34);
             this.AttachButton.TabIndex = 10;
@@ -223,7 +229,8 @@ namespace SendGmailMulti
             // SendButton
             // 
             this.SendButton.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SendButton.Location = new System.Drawing.Point(436, 531);
+            this.SendButton.Location = new System.Drawing.Point(436, 530);
+            this.SendButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SendButton.Name = "SendButton";
             this.SendButton.Size = new System.Drawing.Size(100, 30);
             this.SendButton.TabIndex = 11;
@@ -233,16 +240,18 @@ namespace SendGmailMulti
             // 
             // MessageTextBox
             // 
-            this.MessageTextBox.Location = new System.Drawing.Point(15, 80);
+            this.MessageTextBox.Location = new System.Drawing.Point(15, 98);
+            this.MessageTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MessageTextBox.Multiline = true;
             this.MessageTextBox.Name = "MessageTextBox";
-            this.MessageTextBox.Size = new System.Drawing.Size(509, 225);
+            this.MessageTextBox.Size = new System.Drawing.Size(509, 205);
             this.MessageTextBox.TabIndex = 12;
             // 
             // MailListButton
             // 
             this.MailListButton.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MailListButton.Location = new System.Drawing.Point(388, 56);
+            this.MailListButton.Location = new System.Drawing.Point(388, 9);
+            this.MailListButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MailListButton.Name = "MailListButton";
             this.MailListButton.Size = new System.Drawing.Size(99, 34);
             this.MailListButton.TabIndex = 13;
@@ -254,7 +263,7 @@ namespace SendGmailMulti
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(11, 16);
+            this.label6.Location = new System.Drawing.Point(3, 138);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(86, 22);
             this.label6.TabIndex = 14;
@@ -262,34 +271,27 @@ namespace SendGmailMulti
             // 
             // AccountPanel
             // 
-            this.AccountPanel.Controls.Add(this.TurnOffSecurityButton);
             this.AccountPanel.Controls.Add(this.ImportantBox3);
             this.AccountPanel.Controls.Add(this.ImportantBox2);
             this.AccountPanel.Controls.Add(this.label3);
             this.AccountPanel.Controls.Add(this.label4);
             this.AccountPanel.Controls.Add(this.UserNameTextBox);
             this.AccountPanel.Controls.Add(this.PasswordTextBox);
+            this.AccountPanel.Controls.Add(this.label6);
+            this.AccountPanel.Controls.Add(this.AttachButton);
+            this.AccountPanel.Controls.Add(this.AttachTextBox);
             this.AccountPanel.Location = new System.Drawing.Point(12, 31);
+            this.AccountPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.AccountPanel.Name = "AccountPanel";
-            this.AccountPanel.Size = new System.Drawing.Size(541, 166);
+            this.AccountPanel.Size = new System.Drawing.Size(541, 178);
             this.AccountPanel.TabIndex = 15;
             this.AccountPanel.Tag = "";
-            // 
-            // TurnOffSecurityButton
-            // 
-            this.TurnOffSecurityButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TurnOffSecurityButton.Location = new System.Drawing.Point(195, 124);
-            this.TurnOffSecurityButton.Name = "TurnOffSecurityButton";
-            this.TurnOffSecurityButton.Size = new System.Drawing.Size(157, 39);
-            this.TurnOffSecurityButton.TabIndex = 20;
-            this.TurnOffSecurityButton.Text = "Turn off security";
-            this.TurnOffSecurityButton.UseVisualStyleBackColor = true;
-            this.TurnOffSecurityButton.Click += new System.EventHandler(this.TurnOffSecurityButton_Click);
             // 
             // ImportantBox3
             // 
             this.ImportantBox3.Image = global::SendGmailMulti.Properties.Resources.Important_removebg_preview;
             this.ImportantBox3.Location = new System.Drawing.Point(483, 74);
+            this.ImportantBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ImportantBox3.Name = "ImportantBox3";
             this.ImportantBox3.Size = new System.Drawing.Size(29, 22);
             this.ImportantBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -300,11 +302,24 @@ namespace SendGmailMulti
             // 
             this.ImportantBox2.Image = global::SendGmailMulti.Properties.Resources.Important_removebg_preview;
             this.ImportantBox2.Location = new System.Drawing.Point(483, 12);
+            this.ImportantBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ImportantBox2.Name = "ImportantBox2";
             this.ImportantBox2.Size = new System.Drawing.Size(29, 22);
             this.ImportantBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ImportantBox2.TabIndex = 9;
             this.ImportantBox2.TabStop = false;
+            // 
+            // TurnOffSecurityButton
+            // 
+            this.TurnOffSecurityButton.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TurnOffSecurityButton.Location = new System.Drawing.Point(184, 9);
+            this.TurnOffSecurityButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TurnOffSecurityButton.Name = "TurnOffSecurityButton";
+            this.TurnOffSecurityButton.Size = new System.Drawing.Size(185, 31);
+            this.TurnOffSecurityButton.TabIndex = 20;
+            this.TurnOffSecurityButton.Text = "Turn off security";
+            this.TurnOffSecurityButton.UseVisualStyleBackColor = true;
+            this.TurnOffSecurityButton.Click += new System.EventHandler(this.TurnOffSecurityButton_Click);
             // 
             // PathPanel
             // 
@@ -316,13 +331,11 @@ namespace SendGmailMulti
             this.PathPanel.Controls.Add(this.CCLabel);
             this.PathPanel.Controls.Add(this.ImportantBox1);
             this.PathPanel.Controls.Add(this.MakeEmailListButton);
-            this.PathPanel.Controls.Add(this.AttachTextBox);
             this.PathPanel.Controls.Add(this.label1);
-            this.PathPanel.Controls.Add(this.label6);
             this.PathPanel.Controls.Add(this.ReceiverTextBox);
             this.PathPanel.Controls.Add(this.MailListButton);
-            this.PathPanel.Controls.Add(this.AttachButton);
             this.PathPanel.Location = new System.Drawing.Point(559, 31);
+            this.PathPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PathPanel.Name = "PathPanel";
             this.PathPanel.Size = new System.Drawing.Size(544, 214);
             this.PathPanel.TabIndex = 16;
@@ -330,7 +343,8 @@ namespace SendGmailMulti
             // MailListBCCButon
             // 
             this.MailListBCCButon.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MailListBCCButon.Location = new System.Drawing.Point(388, 138);
+            this.MailListBCCButon.Location = new System.Drawing.Point(388, 129);
+            this.MailListBCCButon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MailListBCCButon.Name = "MailListBCCButon";
             this.MailListBCCButon.Size = new System.Drawing.Size(99, 34);
             this.MailListBCCButon.TabIndex = 21;
@@ -341,7 +355,8 @@ namespace SendGmailMulti
             // MailListCCButton
             // 
             this.MailListCCButton.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MailListCCButton.Location = new System.Drawing.Point(388, 97);
+            this.MailListCCButton.Location = new System.Drawing.Point(388, 70);
+            this.MailListCCButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MailListCCButton.Name = "MailListCCButton";
             this.MailListCCButton.Size = new System.Drawing.Size(99, 34);
             this.MailListCCButton.TabIndex = 20;
@@ -351,7 +366,8 @@ namespace SendGmailMulti
             // 
             // BCCTextBox
             // 
-            this.BCCTextBox.Location = new System.Drawing.Point(116, 144);
+            this.BCCTextBox.Location = new System.Drawing.Point(116, 135);
+            this.BCCTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BCCTextBox.Name = "BCCTextBox";
             this.BCCTextBox.Size = new System.Drawing.Size(235, 22);
             this.BCCTextBox.TabIndex = 19;
@@ -359,7 +375,8 @@ namespace SendGmailMulti
             // 
             // CCTextBox
             // 
-            this.CCTextBox.Location = new System.Drawing.Point(116, 103);
+            this.CCTextBox.Location = new System.Drawing.Point(116, 76);
+            this.CCTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CCTextBox.Name = "CCTextBox";
             this.CCTextBox.Size = new System.Drawing.Size(235, 22);
             this.CCTextBox.TabIndex = 18;
@@ -369,7 +386,7 @@ namespace SendGmailMulti
             // 
             this.BCCLabel.AutoSize = true;
             this.BCCLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BCCLabel.Location = new System.Drawing.Point(11, 144);
+            this.BCCLabel.Location = new System.Drawing.Point(11, 135);
             this.BCCLabel.Name = "BCCLabel";
             this.BCCLabel.Size = new System.Drawing.Size(55, 22);
             this.BCCLabel.TabIndex = 17;
@@ -379,7 +396,7 @@ namespace SendGmailMulti
             // 
             this.CCLabel.AutoSize = true;
             this.CCLabel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CCLabel.Location = new System.Drawing.Point(11, 102);
+            this.CCLabel.Location = new System.Drawing.Point(11, 75);
             this.CCLabel.Name = "CCLabel";
             this.CCLabel.Size = new System.Drawing.Size(42, 22);
             this.CCLabel.TabIndex = 16;
@@ -388,7 +405,8 @@ namespace SendGmailMulti
             // ImportantBox1
             // 
             this.ImportantBox1.Image = global::SendGmailMulti.Properties.Resources.Important_removebg_preview;
-            this.ImportantBox1.Location = new System.Drawing.Point(357, 63);
+            this.ImportantBox1.Location = new System.Drawing.Point(357, 15);
+            this.ImportantBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ImportantBox1.Name = "ImportantBox1";
             this.ImportantBox1.Size = new System.Drawing.Size(29, 22);
             this.ImportantBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -399,6 +417,7 @@ namespace SendGmailMulti
             // 
             this.MakeEmailListButton.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MakeEmailListButton.Location = new System.Drawing.Point(164, 172);
+            this.MakeEmailListButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MakeEmailListButton.Name = "MakeEmailListButton";
             this.MakeEmailListButton.Size = new System.Drawing.Size(187, 39);
             this.MakeEmailListButton.TabIndex = 15;
@@ -408,19 +427,22 @@ namespace SendGmailMulti
             // 
             // InfoPanel
             // 
+            this.InfoPanel.Controls.Add(this.TurnOffSecurityButton);
             this.InfoPanel.Controls.Add(this.SubjectTextBox);
             this.InfoPanel.Controls.Add(this.label2);
             this.InfoPanel.Controls.Add(this.label5);
             this.InfoPanel.Controls.Add(this.MessageTextBox);
-            this.InfoPanel.Location = new System.Drawing.Point(12, 207);
+            this.InfoPanel.Location = new System.Drawing.Point(12, 214);
+            this.InfoPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.InfoPanel.Name = "InfoPanel";
-            this.InfoPanel.Size = new System.Drawing.Size(541, 318);
+            this.InfoPanel.Size = new System.Drawing.Size(541, 310);
             this.InfoPanel.TabIndex = 17;
             // 
             // BackToMenuButton
             // 
             this.BackToMenuButton.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BackToMenuButton.Location = new System.Drawing.Point(27, 531);
+            this.BackToMenuButton.Location = new System.Drawing.Point(27, 530);
+            this.BackToMenuButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BackToMenuButton.Name = "BackToMenuButton";
             this.BackToMenuButton.Size = new System.Drawing.Size(100, 30);
             this.BackToMenuButton.TabIndex = 19;
@@ -445,7 +467,8 @@ namespace SendGmailMulti
             this.DatabaseEditPanel.Controls.Add(this.label9);
             this.DatabaseEditPanel.Controls.Add(this.label10);
             this.DatabaseEditPanel.Controls.Add(this.NameTextBox);
-            this.DatabaseEditPanel.Location = new System.Drawing.Point(559, 251);
+            this.DatabaseEditPanel.Location = new System.Drawing.Point(559, 287);
+            this.DatabaseEditPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DatabaseEditPanel.Name = "DatabaseEditPanel";
             this.DatabaseEditPanel.Size = new System.Drawing.Size(544, 274);
             this.DatabaseEditPanel.TabIndex = 22;
@@ -454,6 +477,7 @@ namespace SendGmailMulti
             // 
             this.AddToCC.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddToCC.Location = new System.Drawing.Point(365, 231);
+            this.AddToCC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.AddToCC.Name = "AddToCC";
             this.AddToCC.Size = new System.Drawing.Size(85, 30);
             this.AddToCC.TabIndex = 32;
@@ -465,6 +489,7 @@ namespace SendGmailMulti
             // 
             this.AddToBCC.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddToBCC.Location = new System.Drawing.Point(456, 231);
+            this.AddToBCC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.AddToBCC.Name = "AddToBCC";
             this.AddToBCC.Size = new System.Drawing.Size(85, 30);
             this.AddToBCC.TabIndex = 31;
@@ -476,6 +501,7 @@ namespace SendGmailMulti
             // 
             this.UpdateDatabaseButton.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UpdateDatabaseButton.Location = new System.Drawing.Point(169, 231);
+            this.UpdateDatabaseButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.UpdateDatabaseButton.Name = "UpdateDatabaseButton";
             this.UpdateDatabaseButton.Size = new System.Drawing.Size(77, 30);
             this.UpdateDatabaseButton.TabIndex = 27;
@@ -486,7 +512,8 @@ namespace SendGmailMulti
             // DeleteDatabaseButton
             // 
             this.DeleteDatabaseButton.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DeleteDatabaseButton.Location = new System.Drawing.Point(86, 231);
+            this.DeleteDatabaseButton.Location = new System.Drawing.Point(85, 231);
+            this.DeleteDatabaseButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DeleteDatabaseButton.Name = "DeleteDatabaseButton";
             this.DeleteDatabaseButton.Size = new System.Drawing.Size(77, 30);
             this.DeleteDatabaseButton.TabIndex = 26;
@@ -498,6 +525,7 @@ namespace SendGmailMulti
             // 
             this.AddDatabaseButton.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddDatabaseButton.Location = new System.Drawing.Point(3, 231);
+            this.AddDatabaseButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.AddDatabaseButton.Name = "AddDatabaseButton";
             this.AddDatabaseButton.Size = new System.Drawing.Size(77, 30);
             this.AddDatabaseButton.TabIndex = 25;
@@ -508,6 +536,7 @@ namespace SendGmailMulti
             // PhoneTextBox
             // 
             this.PhoneTextBox.Location = new System.Drawing.Point(116, 188);
+            this.PhoneTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PhoneTextBox.Name = "PhoneTextBox";
             this.PhoneTextBox.Size = new System.Drawing.Size(371, 22);
             this.PhoneTextBox.TabIndex = 21;
@@ -525,6 +554,7 @@ namespace SendGmailMulti
             // GenderTextBox
             // 
             this.GenderTextBox.Location = new System.Drawing.Point(116, 144);
+            this.GenderTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.GenderTextBox.Name = "GenderTextBox";
             this.GenderTextBox.Size = new System.Drawing.Size(371, 22);
             this.GenderTextBox.TabIndex = 19;
@@ -532,6 +562,7 @@ namespace SendGmailMulti
             // MailTextBox
             // 
             this.MailTextBox.Location = new System.Drawing.Point(116, 103);
+            this.MailTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MailTextBox.Name = "MailTextBox";
             this.MailTextBox.Size = new System.Drawing.Size(371, 22);
             this.MailTextBox.TabIndex = 18;
@@ -558,7 +589,8 @@ namespace SendGmailMulti
             // 
             // IDTextBox
             // 
-            this.IDTextBox.Location = new System.Drawing.Point(116, 19);
+            this.IDTextBox.Location = new System.Drawing.Point(116, 18);
+            this.IDTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.IDTextBox.Name = "IDTextBox";
             this.IDTextBox.Size = new System.Drawing.Size(371, 22);
             this.IDTextBox.TabIndex = 0;
@@ -586,6 +618,7 @@ namespace SendGmailMulti
             // NameTextBox
             // 
             this.NameTextBox.Location = new System.Drawing.Point(116, 62);
+            this.NameTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.NameTextBox.Name = "NameTextBox";
             this.NameTextBox.Size = new System.Drawing.Size(371, 22);
             this.NameTextBox.TabIndex = 2;
@@ -594,6 +627,7 @@ namespace SendGmailMulti
             // 
             this.DatabaseAccountPanel.Controls.Add(this.PortDatabaseTextBox);
             this.DatabaseAccountPanel.Controls.Add(this.label12);
+            this.DatabaseAccountPanel.Controls.Add(this.LoadButton);
             this.DatabaseAccountPanel.Controls.Add(this.PasswordDatabaseTextBox);
             this.DatabaseAccountPanel.Controls.Add(this.UsernameDatabaseTextBox);
             this.DatabaseAccountPanel.Controls.Add(this.label13);
@@ -603,13 +637,15 @@ namespace SendGmailMulti
             this.DatabaseAccountPanel.Controls.Add(this.label16);
             this.DatabaseAccountPanel.Controls.Add(this.DatabaseNameTextBox);
             this.DatabaseAccountPanel.Location = new System.Drawing.Point(559, 31);
+            this.DatabaseAccountPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DatabaseAccountPanel.Name = "DatabaseAccountPanel";
-            this.DatabaseAccountPanel.Size = new System.Drawing.Size(544, 214);
+            this.DatabaseAccountPanel.Size = new System.Drawing.Size(544, 250);
             this.DatabaseAccountPanel.TabIndex = 23;
             // 
             // PortDatabaseTextBox
             // 
             this.PortDatabaseTextBox.Location = new System.Drawing.Point(144, 183);
+            this.PortDatabaseTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PortDatabaseTextBox.Name = "PortDatabaseTextBox";
             this.PortDatabaseTextBox.Size = new System.Drawing.Size(380, 22);
             this.PortDatabaseTextBox.TabIndex = 21;
@@ -624,16 +660,31 @@ namespace SendGmailMulti
             this.label12.TabIndex = 20;
             this.label12.Text = "Port:";
             // 
+            // LoadButton
+            // 
+            this.LoadButton.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoadButton.Location = new System.Drawing.Point(425, 213);
+            this.LoadButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.LoadButton.Name = "LoadButton";
+            this.LoadButton.Size = new System.Drawing.Size(100, 30);
+            this.LoadButton.TabIndex = 25;
+            this.LoadButton.Text = "LOAD";
+            this.LoadButton.UseVisualStyleBackColor = true;
+            this.LoadButton.Click += new System.EventHandler(this.LoadButton_Click);
+            // 
             // PasswordDatabaseTextBox
             // 
             this.PasswordDatabaseTextBox.Location = new System.Drawing.Point(144, 139);
+            this.PasswordDatabaseTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PasswordDatabaseTextBox.Name = "PasswordDatabaseTextBox";
             this.PasswordDatabaseTextBox.Size = new System.Drawing.Size(380, 22);
             this.PasswordDatabaseTextBox.TabIndex = 19;
+            this.PasswordDatabaseTextBox.UseSystemPasswordChar = true;
             // 
             // UsernameDatabaseTextBox
             // 
             this.UsernameDatabaseTextBox.Location = new System.Drawing.Point(144, 98);
+            this.UsernameDatabaseTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.UsernameDatabaseTextBox.Name = "UsernameDatabaseTextBox";
             this.UsernameDatabaseTextBox.Size = new System.Drawing.Size(380, 22);
             this.UsernameDatabaseTextBox.TabIndex = 18;
@@ -661,6 +712,7 @@ namespace SendGmailMulti
             // SeverDatabaseTextBox
             // 
             this.SeverDatabaseTextBox.Location = new System.Drawing.Point(144, 14);
+            this.SeverDatabaseTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SeverDatabaseTextBox.Name = "SeverDatabaseTextBox";
             this.SeverDatabaseTextBox.Size = new System.Drawing.Size(380, 22);
             this.SeverDatabaseTextBox.TabIndex = 0;
@@ -688,6 +740,7 @@ namespace SendGmailMulti
             // DatabaseNameTextBox
             // 
             this.DatabaseNameTextBox.Location = new System.Drawing.Point(144, 57);
+            this.DatabaseNameTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DatabaseNameTextBox.Name = "DatabaseNameTextBox";
             this.DatabaseNameTextBox.Size = new System.Drawing.Size(380, 22);
             this.DatabaseNameTextBox.TabIndex = 2;
@@ -696,6 +749,7 @@ namespace SendGmailMulti
             // 
             this.DatabaseGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DatabaseGridView.Location = new System.Drawing.Point(1109, 31);
+            this.DatabaseGridView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DatabaseGridView.Name = "DatabaseGridView";
             this.DatabaseGridView.RowHeadersWidth = 51;
             this.DatabaseGridView.RowTemplate.Height = 24;
@@ -704,21 +758,11 @@ namespace SendGmailMulti
             this.DatabaseGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DatabaseGridView_CellDoubleClick);
             this.DatabaseGridView.SelectionChanged += new System.EventHandler(this.DatabaseGridView_SelectionChanged);
             // 
-            // LoadButton
-            // 
-            this.LoadButton.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoadButton.Location = new System.Drawing.Point(1592, 531);
-            this.LoadButton.Name = "LoadButton";
-            this.LoadButton.Size = new System.Drawing.Size(100, 30);
-            this.LoadButton.TabIndex = 25;
-            this.LoadButton.Text = "LOAD";
-            this.LoadButton.UseVisualStyleBackColor = true;
-            this.LoadButton.Click += new System.EventHandler(this.LoadButton_Click);
-            // 
             // SendFromDatabaseCheckBox
             // 
             this.SendFromDatabaseCheckBox.AutoSize = true;
             this.SendFromDatabaseCheckBox.Location = new System.Drawing.Point(272, 538);
+            this.SendFromDatabaseCheckBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SendFromDatabaseCheckBox.Name = "SendFromDatabaseCheckBox";
             this.SendFromDatabaseCheckBox.Size = new System.Drawing.Size(158, 21);
             this.SendFromDatabaseCheckBox.TabIndex = 26;
@@ -738,14 +782,16 @@ namespace SendGmailMulti
             this.panel2.Controls.Add(this.label21);
             this.panel2.Controls.Add(this.BCCDatabaseListTextBox);
             this.panel2.Location = new System.Drawing.Point(1109, 395);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(583, 130);
+            this.panel2.Size = new System.Drawing.Size(583, 166);
             this.panel2.TabIndex = 24;
             // 
             // ReceiverDatabaseUpdateButton
             // 
             this.ReceiverDatabaseUpdateButton.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ReceiverDatabaseUpdateButton.Location = new System.Drawing.Point(495, 8);
+            this.ReceiverDatabaseUpdateButton.Location = new System.Drawing.Point(495, 7);
+            this.ReceiverDatabaseUpdateButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ReceiverDatabaseUpdateButton.Name = "ReceiverDatabaseUpdateButton";
             this.ReceiverDatabaseUpdateButton.Size = new System.Drawing.Size(85, 30);
             this.ReceiverDatabaseUpdateButton.TabIndex = 37;
@@ -755,9 +801,10 @@ namespace SendGmailMulti
             // 
             // ReceiverDatabaseListTextBox
             // 
-            this.ReceiverDatabaseListTextBox.Location = new System.Drawing.Point(127, 13);
+            this.ReceiverDatabaseListTextBox.Location = new System.Drawing.Point(127, 14);
+            this.ReceiverDatabaseListTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ReceiverDatabaseListTextBox.Name = "ReceiverDatabaseListTextBox";
-            this.ReceiverDatabaseListTextBox.Size = new System.Drawing.Size(362, 22);
+            this.ReceiverDatabaseListTextBox.Size = new System.Drawing.Size(361, 22);
             this.ReceiverDatabaseListTextBox.TabIndex = 35;
             // 
             // label17
@@ -774,6 +821,7 @@ namespace SendGmailMulti
             // 
             this.BCCDatabaseUpdateButton.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BCCDatabaseUpdateButton.Location = new System.Drawing.Point(495, 95);
+            this.BCCDatabaseUpdateButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BCCDatabaseUpdateButton.Name = "BCCDatabaseUpdateButton";
             this.BCCDatabaseUpdateButton.Size = new System.Drawing.Size(85, 30);
             this.BCCDatabaseUpdateButton.TabIndex = 34;
@@ -785,6 +833,7 @@ namespace SendGmailMulti
             // 
             this.CCDatabaseUpdateButton.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CCDatabaseUpdateButton.Location = new System.Drawing.Point(495, 52);
+            this.CCDatabaseUpdateButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CCDatabaseUpdateButton.Name = "CCDatabaseUpdateButton";
             this.CCDatabaseUpdateButton.Size = new System.Drawing.Size(85, 30);
             this.CCDatabaseUpdateButton.TabIndex = 33;
@@ -795,8 +844,9 @@ namespace SendGmailMulti
             // CCDatabaseListTextBox
             // 
             this.CCDatabaseListTextBox.Location = new System.Drawing.Point(127, 57);
+            this.CCDatabaseListTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CCDatabaseListTextBox.Name = "CCDatabaseListTextBox";
-            this.CCDatabaseListTextBox.Size = new System.Drawing.Size(362, 22);
+            this.CCDatabaseListTextBox.Size = new System.Drawing.Size(361, 22);
             this.CCDatabaseListTextBox.TabIndex = 0;
             // 
             // label20
@@ -822,8 +872,9 @@ namespace SendGmailMulti
             // BCCDatabaseListTextBox
             // 
             this.BCCDatabaseListTextBox.Location = new System.Drawing.Point(127, 100);
+            this.BCCDatabaseListTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BCCDatabaseListTextBox.Name = "BCCDatabaseListTextBox";
-            this.BCCDatabaseListTextBox.Size = new System.Drawing.Size(362, 22);
+            this.BCCDatabaseListTextBox.Size = new System.Drawing.Size(361, 22);
             this.BCCDatabaseListTextBox.TabIndex = 2;
             // 
             // menuStrip1
@@ -834,7 +885,8 @@ namespace SendGmailMulti
             this.infoToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1732, 28);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(1540, 28);
             this.menuStrip1.TabIndex = 27;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -850,9 +902,16 @@ namespace SendGmailMulti
             // loopToolStripMenuItem
             // 
             this.loopToolStripMenuItem.Name = "loopToolStripMenuItem";
-            this.loopToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.loopToolStripMenuItem.Size = new System.Drawing.Size(126, 26);
             this.loopToolStripMenuItem.Text = "Loop";
             this.loopToolStripMenuItem.Click += new System.EventHandler(this.loopToolStripMenuItem_Click);
+            // 
+            // bGMToolStripMenuItem
+            // 
+            this.bGMToolStripMenuItem.Name = "bGMToolStripMenuItem";
+            this.bGMToolStripMenuItem.Size = new System.Drawing.Size(126, 26);
+            this.bGMToolStripMenuItem.Text = "BGM";
+            this.bGMToolStripMenuItem.Click += new System.EventHandler(this.bGMToolStripMenuItem_Click);
             // 
             // infoToolStripMenuItem
             // 
@@ -877,21 +936,13 @@ namespace SendGmailMulti
             this.aboutUsToolStripMenuItem.Text = "About us";
             this.aboutUsToolStripMenuItem.Click += new System.EventHandler(this.aboutUsToolStripMenuItem_Click);
             // 
-            // bGMToolStripMenuItem
-            // 
-            this.bGMToolStripMenuItem.Name = "bGMToolStripMenuItem";
-            this.bGMToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.bGMToolStripMenuItem.Text = "BGM";
-            this.bGMToolStripMenuItem.Click += new System.EventHandler(this.bGMToolStripMenuItem_Click);
-            // 
             // SendGmailMulti
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1732, 573);
+            this.ClientSize = new System.Drawing.Size(1540, 574);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.SendFromDatabaseCheckBox);
-            this.Controls.Add(this.LoadButton);
             this.Controls.Add(this.DatabaseGridView);
             this.Controls.Add(this.DatabaseAccountPanel);
             this.Controls.Add(this.DatabaseEditPanel);
@@ -903,6 +954,7 @@ namespace SendGmailMulti
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "SendGmailMulti";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Send gmail multi";

@@ -16,6 +16,7 @@ using MySql.Data.MySqlClient;
 using System.Media;
 using System.Windows.Media;
 using AudioSwitcher.AudioApi.CoreAudio;
+using System.IO.Ports;
 
 namespace SendGmailMulti
 {
@@ -107,9 +108,7 @@ namespace SendGmailMulti
                     }
                     catch
                     {
-                        if ((ReceiverTextBox.Text == null || ReceiverTextBox.Text == "") && (CCTextBox.Text == null || CCTextBox.Text == "") && (BCCTextBox.Text == null || BCCTextBox.Text == ""))
-                            MessageBox.Show("Error! You haven't choose any receiver!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                        else if ((ReceiverTextBox.Text == null || ReceiverTextBox.Text == "") && CheckAccSecur == false)
+                        if ((ReceiverTextBox.Text == null || ReceiverTextBox.Text == "") && CheckAccSecur == false)
                             MessageBox.Show("User name or password is not correct!\nPlease check your connection and account security", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                         else
                             MessageBox.Show("Send unsuccessful!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);

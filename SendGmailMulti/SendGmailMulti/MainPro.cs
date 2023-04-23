@@ -391,11 +391,6 @@ namespace SendGmailMulti
             }
         }
 
-        private void TurnOffSecurityButton_Click(object sender, EventArgs e)
-        {
-            Process.Start("https://myaccount.google.com/lesssecureapps");
-        }
-
         private void ReceiverTextBox_TextChanged(object sender, EventArgs e)
         {
             if ((ReceiverTextBox.Text == null || ReceiverTextBox.Text == "") && (CCTextBox.Text == null || CCTextBox.Text == "") && (BCCTextBox.Text == null || BCCTextBox.Text == ""))
@@ -660,6 +655,11 @@ namespace SendGmailMulti
                 CCTextBox.Text = dialog.FileName;
                 //CheckAccCorrect = true;
             }
+        }
+
+        private void turnOffSecurityToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Process.Start("https://myaccount.google.com/lesssecureapps");
         }
 
         private void MailListBCCButon_Click(object sender, EventArgs e)

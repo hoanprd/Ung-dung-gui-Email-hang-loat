@@ -91,13 +91,14 @@ namespace SendGmailMulti
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.settingToolStripMenuItem,
             this.infoToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1330, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1330, 30);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -106,7 +107,7 @@ namespace SendGmailMulti
             this.settingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.createToolStripMenuItem});
             this.settingToolStripMenuItem.Name = "settingToolStripMenuItem";
-            this.settingToolStripMenuItem.Size = new System.Drawing.Size(70, 24);
+            this.settingToolStripMenuItem.Size = new System.Drawing.Size(70, 26);
             this.settingToolStripMenuItem.Text = "Setting";
             // 
             // createToolStripMenuItem
@@ -138,27 +139,28 @@ namespace SendGmailMulti
             this.howToUseToolStripMenuItem,
             this.aboutUsToolStripMenuItem});
             this.infoToolStripMenuItem.Name = "infoToolStripMenuItem";
-            this.infoToolStripMenuItem.Size = new System.Drawing.Size(49, 24);
+            this.infoToolStripMenuItem.Size = new System.Drawing.Size(49, 26);
             this.infoToolStripMenuItem.Text = "Info";
             // 
             // howToUseToolStripMenuItem
             // 
             this.howToUseToolStripMenuItem.Name = "howToUseToolStripMenuItem";
-            this.howToUseToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.howToUseToolStripMenuItem.Size = new System.Drawing.Size(167, 26);
             this.howToUseToolStripMenuItem.Text = "How to use";
             this.howToUseToolStripMenuItem.Click += new System.EventHandler(this.howToUseToolStripMenuItem_Click);
             // 
             // aboutUsToolStripMenuItem
             // 
             this.aboutUsToolStripMenuItem.Name = "aboutUsToolStripMenuItem";
-            this.aboutUsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.aboutUsToolStripMenuItem.Size = new System.Drawing.Size(167, 26);
             this.aboutUsToolStripMenuItem.Text = "About us";
             this.aboutUsToolStripMenuItem.Click += new System.EventHandler(this.aboutUsToolStripMenuItem_Click);
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(583, 30);
+            this.dataGridView1.Location = new System.Drawing.Point(590, 30);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
@@ -167,6 +169,7 @@ namespace SendGmailMulti
             // 
             // AccountPanel
             // 
+            this.AccountPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.AccountPanel.Controls.Add(this.BackToMenuButton);
             this.AccountPanel.Controls.Add(this.LoginButton);
             this.AccountPanel.Controls.Add(this.ImportantBox3);
@@ -267,13 +270,14 @@ namespace SendGmailMulti
             this.PasswordTextBox.Location = new System.Drawing.Point(108, 74);
             this.PasswordTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PasswordTextBox.Name = "PasswordTextBox";
-            this.PasswordTextBox.PasswordChar = '*';
             this.PasswordTextBox.Size = new System.Drawing.Size(416, 23);
             this.PasswordTextBox.TabIndex = 8;
+            this.PasswordTextBox.UseSystemPasswordChar = true;
             this.PasswordTextBox.TextChanged += new System.EventHandler(this.PasswordTextBox_TextChanged);
             // 
             // DatabaseAccountPanel
             // 
+            this.DatabaseAccountPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.DatabaseAccountPanel.Controls.Add(this.PortDatabaseTextBox);
             this.DatabaseAccountPanel.Controls.Add(this.label12);
             this.DatabaseAccountPanel.Controls.Add(this.LoadButton);
@@ -288,7 +292,7 @@ namespace SendGmailMulti
             this.DatabaseAccountPanel.Location = new System.Drawing.Point(12, 200);
             this.DatabaseAccountPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DatabaseAccountPanel.Name = "DatabaseAccountPanel";
-            this.DatabaseAccountPanel.Size = new System.Drawing.Size(565, 204);
+            this.DatabaseAccountPanel.Size = new System.Drawing.Size(565, 219);
             this.DatabaseAccountPanel.TabIndex = 24;
             // 
             // PortDatabaseTextBox
@@ -398,6 +402,7 @@ namespace SendGmailMulti
             // 
             // DatabaseEditPanel
             // 
+            this.DatabaseEditPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.DatabaseEditPanel.Controls.Add(this.UpdateDatabaseButton);
             this.DatabaseEditPanel.Controls.Add(this.DeleteDatabaseButton);
             this.DatabaseEditPanel.Controls.Add(this.AddDatabaseButton);
@@ -411,10 +416,10 @@ namespace SendGmailMulti
             this.DatabaseEditPanel.Controls.Add(this.label9);
             this.DatabaseEditPanel.Controls.Add(this.label10);
             this.DatabaseEditPanel.Controls.Add(this.NameTextBox);
-            this.DatabaseEditPanel.Location = new System.Drawing.Point(12, 421);
+            this.DatabaseEditPanel.Location = new System.Drawing.Point(12, 410);
             this.DatabaseEditPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DatabaseEditPanel.Name = "DatabaseEditPanel";
-            this.DatabaseEditPanel.Size = new System.Drawing.Size(565, 218);
+            this.DatabaseEditPanel.Size = new System.Drawing.Size(565, 229);
             this.DatabaseEditPanel.TabIndex = 25;
             // 
             // UpdateDatabaseButton
@@ -422,10 +427,10 @@ namespace SendGmailMulti
             this.UpdateDatabaseButton.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UpdateDatabaseButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.UpdateDatabaseButton.Image = ((System.Drawing.Image)(resources.GetObject("UpdateDatabaseButton.Image")));
-            this.UpdateDatabaseButton.Location = new System.Drawing.Point(99, 173);
+            this.UpdateDatabaseButton.Location = new System.Drawing.Point(224, 187);
             this.UpdateDatabaseButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.UpdateDatabaseButton.Name = "UpdateDatabaseButton";
-            this.UpdateDatabaseButton.Size = new System.Drawing.Size(85, 30);
+            this.UpdateDatabaseButton.Size = new System.Drawing.Size(98, 30);
             this.UpdateDatabaseButton.TabIndex = 27;
             this.UpdateDatabaseButton.Text = "Update";
             this.UpdateDatabaseButton.UseVisualStyleBackColor = true;
@@ -436,10 +441,10 @@ namespace SendGmailMulti
             this.DeleteDatabaseButton.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DeleteDatabaseButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.DeleteDatabaseButton.Image = global::SendGmailMulti.Properties.Resources.pixlr_bg_result;
-            this.DeleteDatabaseButton.Location = new System.Drawing.Point(189, 173);
+            this.DeleteDatabaseButton.Location = new System.Drawing.Point(120, 187);
             this.DeleteDatabaseButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DeleteDatabaseButton.Name = "DeleteDatabaseButton";
-            this.DeleteDatabaseButton.Size = new System.Drawing.Size(85, 30);
+            this.DeleteDatabaseButton.Size = new System.Drawing.Size(98, 30);
             this.DeleteDatabaseButton.TabIndex = 26;
             this.DeleteDatabaseButton.Text = "Delete";
             this.DeleteDatabaseButton.UseVisualStyleBackColor = true;
@@ -450,10 +455,10 @@ namespace SendGmailMulti
             this.AddDatabaseButton.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddDatabaseButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.AddDatabaseButton.Image = global::SendGmailMulti.Properties.Resources.pixlr_bg_result;
-            this.AddDatabaseButton.Location = new System.Drawing.Point(16, 173);
+            this.AddDatabaseButton.Location = new System.Drawing.Point(15, 187);
             this.AddDatabaseButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.AddDatabaseButton.Name = "AddDatabaseButton";
-            this.AddDatabaseButton.Size = new System.Drawing.Size(77, 30);
+            this.AddDatabaseButton.Size = new System.Drawing.Size(99, 30);
             this.AddDatabaseButton.TabIndex = 25;
             this.AddDatabaseButton.Text = "Add";
             this.AddDatabaseButton.UseVisualStyleBackColor = true;
@@ -551,17 +556,19 @@ namespace SendGmailMulti
             // 
             // dataGridView2
             // 
+            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(583, 421);
+            this.dataGridView2.Location = new System.Drawing.Point(590, 410);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(737, 218);
+            this.dataGridView2.Size = new System.Drawing.Size(737, 229);
             this.dataGridView2.TabIndex = 26;
             this.dataGridView2.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellDoubleClick);
             // 
             // TxtSaveResListPanel
             // 
+            this.TxtSaveResListPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.TxtSaveResListPanel.Controls.Add(this.SavetTxtListResButton);
             this.TxtSaveResListPanel.Controls.Add(this.TxtResListTextBox);
             this.TxtSaveResListPanel.Location = new System.Drawing.Point(12, 200);
@@ -597,6 +604,7 @@ namespace SendGmailMulti
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(1330, 650);
             this.ControlBox = false;
             this.Controls.Add(this.TxtSaveResListPanel);

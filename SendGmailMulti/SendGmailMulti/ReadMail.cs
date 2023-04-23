@@ -65,69 +65,63 @@ namespace SendGmailMulti
 
         private async void LoginButton_Click(object sender, EventArgs e)
         {
-            /*var listEmail = new List<EmailInfo>();
-            var mailClient = new ImapClient();
-            var folder = await mailClient.GetFolderAsync("Inbox");
-            await folder.OpenAsync(FolderAccess.ReadWrite);
-
             try
             {
+                var listEmail = new List<EmailInfo>();
+                var mailClient = new ImapClient();
                 mailClient.Connect("imap.gmail.com", 993);
                 mailClient.Authenticate(UserNameTextBox.Text, PasswordTextBox.Text);
+                var folder = await mailClient.GetFolderAsync("Inbox");
+                await folder.OpenAsync(FolderAccess.ReadWrite);
+
+
+                IList<UniqueId> uids = folder.Search(SearchQuery.All);
+                foreach (UniqueId uid in uids)
+                {
+                    MimeMessage message = folder.GetMessage(uid);
+                    var emailInfo = new EmailInfo();
+                    emailInfo.Id = uid.ToString();
+                    emailInfo.From = message.From.ToString();
+                    emailInfo.TimeReceive = message.Date;
+                    emailInfo.Subject = message.Subject;
+                    emailInfo.Body = message.TextBody;
+                    var fileAttactment = new List<string>();
+
+
+                    foreach (MimeEntity attachment in message.Attachments)
+                    {
+                        var fileName = attachment.ContentDisposition?.FileName ?? attachment.ContentType.Name;
+                        fileAttactment.Add(fileName);
+
+                        using (var stream = File.Create(fileName))
+                        {
+                            if (attachment is MessagePart)
+                            {
+                                var rfc822 = (MessagePart)attachment;
+
+                                rfc822.Message.WriteTo(stream);
+                            }
+                            else
+                            {
+                                var part = (MimePart)attachment;
+
+                                part.Content.DecodeTo(stream);
+                            }
+                        }
+                    }
+                    emailInfo.FileAttactment = string.Join("; ", fileAttactment);
+                    listEmail.Add(emailInfo);
+
+                }
+                dataGridView1.DataSource = listEmail;
+                menuStrip1.Show();
+                this.Size = new Size(1020, 380);
+                this.CenterToScreen();
             }
             catch
             {
-                if ((UserNameTextBox.Text == null || PasswordTextBox.Text == ""))
-                    MessageBox.Show("User name or password is not correct!\nPlease check your connection and account security", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
-            }*/
-
-            var listEmail = new List<EmailInfo>();
-            var mailClient = new ImapClient();
-            mailClient.Connect("imap.gmail.com", 993);
-            mailClient.Authenticate(UserNameTextBox.Text, PasswordTextBox.Text);
-            var folder = await mailClient.GetFolderAsync("Inbox");
-            await folder.OpenAsync(FolderAccess.ReadWrite);
-
-
-            IList<UniqueId> uids = folder.Search(SearchQuery.All);
-            foreach (UniqueId uid in uids)
-            {
-                MimeMessage message = folder.GetMessage(uid);
-                var emailInfo = new EmailInfo();
-                emailInfo.Id = uid.ToString();
-                emailInfo.From = message.From.ToString();
-                emailInfo.TimeReceive = message.Date;
-                emailInfo.Subject = message.Subject;
-                emailInfo.Body = message.TextBody;
-                var fileAttactment = new List<string>();
-
-
-                foreach (MimeEntity attachment in message.Attachments)
-                {
-                    var fileName = attachment.ContentDisposition?.FileName ?? attachment.ContentType.Name;
-                    fileAttactment.Add(fileName);
-
-                    using (var stream = File.Create(fileName))
-                    {
-                        if (attachment is MessagePart)
-                        {
-                            var rfc822 = (MessagePart)attachment;
-
-                            rfc822.Message.WriteTo(stream);
-                        }
-                        else
-                        {
-                            var part = (MimePart)attachment;
-
-                            part.Content.DecodeTo(stream);
-                        }
-                    }
-                }
-                emailInfo.FileAttactment = string.Join("; ", fileAttactment);
-                listEmail.Add(emailInfo);
-
+                MessageBox.Show("User name or password is not correct!\nPlease check your connection and account security", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
             }
-            dataGridView1.DataSource = listEmail;
         }
 
         public string id { get; set; }
@@ -254,11 +248,12 @@ namespace SendGmailMulti
 
         private void ReadMail_Load(object sender, EventArgs e)
         {
+            menuStrip1.Hide();
             TxtSaveResListPanel.Hide();
             DatabaseAccountPanel.Hide();
             DatabaseEditPanel.Hide();
             dataGridView2.Hide();
-            this.Size = new Size(1020, 380);
+            this.Size = new Size(458, 215);
             this.CenterToScreen();
         }
 
@@ -285,7 +280,7 @@ namespace SendGmailMulti
             DatabaseAccountPanel.Show();
             DatabaseEditPanel.Show();
             dataGridView2.Show();
-            this.Size = new Size(1020, 580);
+            this.Size = new Size(1020, 570);
             this.CenterToScreen();
         }
 

@@ -133,16 +133,19 @@
   <data name="toi-pham-spammer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\toi-pham-spammer.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Important1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Important1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Important-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Important-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Important" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Important.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Important1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Important1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Atelier.Firis.full.2175355 (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Atelier.Firis.full.2175355 (2).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Important-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Important-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="z4212394209715_140809aeb82b6cc649f3972bf27aa4ff" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\z4212394209715_140809aeb82b6cc649f3972bf27aa4ff.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

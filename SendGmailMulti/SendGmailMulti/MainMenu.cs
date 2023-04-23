@@ -34,5 +34,12 @@ namespace SendGmailMulti
         {
             MaximizeBox = false;
         }
+
+        private void ReadMainButton_Click(object sender, EventArgs e)
+        {
+            ReadMail rm = new ReadMail();
+            rm.Show();
+            this.Hide();
+        }
     }
 }

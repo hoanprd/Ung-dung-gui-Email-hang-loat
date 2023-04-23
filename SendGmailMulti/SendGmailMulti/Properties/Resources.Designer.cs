@@ -149,5 +149,15 @@ namespace SendGmailMulti.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap z4212394209715_140809aeb82b6cc649f3972bf27aa4ff {
+            get {
+                object obj = ResourceManager.GetObject("z4212394209715_140809aeb82b6cc649f3972bf27aa4ff", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

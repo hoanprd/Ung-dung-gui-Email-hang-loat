@@ -39,18 +39,22 @@ namespace SendGmailMulti
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 40);
+            this.label1.Location = new System.Drawing.Point(9, 32);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(282, 23);
+            this.label1.Size = new System.Drawing.Size(222, 19);
             this.label1.TabIndex = 0;
             this.label1.Text = "Enter the number of repetitions:";
             // 
             // button1
             // 
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(240, 101);
+            this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button1.Image = global::SendGmailMulti.Properties.Resources.pixlr_bg_result;
+            this.button1.Location = new System.Drawing.Point(180, 82);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(107, 40);
+            this.button1.Size = new System.Drawing.Size(80, 32);
             this.button1.TabIndex = 2;
             this.button1.Text = "OK";
             this.button1.UseVisualStyleBackColor = true;
@@ -59,7 +63,8 @@ namespace SendGmailMulti
             // LoopTimeNum
             // 
             this.LoopTimeNum.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LoopTimeNum.Location = new System.Drawing.Point(312, 39);
+            this.LoopTimeNum.Location = new System.Drawing.Point(234, 32);
+            this.LoopTimeNum.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.LoopTimeNum.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -71,7 +76,7 @@ namespace SendGmailMulti
             0,
             0});
             this.LoopTimeNum.Name = "LoopTimeNum";
-            this.LoopTimeNum.Size = new System.Drawing.Size(258, 30);
+            this.LoopTimeNum.Size = new System.Drawing.Size(194, 26);
             this.LoopTimeNum.TabIndex = 3;
             this.LoopTimeNum.Value = new decimal(new int[] {
             1,
@@ -81,12 +86,13 @@ namespace SendGmailMulti
             // 
             // LoopSetting
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(582, 153);
+            this.ClientSize = new System.Drawing.Size(436, 124);
             this.Controls.Add(this.LoopTimeNum);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "LoopSetting";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Loop setting";

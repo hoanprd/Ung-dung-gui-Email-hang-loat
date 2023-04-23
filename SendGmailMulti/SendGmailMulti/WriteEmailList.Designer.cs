@@ -39,24 +39,30 @@
             // 
             // TextBoxW
             // 
-            this.TextBoxW.Location = new System.Drawing.Point(12, 163);
+            this.TextBoxW.Location = new System.Drawing.Point(9, 132);
+            this.TextBoxW.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.TextBoxW.Multiline = true;
             this.TextBoxW.Name = "TextBoxW";
-            this.TextBoxW.Size = new System.Drawing.Size(776, 295);
+            this.TextBoxW.Size = new System.Drawing.Size(583, 240);
             this.TextBoxW.TabIndex = 0;
             // 
             // PathTextBoxW
             // 
-            this.PathTextBoxW.Location = new System.Drawing.Point(83, 12);
+            this.PathTextBoxW.Location = new System.Drawing.Point(62, 10);
+            this.PathTextBoxW.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.PathTextBoxW.Name = "PathTextBoxW";
-            this.PathTextBoxW.Size = new System.Drawing.Size(705, 22);
+            this.PathTextBoxW.Size = new System.Drawing.Size(530, 20);
             this.PathTextBoxW.TabIndex = 1;
             // 
             // OpenButtonW
             // 
-            this.OpenButtonW.Location = new System.Drawing.Point(544, 116);
+            this.OpenButtonW.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OpenButtonW.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.OpenButtonW.Image = ((System.Drawing.Image)(resources.GetObject("OpenButtonW.Image")));
+            this.OpenButtonW.Location = new System.Drawing.Point(408, 94);
+            this.OpenButtonW.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.OpenButtonW.Name = "OpenButtonW";
-            this.OpenButtonW.Size = new System.Drawing.Size(119, 41);
+            this.OpenButtonW.Size = new System.Drawing.Size(89, 33);
             this.OpenButtonW.TabIndex = 2;
             this.OpenButtonW.Text = "Open";
             this.OpenButtonW.UseVisualStyleBackColor = true;
@@ -64,9 +70,13 @@
             // 
             // SaveAsButtonW
             // 
-            this.SaveAsButtonW.Location = new System.Drawing.Point(669, 116);
+            this.SaveAsButtonW.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SaveAsButtonW.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.SaveAsButtonW.Image = ((System.Drawing.Image)(resources.GetObject("SaveAsButtonW.Image")));
+            this.SaveAsButtonW.Location = new System.Drawing.Point(502, 94);
+            this.SaveAsButtonW.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.SaveAsButtonW.Name = "SaveAsButtonW";
-            this.SaveAsButtonW.Size = new System.Drawing.Size(119, 41);
+            this.SaveAsButtonW.Size = new System.Drawing.Size(89, 33);
             this.SaveAsButtonW.TabIndex = 4;
             this.SaveAsButtonW.Text = "Save as";
             this.SaveAsButtonW.UseVisualStyleBackColor = true;
@@ -76,17 +86,22 @@
             // 
             this.PathLabelW.AutoSize = true;
             this.PathLabelW.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PathLabelW.Location = new System.Drawing.Point(12, 4);
+            this.PathLabelW.Location = new System.Drawing.Point(9, 3);
+            this.PathLabelW.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.PathLabelW.Name = "PathLabelW";
-            this.PathLabelW.Size = new System.Drawing.Size(73, 33);
+            this.PathLabelW.Size = new System.Drawing.Size(56, 25);
             this.PathLabelW.TabIndex = 5;
             this.PathLabelW.Text = "Path:";
             // 
             // CloseWriteEmailList
             // 
-            this.CloseWriteEmailList.Location = new System.Drawing.Point(12, 116);
+            this.CloseWriteEmailList.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CloseWriteEmailList.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.CloseWriteEmailList.Image = ((System.Drawing.Image)(resources.GetObject("CloseWriteEmailList.Image")));
+            this.CloseWriteEmailList.Location = new System.Drawing.Point(9, 94);
+            this.CloseWriteEmailList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.CloseWriteEmailList.Name = "CloseWriteEmailList";
-            this.CloseWriteEmailList.Size = new System.Drawing.Size(119, 41);
+            this.CloseWriteEmailList.Size = new System.Drawing.Size(89, 33);
             this.CloseWriteEmailList.TabIndex = 6;
             this.CloseWriteEmailList.Text = "Close";
             this.CloseWriteEmailList.UseVisualStyleBackColor = true;
@@ -94,9 +109,9 @@
             // 
             // WriteEmailList
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 470);
+            this.ClientSize = new System.Drawing.Size(600, 382);
             this.Controls.Add(this.CloseWriteEmailList);
             this.Controls.Add(this.PathLabelW);
             this.Controls.Add(this.SaveAsButtonW);
@@ -104,6 +119,7 @@
             this.Controls.Add(this.PathTextBoxW);
             this.Controls.Add(this.TextBoxW);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "WriteEmailList";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Write Email List";

@@ -615,30 +615,6 @@ namespace SendGmailMulti
             }
         }
 
-        private void CCDatabaseUpdateButton_Click(object sender, EventArgs e)
-        {
-            if (conneted == true)
-            {
-                CCTemp = CCDatabaseListTextBox.Text;
-
-                MessageBox.Show("CC list update successful!");
-            }
-            else
-                MessageBox.Show("Database unconnect!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
-        }
-
-        private void BCCDatabaseUpdateButton_Click(object sender, EventArgs e)
-        {
-            if (conneted == true)
-            {
-                BCCTemp = BCCDatabaseListTextBox.Text;
-
-                MessageBox.Show("BCC list update successful!");
-            }
-            else
-                MessageBox.Show("Database unconnect!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
-        }
-
         private void loopToolStripMenuItem_Click(object sender, EventArgs e)
         {
             LoopSetting ls = new LoopSetting();
@@ -650,6 +626,8 @@ namespace SendGmailMulti
             if (conneted == true)
             {
                 MailTemp = ReceiverDatabaseListTextBox.Text;
+                CCTemp = CCDatabaseListTextBox.Text;
+                BCCTemp = BCCDatabaseListTextBox.Text;
 
                 MessageBox.Show("Receiver list update successful!");
             }

@@ -140,6 +140,12 @@
     <Compile Include="ReadMail.Designer.cs">
       <DependentUpon>ReadMail.cs</DependentUpon>
     </Compile>
+    <Compile Include="SecureTurnOff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SecureTurnOff.Designer.cs">
+      <DependentUpon>SecureTurnOff.cs</DependentUpon>
+    </Compile>
     <Compile Include="WriteEmailList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,6 +179,9 @@
     </Compile>
     <EmbeddedResource Include="ReadMail.resx">
       <DependentUpon>ReadMail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SecureTurnOff.resx">
+      <DependentUpon>SecureTurnOff.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WriteEmailList.resx">
       <DependentUpon>WriteEmailList.cs</DependentUpon>

@@ -115,12 +115,23 @@ namespace SendGmailMulti
                 }
                 dataGridView1.DataSource = listEmail;
                 menuStrip1.Show();
+                LoginStatusPanel.Show();
+                LoginStatusLabel.Text = "Login success with " + UserNameTextBox.Text;
                 this.Size = new Size(1020, 380);
                 this.CenterToScreen();
             }
             catch
             {
-                MessageBox.Show("User name or password is not correct!\nPlease check your connection and account security", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                //MessageBox.Show("User name or password is not correct!\nPlease check your connection and account security", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                if (MessageBox.Show("User name or password is not correct!\nPlease check your connection and account security", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand) == DialogResult.OK)
+                {
+                    SecureTurnOff sto = new SecureTurnOff();
+                    sto.Show();
+                }
+                else
+                {
+                    //do nothing
+                }
             }
         }
 
@@ -249,6 +260,7 @@ namespace SendGmailMulti
         private void ReadMail_Load(object sender, EventArgs e)
         {
             menuStrip1.Hide();
+            LoginStatusPanel.Hide();
             TxtSaveResListPanel.Hide();
             DatabaseAccountPanel.Hide();
             DatabaseEditPanel.Hide();
@@ -322,6 +334,19 @@ namespace SendGmailMulti
         private void aboutUsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Process.Start("https://www.facebook.com/hoan.nguyenduy.7967");
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MainMenu mm = new MainMenu();
+            mm.Show();
+            this.Close();
+        }
+
+        private void turnOffSecurityToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SecureTurnOff sto = new SecureTurnOff();
+            sto.Show();
         }
     }
 }

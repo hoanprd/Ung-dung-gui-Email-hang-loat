@@ -17,6 +17,10 @@ using System.Media;
 using System.Windows.Media;
 using AudioSwitcher.AudioApi.CoreAudio;
 using System.IO.Ports;
+using MailKit;
+using MailKit.Net.Imap;
+using MailKit.Search;
+using MimeKit;
 
 namespace SendGmailMulti
 {
@@ -29,6 +33,8 @@ namespace SendGmailMulti
         public static int LoopTime = 1;
         private SoundPlayer sp;
         CoreAudioDevice defaultPlaybackDevice = new CoreAudioController().DefaultPlaybackDevice;
+
+        SmtpClient client = new SmtpClient("smtp.gmail.com", 587);
 
         string constr;
         MySqlConnection con;
@@ -267,8 +273,6 @@ namespace SendGmailMulti
                 }
             }
 
-            SmtpClient client = new SmtpClient("smtp.gmail.com", 587);
-
             client.EnableSsl = true;
 
             client.Credentials = new NetworkCredential(UserNameTextBox.Text, PasswordTextBox.Text);
@@ -322,8 +326,6 @@ namespace SendGmailMulti
                 }
             }
 
-            SmtpClient client = new SmtpClient("smtp.gmail.com", 587);
-
             client.EnableSsl = true;
 
             client.Credentials = new NetworkCredential(UserNameTextBox.Text, PasswordTextBox.Text);
@@ -361,9 +363,14 @@ namespace SendGmailMulti
             MaximizeBox = false;
             ControlBox = false;
             //this.Size = new Size(1300, 510);
+            menuStrip1.Hide();
+            PathPanel.Hide();
+            InfoPanel.Hide();
             DatabaseEditPanel.Hide();
             DatabaseAccountPanel.Hide();
-            this.Size = new Size(820, 510);
+            LoginStatusPanel.Hide();
+            //this.Size = new Size(820, 510);
+            this.Size = new Size(440, 210);
             this.CenterToScreen();
         }
 
@@ -659,7 +666,45 @@ namespace SendGmailMulti
 
         private void turnOffSecurityToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Process.Start("https://myaccount.google.com/lesssecureapps");
+            SecureTurnOff sto = new SecureTurnOff();
+            sto.Show();
+        }
+
+        private async void LoginButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var mailClient = new ImapClient();
+                mailClient.Connect("imap.gmail.com", 993);
+                mailClient.Authenticate(UserNameTextBox.Text, PasswordTextBox.Text);
+                menuStrip1.Show();
+                PathPanel.Show();
+                InfoPanel.Show();
+                LoginStatusPanel.Show();
+                LoginStatusLabel.Text = "Login success with " + UserNameTextBox.Text;
+                this.Size = new Size(820, 510);
+                this.CenterToScreen();
+            }
+            catch
+            {
+                //MessageBox.Show("User name or password is not correct!\nPlease check your connection and account security", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                if (MessageBox.Show("User name or password is not correct!\nPlease check your connection and account security", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand) == DialogResult.OK)
+                {
+                    SecureTurnOff sto = new SecureTurnOff();
+                    sto.Show();
+                }
+                else
+                {
+                    //do nothing
+                }
+            }
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MainMenu mm = new MainMenu();
+            mm.Show();
+            this.Close();
         }
 
         private void MailListBCCButon_Click(object sender, EventArgs e)

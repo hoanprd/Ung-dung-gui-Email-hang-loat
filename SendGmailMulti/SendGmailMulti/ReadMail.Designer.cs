@@ -38,6 +38,7 @@ namespace SendGmailMulti
             this.infoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.howToUseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutUsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.AccountPanel = new System.Windows.Forms.Panel();
             this.BackToMenuButton = new System.Windows.Forms.Button();
@@ -78,6 +79,9 @@ namespace SendGmailMulti
             this.TxtSaveResListPanel = new System.Windows.Forms.Panel();
             this.SavetTxtListResButton = new System.Windows.Forms.Button();
             this.TxtResListTextBox = new System.Windows.Forms.TextBox();
+            this.LoginStatusPanel = new System.Windows.Forms.Panel();
+            this.LoginStatusLabel = new System.Windows.Forms.Label();
+            this.turnOffSecurityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.AccountPanel.SuspendLayout();
@@ -87,6 +91,7 @@ namespace SendGmailMulti
             this.DatabaseEditPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.TxtSaveResListPanel.SuspendLayout();
+            this.LoginStatusPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -95,19 +100,22 @@ namespace SendGmailMulti
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.settingToolStripMenuItem,
-            this.infoToolStripMenuItem});
+            this.infoToolStripMenuItem,
+            this.exitToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1330, 30);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(1331, 28);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // settingToolStripMenuItem
             // 
             this.settingToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.createToolStripMenuItem});
+            this.createToolStripMenuItem,
+            this.turnOffSecurityToolStripMenuItem});
             this.settingToolStripMenuItem.Name = "settingToolStripMenuItem";
-            this.settingToolStripMenuItem.Size = new System.Drawing.Size(70, 26);
+            this.settingToolStripMenuItem.Size = new System.Drawing.Size(70, 24);
             this.settingToolStripMenuItem.Text = "Setting";
             // 
             // createToolStripMenuItem
@@ -116,7 +124,7 @@ namespace SendGmailMulti
             this.responseTxtListToolStripMenuItem,
             this.responseDatabaseListToolStripMenuItem});
             this.createToolStripMenuItem.Name = "createToolStripMenuItem";
-            this.createToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
+            this.createToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.createToolStripMenuItem.Text = "Create response ";
             // 
             // responseTxtListToolStripMenuItem
@@ -139,7 +147,7 @@ namespace SendGmailMulti
             this.howToUseToolStripMenuItem,
             this.aboutUsToolStripMenuItem});
             this.infoToolStripMenuItem.Name = "infoToolStripMenuItem";
-            this.infoToolStripMenuItem.Size = new System.Drawing.Size(49, 26);
+            this.infoToolStripMenuItem.Size = new System.Drawing.Size(49, 24);
             this.infoToolStripMenuItem.Text = "Info";
             // 
             // howToUseToolStripMenuItem
@@ -156,11 +164,19 @@ namespace SendGmailMulti
             this.aboutUsToolStripMenuItem.Text = "About us";
             this.aboutUsToolStripMenuItem.Click += new System.EventHandler(this.aboutUsToolStripMenuItem_Click);
             // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(47, 24);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
             // dataGridView1
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(590, 30);
+            this.dataGridView1.Location = new System.Drawing.Point(589, 30);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
@@ -193,7 +209,7 @@ namespace SendGmailMulti
             this.BackToMenuButton.Location = new System.Drawing.Point(7, 111);
             this.BackToMenuButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BackToMenuButton.Name = "BackToMenuButton";
-            this.BackToMenuButton.Size = new System.Drawing.Size(100, 30);
+            this.BackToMenuButton.Size = new System.Drawing.Size(100, 34);
             this.BackToMenuButton.TabIndex = 27;
             this.BackToMenuButton.Text = "Back";
             this.BackToMenuButton.UseVisualStyleBackColor = true;
@@ -207,7 +223,7 @@ namespace SendGmailMulti
             this.LoginButton.Location = new System.Drawing.Point(425, 111);
             this.LoginButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.LoginButton.Name = "LoginButton";
-            this.LoginButton.Size = new System.Drawing.Size(100, 30);
+            this.LoginButton.Size = new System.Drawing.Size(100, 34);
             this.LoginButton.TabIndex = 26;
             this.LoginButton.Text = "Login";
             this.LoginButton.UseVisualStyleBackColor = true;
@@ -216,7 +232,7 @@ namespace SendGmailMulti
             // ImportantBox3
             // 
             this.ImportantBox3.Image = global::SendGmailMulti.Properties.Resources.Important_removebg_preview;
-            this.ImportantBox3.Location = new System.Drawing.Point(530, 74);
+            this.ImportantBox3.Location = new System.Drawing.Point(531, 74);
             this.ImportantBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ImportantBox3.Name = "ImportantBox3";
             this.ImportantBox3.Size = new System.Drawing.Size(29, 22);
@@ -227,7 +243,7 @@ namespace SendGmailMulti
             // ImportantBox2
             // 
             this.ImportantBox2.Image = global::SendGmailMulti.Properties.Resources.Important_removebg_preview;
-            this.ImportantBox2.Location = new System.Drawing.Point(530, 12);
+            this.ImportantBox2.Location = new System.Drawing.Point(531, 12);
             this.ImportantBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ImportantBox2.Name = "ImportantBox2";
             this.ImportantBox2.Size = new System.Drawing.Size(29, 22);
@@ -289,7 +305,7 @@ namespace SendGmailMulti
             this.DatabaseAccountPanel.Controls.Add(this.label15);
             this.DatabaseAccountPanel.Controls.Add(this.label16);
             this.DatabaseAccountPanel.Controls.Add(this.DatabaseNameTextBox);
-            this.DatabaseAccountPanel.Location = new System.Drawing.Point(12, 200);
+            this.DatabaseAccountPanel.Location = new System.Drawing.Point(12, 199);
             this.DatabaseAccountPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DatabaseAccountPanel.Name = "DatabaseAccountPanel";
             this.DatabaseAccountPanel.Size = new System.Drawing.Size(565, 219);
@@ -318,7 +334,7 @@ namespace SendGmailMulti
             this.LoadButton.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LoadButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.LoadButton.Image = global::SendGmailMulti.Properties.Resources.pixlr_bg_result;
-            this.LoadButton.Location = new System.Drawing.Point(424, 169);
+            this.LoadButton.Location = new System.Drawing.Point(425, 175);
             this.LoadButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.LoadButton.Name = "LoadButton";
             this.LoadButton.Size = new System.Drawing.Size(100, 30);
@@ -430,7 +446,7 @@ namespace SendGmailMulti
             this.UpdateDatabaseButton.Location = new System.Drawing.Point(224, 187);
             this.UpdateDatabaseButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.UpdateDatabaseButton.Name = "UpdateDatabaseButton";
-            this.UpdateDatabaseButton.Size = new System.Drawing.Size(98, 30);
+            this.UpdateDatabaseButton.Size = new System.Drawing.Size(99, 34);
             this.UpdateDatabaseButton.TabIndex = 27;
             this.UpdateDatabaseButton.Text = "Update";
             this.UpdateDatabaseButton.UseVisualStyleBackColor = true;
@@ -444,7 +460,7 @@ namespace SendGmailMulti
             this.DeleteDatabaseButton.Location = new System.Drawing.Point(120, 187);
             this.DeleteDatabaseButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DeleteDatabaseButton.Name = "DeleteDatabaseButton";
-            this.DeleteDatabaseButton.Size = new System.Drawing.Size(98, 30);
+            this.DeleteDatabaseButton.Size = new System.Drawing.Size(99, 34);
             this.DeleteDatabaseButton.TabIndex = 26;
             this.DeleteDatabaseButton.Text = "Delete";
             this.DeleteDatabaseButton.UseVisualStyleBackColor = true;
@@ -458,7 +474,7 @@ namespace SendGmailMulti
             this.AddDatabaseButton.Location = new System.Drawing.Point(15, 187);
             this.AddDatabaseButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.AddDatabaseButton.Name = "AddDatabaseButton";
-            this.AddDatabaseButton.Size = new System.Drawing.Size(99, 30);
+            this.AddDatabaseButton.Size = new System.Drawing.Size(99, 34);
             this.AddDatabaseButton.TabIndex = 25;
             this.AddDatabaseButton.Text = "Add";
             this.AddDatabaseButton.UseVisualStyleBackColor = true;
@@ -520,7 +536,7 @@ namespace SendGmailMulti
             // 
             // IDTextBox
             // 
-            this.IDTextBox.Location = new System.Drawing.Point(144, 13);
+            this.IDTextBox.Location = new System.Drawing.Point(144, 14);
             this.IDTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.IDTextBox.Name = "IDTextBox";
             this.IDTextBox.Size = new System.Drawing.Size(380, 22);
@@ -558,7 +574,8 @@ namespace SendGmailMulti
             // 
             this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(590, 410);
+            this.dataGridView2.Location = new System.Drawing.Point(589, 410);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.RowTemplate.Height = 24;
@@ -571,10 +588,10 @@ namespace SendGmailMulti
             this.TxtSaveResListPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.TxtSaveResListPanel.Controls.Add(this.SavetTxtListResButton);
             this.TxtSaveResListPanel.Controls.Add(this.TxtResListTextBox);
-            this.TxtSaveResListPanel.Location = new System.Drawing.Point(12, 200);
+            this.TxtSaveResListPanel.Location = new System.Drawing.Point(12, 199);
             this.TxtSaveResListPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtSaveResListPanel.Name = "TxtSaveResListPanel";
-            this.TxtSaveResListPanel.Size = new System.Drawing.Size(565, 204);
+            this.TxtSaveResListPanel.Size = new System.Drawing.Size(565, 217);
             this.TxtSaveResListPanel.TabIndex = 27;
             // 
             // SavetTxtListResButton
@@ -582,10 +599,10 @@ namespace SendGmailMulti
             this.SavetTxtListResButton.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SavetTxtListResButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.SavetTxtListResButton.Image = global::SendGmailMulti.Properties.Resources.pixlr_bg_result;
-            this.SavetTxtListResButton.Location = new System.Drawing.Point(459, 171);
+            this.SavetTxtListResButton.Location = new System.Drawing.Point(459, 175);
             this.SavetTxtListResButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SavetTxtListResButton.Name = "SavetTxtListResButton";
-            this.SavetTxtListResButton.Size = new System.Drawing.Size(100, 30);
+            this.SavetTxtListResButton.Size = new System.Drawing.Size(100, 34);
             this.SavetTxtListResButton.TabIndex = 25;
             this.SavetTxtListResButton.Text = "Save";
             this.SavetTxtListResButton.UseVisualStyleBackColor = true;
@@ -600,13 +617,44 @@ namespace SendGmailMulti
             this.TxtResListTextBox.Size = new System.Drawing.Size(552, 153);
             this.TxtResListTextBox.TabIndex = 0;
             // 
+            // LoginStatusPanel
+            // 
+            this.LoginStatusPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.LoginStatusPanel.Controls.Add(this.LoginStatusLabel);
+            this.LoginStatusPanel.Location = new System.Drawing.Point(12, 30);
+            this.LoginStatusPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.LoginStatusPanel.Name = "LoginStatusPanel";
+            this.LoginStatusPanel.Size = new System.Drawing.Size(565, 156);
+            this.LoginStatusPanel.TabIndex = 30;
+            this.LoginStatusPanel.Tag = "";
+            // 
+            // LoginStatusLabel
+            // 
+            this.LoginStatusLabel.AutoSize = true;
+            this.LoginStatusLabel.BackColor = System.Drawing.SystemColors.Window;
+            this.LoginStatusLabel.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LoginStatusLabel.Location = new System.Drawing.Point(4, 50);
+            this.LoginStatusLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LoginStatusLabel.Name = "LoginStatusLabel";
+            this.LoginStatusLabel.Size = new System.Drawing.Size(238, 31);
+            this.LoginStatusLabel.TabIndex = 28;
+            this.LoginStatusLabel.Text = "Login success with ";
+            // 
+            // turnOffSecurityToolStripMenuItem
+            // 
+            this.turnOffSecurityToolStripMenuItem.Name = "turnOffSecurityToolStripMenuItem";
+            this.turnOffSecurityToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.turnOffSecurityToolStripMenuItem.Text = "Turn off security";
+            this.turnOffSecurityToolStripMenuItem.Click += new System.EventHandler(this.turnOffSecurityToolStripMenuItem_Click);
+            // 
             // ReadMail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(1330, 650);
+            this.ClientSize = new System.Drawing.Size(1331, 650);
             this.ControlBox = false;
+            this.Controls.Add(this.LoginStatusPanel);
             this.Controls.Add(this.TxtSaveResListPanel);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.DatabaseEditPanel);
@@ -616,6 +664,7 @@ namespace SendGmailMulti
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ReadMail";
             this.Text = "ReadMail";
             this.Load += new System.EventHandler(this.ReadMail_Load);
@@ -633,6 +682,8 @@ namespace SendGmailMulti
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.TxtSaveResListPanel.ResumeLayout(false);
             this.TxtSaveResListPanel.PerformLayout();
+            this.LoginStatusPanel.ResumeLayout(false);
+            this.LoginStatusPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -687,5 +738,9 @@ namespace SendGmailMulti
         private System.Windows.Forms.Panel TxtSaveResListPanel;
         private System.Windows.Forms.Button SavetTxtListResButton;
         private System.Windows.Forms.TextBox TxtResListTextBox;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.Panel LoginStatusPanel;
+        private System.Windows.Forms.Label LoginStatusLabel;
+        private System.Windows.Forms.ToolStripMenuItem turnOffSecurityToolStripMenuItem;
     }
 }

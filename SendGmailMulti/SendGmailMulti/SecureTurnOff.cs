@@ -31,7 +31,8 @@ namespace SendGmailMulti
 
         private void TurnOffSecure2Button_Click(object sender, EventArgs e)
         {
-            Process.Start("https://myaccount.google.com/apppasswords?utm_source=google-account&utm_medium=myaccountsecurity&utm_campaign=tsv-settings&rapt=AEjHL4O6PusxrQUtum4D0AeNWP43wXffz3qU1TonRLoH0_YpDhN1udoFlqM7pjlk1H9GpiB4RCBzgJRKrBPTVD_m0IEXI2sz2A");
+            Process.Start("https://myaccount.google.com/signinoptions/two-step-verification?pli=1&rapt=AEjHL4MbU9oxp4vnELv8ehHJmLHs3AMLBnXpjERJqhNaNismSG4OyezyRVwart7hhrh9AocqNgpBNXD7op67RVaJCJn_fiLuFw");
+            Process.Start("https://youtu.be/oC6v2CoLl9A");
         }
     }
 }

@@ -47,7 +47,7 @@ namespace SendGmailMulti
             // 
             // TurnOffSecure2Button
             // 
-            this.TurnOffSecure2Button.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TurnOffSecure2Button.Font = new System.Drawing.Font("Times New Roman", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TurnOffSecure2Button.Location = new System.Drawing.Point(12, 114);
             this.TurnOffSecure2Button.Name = "TurnOffSecure2Button";
             this.TurnOffSecure2Button.Size = new System.Drawing.Size(458, 77);
